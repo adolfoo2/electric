@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Electric Latam | Ingreso</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="#"><b>Admin</b>ElectricLATAM</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Ingresar a tu sesión</p>
+      <form class="pt-3">
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" id="InputEmail" placeholder="Correo">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" id="InputPassword" placeholder="Contraseña">
+
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Recordar
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button class="btn btn-primary btn-block" type="button" onClick="iniciar(this.form)">Ingresar</button>
+
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <!--<div class="social-auth-links text-center mb-3">
+        <p>- O -</p>
+        <a href="#" class="btn btn-block btn-danger">
+          <i class="fab fa-google-plus mr-2"></i> Inicia usando Google+
+        </a>
+      </div>
+       /.social-auth-links -->
+
+      <p class="mb-1">
+        <a href="recovery.html" class="auth-link text-black">Olvidé/cambiar mi contraseña</a>
+      </p>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+
+</body>
+
+</script> 
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+	apiKey: "AIzaSyBdAIe1K0LqZ7Vwm0g1uK2G-dB_fd6ClPo",
+	authDomain: "electric-latam.firebaseapp.com",
+	databaseURL: "https://electric-latam.firebaseio.com",
+	projectId: "electric-latam",
+	storageBucket: "electric-latam.appspot.com",
+  };
+  
+  firebase.initializeApp(config);
+
+  // make auth and firestore references
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+var storageRef = firebase.storage().ref();
+
+  var database = firebase.database();
+
+</script>
+<script type="text/javascript">
+
+  function iniciar(form){
+    var email = form.InputEmail.value;
+    var password = form.InputPassword.value;
+    email = email.toLowerCase();
+    email = email.trim();
+
+            //apago pantalla y enciendo gif
+           // document.getElementById('pantalla').style.display = "none";
+           // document.getElementById('loadingGif').style.display = "block";
+
+    // log the user in
+    auth.signInWithEmailAndPassword(email, password).then(function(result) {
+    
+      window.location.href = 'dashboard.html';
+    }).catch(function(error) {
+                //enciendo pantalla y apago gif
+      //document.getElementById('pantalla').style.display = "block";
+      //document.getElementById('loadingGif').style.display = "none";
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert("La clave es incorrecta o el usuario no existe."); 
+    });
+  }
+
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      //document.getElementById('pantalla').style.display = "block";
+      //document.getElementById('loadingGif').style.display = "none";
+      window.location.href = 'dashboard.html';
+    }else{
+      //enciendo pantalla y apago gif
+      //document.getElementById('pantalla').style.display = "block";
+      //document.getElementById('loadingGif').style.display = "none";
+      //window.location.href = 'login.html';
+    } 
+  });
+
+</script>
+</html>
