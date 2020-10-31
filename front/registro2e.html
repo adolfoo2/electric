@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!--
+		Basic
+	-->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+	<title>Electric - LatAm</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<meta name="keywords" content="vcard, resposnive, resume, personal, card, cv, cards, portfolio" />
+	<meta name="author" content="beshleyua" />
+	
+	<!--
+		Load Fonts
+	-->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+	
+	<!--
+		Load CSS
+	-->
+	<link rel="stylesheet" href="css/basic.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="css/blogs.css" />
+	<link rel="stylesheet" href="css/line-awesome.css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/simplebar.css" />
+	<link rel="newest stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<!-- theme colors -->
+	<link rel="stylesheet" href="css/theme-colors/green.css" />
+	<!--<link rel="stylesheet" href="css/theme-colors/blue.css" />-->
+	<!--<link rel="stylesheet" href="css/theme-colors/red.css" />-->
+	<!--<link rel="stylesheet" href="css/theme-colors/orange.css" />-->
+	<!--<link rel="stylesheet" href="css/theme-colors/pink.css" />-->
+	<!--<link rel="stylesheet" href="css/theme-colors/purple.css" />-->
+	
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!--
+		Favicons
+	-->
+
+	<link rel="shortcut icon" href="images/favicons/favicon.ico">
+	<script>
+
+		$(document).ready(function() {
+			$(".js-especialidad-tokenizer").select2({
+			tags: true,
+			tokenSeparators: [',', ' '],
+			maximumSelectionLength: 15,
+			placeholder: 'Escribe hasta 15 especialidades'
+		});
+		
+		$(".js-areas-tokenizer").select2({
+			tags: true,
+			tokenSeparators: [',', ' '],
+			maximumSelectionLength: 15,
+			placeholder: 'Escribe hasta 15 áreas de experiencia'
+		}); 
+		
+
+		
+		});
+		</script>
+</head>
+
+<body>
+
+	<div class="page">
+
+		<!--
+			Preloader
+		-->
+		<div class="preloader">
+			<div class="centrize full-width">
+				<div class="vertical-center">
+					<div class="spinner">
+						<div class="double-bounce1"></div>
+						<div class="double-bounce2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--
+			Header
+		-->
+		<header class="header">
+
+			<!-- logo -->
+			<div class="logo">
+				<a href="#"><span>P</span></a>
+			</div>
+
+			<!-- menu 
+			<div class="top-menu">
+				<ul>
+					<li class="active">
+						<a href="./index.html">
+							<span class="icon la la-home"></span>
+							<span class="link">Home</span>
+						</a>
+					</li>
+					<li>
+						<a href="./perfil.html">
+							<span class="icon la la-user"></span>
+							<span class="link">Perfil</span>
+						</a>
+					</li>
+					<li>
+						<a href="#resume-card">
+							<span class="icon la la-gear"></span>
+							<span class="link">Resume</span>
+						</a>
+					</li>
+					<li>
+						<a href="#works-card">
+							<span class="icon la la-eye"></span>
+							<span class="link">Portfolio</span>
+						</a>
+					</li>
+					<li>
+						<a href="#blog-card">
+							<span class="icon la la-newspaper-o"></span>
+							<span class="link">Blog</span>
+						</a>
+					</li>
+					<li>
+						<a href="#contacts-card">
+							<span class="icon la la-envelope"></span>
+							<span class="link">Contacts</span>
+						</a>
+					</li>
+				</ul>
+			</div>-->
+
+			<!-- Started socials -->
+			<div class="social">
+				<a target="_blank" href="https://facebook.com/"><span class="icon la la-facebook"></span></a>
+			</div>
+
+			<!-- Mobile Menu -->
+			<span class="menu-btn">
+				<span class="m-line"></span>
+			</span>
+
+		</header>
+
+
+
+<!--
+			Container
+		-->
+		
+
+
+			<!--
+				Card - Started
+			-->
+			<div class="card-inner card-started active" id="home-card">
+
+				<div class="row card-container">
+
+					<!--
+						Card Wrap
+					-->
+					<div class="card-wrap col col-m-12 col-t-12 col-d-12 col-d-lg-12" data-simplebar>
+						
+						<!-- About Image 
+						<div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-6" style="background-image: url(images/profile.jpg);"></div>
+						-->
+						<!--
+							Inner Top
+						-->
+						
+						<div class="content inner-top">
+							<div class="row">
+								
+								<div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+									<div class="title-bg">  </div>
+									<div class="text">
+										<p>
+											<strong>Registro</strong>
+											<div class="row">
+												<div class="col col-m-12 col-t-12 col-d-12 col-d-lg-6">
+				
+													<!-- form -->
+
+													<div class="contact_form card-box">
+														<form class="pt-3">
+
+
+															<div class="col-m-12 col-t-12 col-d-12 col-d-lg-6" style="color:blanchedalmond">
+																<!--<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+																	<div class="group-val">
+																		<input type="text" name="name" placeholder="Full Name" />
+																	</div>
+																</div>-->
+																<div class='col-md-6 mb-6 align-left'>
+																	<label for='rut'>Rut</label>
+																	<input type='text' class='form-control' id='rut' placeholder='XXXXXXXXX-X' required>
+																</div><br>
+																	<div class="input-group mb-3 form-group">
+																		<div class="input-group-prepend">
+																		  <label class="input-group-text" for="inputGroupSelect01">Nivel de estudios</label>
+																		</div>
+																		<select class="custom-select" id="nivel_estudios" >
+																		  <option selected>Selecciona un nivel de estudios</option>
+																		  <option value="emtp">EMTP (enseñanza media técnico profesional)</option>
+																		  <option value="tecnico">Técnico de nivel superior</option>
+																		  <option value="ingeniero">Ingeniero</option>
+																		  <option value="magister">Magister</option>
+																		  <option value="doctorado">Doctorado</option>
+																		  <option value="estudiante">Estudiante</option>
+																		</select>
+																	  </div>
+																	  <div class='col-md-6 mb-6 align-left' style="color:black" >
+																		<label style="color:blanchedalmond" for='especialidades'>Especialidades de estudio</label>
+																		<select class="js-especialidad-tokenizer form-control" multiple="multiple" id='especialidades'>
+
+																		  </select>
+																	</div><br>
+																	<div class='col-md-6 mb-6 align-left' style="color:black" >
+																		<label style="color:blanchedalmond" for='areas'>Áreas de experiencia</label>
+																		<select class="js-areas-tokenizer form-control" multiple="multiple" id='areas'>
+
+																		  </select>
+																	</div>
+
+															</div>
+										
+															<div class="mt-3">																
+																<button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="button" onClick="iniciar(this.form)">Continuar<span class="icon"><i class="la la-arrow-right"></i></span></button>
+															  </div>
+														</form>
+														<div class="alert-success">
+															<p> </p>
+														</div>
+													</div>
+				
+												</div>
+											</div>
+										</p>
+									</div>
+
+									<div class="circle-bts">
+										<!--<a href="#"><span></span></a>-->
+										
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					
+				</div>
+			</div>
+		
+			</div>
+
+
+			<!-- 
+				Lines Grid
+			-->
+			<div class="lines-grid">
+				<div class="row">
+					<div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
+					<div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3">
+						<div class="lines">
+							<div class="line-1"></div>
+							<div class="line-2" style="animation-delay: 10s;"></div>
+						</div>
+					</div>
+					<div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3">
+						<div class="lines">
+							<div class="line-1"></div>
+						</div>
+					</div>
+					<div class="col col-m-0 col-t-0 col-d-0 col-d-lg-3">
+						<div class="lines">
+							<div class="line-1"></div>
+							<div class="line-2" style="animation-delay: 0s;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<!--
+		jQuery Scripts
+	-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.validate.js"></script>
+	<script src="js/jquery.magnific-popup.js"></script>
+	<script src="js/imagesloaded.pkgd.js"></script>
+	<script src="js/masonry.pkgd.js"></script>
+	<script src="js/masonry-filter.js"></script>
+	<script src="js/simplebar.js"></script>
+	<script src="js/typed.js"></script>
+	
+
+	
+	<!--
+		Main Scripts
+	-->
+	<script src="js/scripts.js"></script>
+	
+	
+</body>
+
+
+
+</script> 
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+	apiKey: "AIzaSyBdAIe1K0LqZ7Vwm0g1uK2G-dB_fd6ClPo",
+	authDomain: "electric-latam.firebaseapp.com",
+	databaseURL: "https://electric-latam.firebaseio.com",
+	projectId: "electric-latam",
+	storageBucket: "electric-latam.appspot.com",
+  };
+  
+  firebase.initializeApp(config);
+
+  // make auth and firestore references
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+var storageRef = firebase.storage().ref();
+
+  var database = firebase.database();
+
+</script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+					<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+					<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script type="text/javascript">
+  
+  auth.onAuthStateChanged(user => {
+    var user = firebase.auth().currentUser;
+    if(user===null){
+		window.location.href = 'index.html';
+	}else{
+		var docRef = db.collection("users").doc(user.uid);
+      	docRef.get().then(function(doc) {
+    		var faseregistro = doc.data().faseregistro;
+			var tipo = doc.data().tipo;
+			if(faseregistro==2){
+					window.location.href = 'registro3.html';
+			}else if(faseregistro==3){
+				//ya habia temrinado el registro
+				window.location.href = 'perfil.html';
+			}else if(faseregistro==1){
+				if(tipo=="estudiante"){
+					//se espera que este aqui
+					console.log("Registro fase 2");
+				}else if(tipo=="empresa"){
+					window.location.href = 'registro2em.html';
+				}else{
+					window.location.href = 'registro2p.html';
+				}
+				
+			}
+	  	})
+	}
+})
+
+var Fn = {
+    // Valida el rut con su cadena completa "XXXXXXXX-X"
+    validaRut : function (rutCompleto) {
+        rutCompleto = rutCompleto.replace("‐","-");
+        if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
+            return false;
+        var tmp     = rutCompleto.split('-');
+        var digv    = tmp[1]; 
+        var rut     = tmp[0];
+        if ( digv == 'K' ) digv = 'k' ;
+        
+        return (Fn.dv(rut) == digv );
+    },
+    dv : function(T){
+        var M=0,S=1;
+        for(;T;T=Math.floor(T/10))
+            S=(S+T%10*(9-M++%6))%11;
+        return S?S-1:'k';
+    }
+}
+
+	function iniciar(form){
+		var rut = form.rut.value;
+		var nivel_estudios = form.nivel_estudios.value;
+
+		var areas = form.areas.value;
+
+		var flag = true;
+
+		var especialidades = $('.js-especialidad-tokenizer').select2('data');
+		var especialidadesString = "";
+		for(var i = 0;i< especialidades.length;i++){
+			especialidadesString = especialidadesString+especialidades[i].text;
+			if((i+1)!=especialidades.length){
+				especialidadesString = especialidadesString+",";
+			}
+		}
+
+		var areas = $('.js-areas-tokenizer').select2('data');
+		var areasString = "";
+		for(var i = 0;i< areas.length;i++){
+			areasString = areasString+areas[i].text;
+			if((i+1)!=areas.length){
+				areasString = areasString+",";
+			}
+		}
+
+
+
+		if(!Fn.validaRut(rut)){
+			alert("Rut inválido"); 
+			flag = false;
+		}
+
+
+		if((rut =="" || especialidadesString =="" || areasString =="" || nivel_estudios =="" )){
+			alert("Ingrese todos los campos"); 
+			flag = false;
+		}
+		if(flag){
+			//guardar los nuevos campos en el registro anteriormente guardado
+			var user = firebase.auth().currentUser;
+			var userID = user.uid;
+			var userRef = db.collection('users').doc(userID);
+
+			var setWithMerge = userRef.set({
+				rut:rut,
+				nivel_estudios:nivel_estudios,
+				areas_experiencia:areasString,
+				especialidades:especialidadesString,
+				faseregistro:2
+			}, { merge: true }).then(function(docRef) {
+				
+				window.location.href = 'registro3.html';
+			});
+
+
+		}
+  
+	}
+
+  
+	  </script>
+	
+</html>
