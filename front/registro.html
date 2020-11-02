@@ -64,37 +64,42 @@
 				$("#telefonoE").inputmask({"mask": "+999 9 999 9999"});
 				$(".js-otro-tokenizer").select2({
 					tags: true,
-					tokenSeparators: [',', ' '],
+					allowClear: true,
+					tokenSeparators: [','],
 					maximumSelectionLength: 15,
 					placeholder: 'Indique hasta 15 Áreas.'
 				});
 				$(".carreras-estudiante").select2({
 					tags: true,
-					tokenSeparators: [',', ' '],
+					allowClear: true,
+					tokenSeparators: [','],
 					maximumSelectionLength: 5,
 					placeholder: 'Carreras.'
 				});
 				$(".titulos-profesionales").select2({
 					tags: true,
-					tokenSeparators: [',', ' '],
+					allowClear: true,
+					tokenSeparators: [','],
 					maximumSelectionLength: 15,
 					placeholder: 'Títulos Profesionales.'
 				});
 				$(".area-servicio").select2({
 					tags: true,
-					tokenSeparators: [',', ' '],
+					allowClear: true,
+					tokenSeparators: [','],
 					maximumSelectionLength: 15,
 					placeholder: 'Areas de Servicios.'
 				});
 				$(".nivel-estudio").select2({
 					tags: false,
-					tokenSeparators: [',', ' '],
+					tokenSeparators: [','],
 					maximumSelectionLength: 15,
 					placeholder: 'Nivel Estudio.'
 				});
 				$(".giroE").select2({
 					tags: true,
-					tokenSeparators: [',', ' '],
+					allowClear: true,
+					tokenSeparators: [','],
 					maximumSelectionLength: 5,
 					placeholder: 'Giro.'
 				});
@@ -994,8 +999,8 @@ $(document).ready(function() {
 					//guardar en BD
 					var user = firebase.auth().currentUser;
 					var userID = user.uid;
+					email = user.email;
 					if(tipo =="empresa"){
-						email = user.email;
 						db.collection('users').doc(userID).set({
 							userID: userID,
 							telefono : {dato: telefono, publico: false, privado: true, editable: true},
