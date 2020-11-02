@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title>ElectroniConecta</title>	
+
+		<meta name="keywords" content="ElectroniConecta, Electronicos, Electricos" />
+		<meta name="description" content="ElectroniConecta">
+		<meta name="author" content="Adolfoo2">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+		<!-- Web Fonts  -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400&display=swap" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
+		<link rel="stylesheet" href="vendor/animate/animate.compat.css">
+		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/theme-elements.css">
+		<link rel="stylesheet" href="css/theme-blog.css">
+		<link rel="stylesheet" href="css/theme-shop.css">
+
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css">
+		
+		<!-- Demo CSS -->
+
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/skin-corporate-5.css"> 
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.min.js"></script>
+
+	</head>
+	<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+		<div id="header"></div>
+
+			<div role="main" class="main shop py-4">
+
+				<div class="container py-4">
+					<div class="row justify-content-center">
+						<div class="col-md-8 col-lg-8 mb-5 mb-lg-0">
+							<div id="alerta" class="alert alert-danger" style="display:none">
+								<strong>Datos inválidos! </strong>La clave es incorrecta o el usuario no existe.
+							</div>
+							<h2 class="font-weight-bold text-5 mb-0">Ingreso</h2>
+							<form class="pt-3">
+								<div class="form-row">
+									<div class="form-group col">
+										<label for="mail" class="text-color-dark text-3">Dirección de Correo <span class="text-color-danger">*</span></label>
+										<input type="email" class="form-control form-control-lg text-4" id="mail" placeholder="ejemplo@gmail.com">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col">
+										<label for="pass" class="text-color-dark text-3">Contraseña <span class="text-color-danger">*</span></label>
+										<input type="password" class="form-control form-control-lg text-4" id="pass" placeholder="********">
+									</div>
+								</div>
+								<div class="form-row justify-content-between">
+									<div class="form-group col-md-auto">
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="rememberme">
+											<label class="custom-control-label cur-pointer text-2" for="rememberme">Recuérdame</label>
+										</div>
+									</div>
+									<div class="form-group col-md-auto">
+										<a class="text-decoration-none text-color-dark text-color-hover-primary font-weight-semibold text-2" href="recovery.html">¿Olvidaste tu Contraseña?</a>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col">
+										<button type="button" onClick="iniciar(this.form)" class="btn btn-dark btn-modern btn-block text-uppercase rounded-0 font-weight-bold text-3 py-3" data-loading-text="Loading...">Ingresar</button>
+										<div class="divider">
+											<span class="bg-light px-4 position-absolute left-50pct top-50pct transform3dxy-n50">O</span>
+										</div>
+										<a href="#"  onClick="google()" class="btn btn-danger btn-modern btn-block text-transform-none rounded-0 font-weight-bold align-items-center d-inline-flex justify-content-center text-3 py-3" data-loading-text="Cargando..."><i class="far fa-envelope text-5 mr-2"></i> Ingresar con Gmail</a>
+									</div>
+								</div>
+							</form>
+						</div>
+						
+					</div>
+
+				</div>
+
+			</div>
+
+ 
+			<footer id="footer">
+			</footer>
+		</div>
+
+		<!-- Vendor -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
+		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+		<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>
+		<script src="vendor/popper/umd/popper.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="vendor/common/common.min.js"></script>
+		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
+		<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
+		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+		<script src="vendor/isotope/jquery.isotope.min.js"></script>
+		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="vendor/vide/jquery.vide.min.js"></script>
+		<script src="vendor/vivus/vivus.min.js"></script>
+
+		<!--(remove-empty-lines-end)-->
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="js/theme.js"></script>
+
+		<!-- Current Page Vendor and Views -->
+		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+		<!-- Theme Custom -->
+		<script src="js/custom.js"></script>
+
+
+		<!-- Theme Initialization Files -->
+		<script src="js/theme.init.js"></script>
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		 -->
+
+	</body>
+	</script> 
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+	apiKey: "AIzaSyBdAIe1K0LqZ7Vwm0g1uK2G-dB_fd6ClPo",
+	authDomain: "electric-latam.firebaseapp.com",
+	databaseURL: "https://electric-latam.firebaseio.com",
+	projectId: "electric-latam",
+	storageBucket: "electric-latam.appspot.com",
+  };
+  
+  firebase.initializeApp(config);
+
+  // make auth and firestore references
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+var storageRef = firebase.storage().ref();
+
+  var database = firebase.database();
+
+</script>
+<script type="text/javascript">
+var count;
+  function iniciar(form){
+    var email = form.mail.value;
+    var password = form.pass.value;
+    email = email.toLowerCase();
+    email = email.trim();
+
+            //apago pantalla y enciendo gif
+           // document.getElementById('pantalla').style.display = "none";
+           // document.getElementById('loadingGif').style.display = "block";
+
+    // log the user in
+    auth.signInWithEmailAndPassword(email, password).then(function(result) {
+    
+      window.location.href = 'dashboard.html';
+    }).catch(function(error) {
+                //enciendo pantalla y apago gif
+      //document.getElementById('pantalla').style.display = "block";
+      //document.getElementById('loadingGif').style.display = "none";
+      var errorCode = error.code;
+      var errorMessage = error.message;
+	  //alert("La clave es incorrecta o el usuario no existe."); 
+	  document.getElementById('alerta').style.display = "block";
+	  count = 3;
+	  setInterval(function(){updateTimer()},2000)
+    });
+  }
+
+function updateTimer(){
+	count--;
+	if(count <= 0){
+        $("#alerta").fadeOut('slow', function(){
+            document.getElementById('alerta').style.display = "none";
+        });
+        
+    }
+    
+}
+
+function google(){				
+	var provider = new firebase.auth.GoogleAuthProvider();
+	firebase.auth().signInWithPopup(provider).then(function(result) {
+		// This gives you a Google Access Token. You can use it to access the Google API.
+		var token = result.credential.accessToken;
+		// The signed-in user info.
+		var user = result.user;
+		// ...
+		console.log(user);
+	
+	}).catch(function(error) {
+		// Handle Errors here.
+		var errorCode = error.code;
+		var errorMessage = error.message;
+		// The email of the user's account used.
+		var email = error.email;
+		// The firebase.auth.AuthCredential type that was used.
+		var credential = error.credential;
+		// ...
+		console.log(errorMessage);
+		document.getElementById('alerta').style.display = "block";
+		count = 3;
+		setInterval(function(){updateTimer()},2000)
+	});
+}
+
+	$(function(){
+		$( "#footer" ).load( "footer.html", function() {})
+		$( "#header" ).load( "header.html", function() {
+			auth.onAuthStateChanged(user => {
+			var user = firebase.auth().currentUser;
+				if(user===null){
+					//se espera que este aqui
+					document.getElementById('login').style.display = "block";
+					document.getElementById('register').style.display = "block";
+
+					document.getElementById('logout').style.display = "none";
+					document.getElementById('editProfile').style.display = "none";
+					
+				}else{
+					document.getElementById('logout').style.display = "block";
+					document.getElementById('login').style.display = "none";
+					document.getElementById('register').style.display = "none";
+					document.getElementById('editProfile').style.display = "none";
+
+					var docRef = db.collection("users").doc(user.uid);
+					docRef.get().then(function(doc) {
+						if(doc.data()===undefined){
+							console.log("google");
+							//si apreto el boton de gmail y no tiene cuenta, debe estar aqui!
+							window.location.href = 'registro.html';
+						
+						}else{
+							document.getElementById('editProfile').style.display = "block";
+							//si esta aqui es porque apreto el boton y TIENE CUENTA
+							window.location.href = 'perfil.html';
+							
+						}
+					})
+				}
+			});
+		});
+	});
+
+</script>
+</html>
