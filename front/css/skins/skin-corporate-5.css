@@ -908,15 +908,15 @@ html .show > .btn-primary-scale-2.dropdown-toggle {
 }
 
 html .btn-secondary {
-	background-color: #484A51;
-	border-color: #484A51 #484A51 #303136;
+	background-color: #e36159;
+	border-color: #e36159 #e36159 #dc372d;
 	color: #FFF;
 }
 
 html .btn-secondary:hover,
 html .btn-secondary.hover {
-	background-color: #5a5d65;
-	border-color: #60636c #60636c #484A51;
+	background-color: #e9807a;
+	border-color: #ea8b85 #ea8b85 #e36159;
 	color: #FFF;
 }
 
@@ -1005,8 +1005,8 @@ html .btn-tertiary.focus {
 
 html .btn-tertiary.disabled,
 html .btn-tertiary:disabled {
-	background-color: #2BAAB1;
-	border-color: #2BAAB1 #2BAAB1 #218388;
+	background-color: #484A51;
+	border-color: #484A51 #484A51 #303136;
 }
 
 html .btn-tertiary:active,
@@ -1379,7 +1379,7 @@ html .btn-outline.btn-tertiary.focus {
 
 html .btn-outline.btn-tertiary.disabled,
 html .btn-outline.btn-tertiary:disabled {
-	color: #2BAAB1;
+	color: #484A51;
 	background-color: transparent;
 }
 

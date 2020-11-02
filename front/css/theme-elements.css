@@ -1598,8 +1598,8 @@ html body.body .btn:active {
 }
 
 .btn-success.disabled, .btn-success:disabled {
-	background-color: #28a745;
-	border-color: #28a745 #28a745 #1e7e34;
+	background-color: #484A51;
+	border-color: #484A51 #484A51 #303136;
 }
 
 .btn-success:active, .btn-success.active,

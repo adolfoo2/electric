@@ -1,402 +1,628 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	
-	<!--
-		Basic
-	-->
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
-	<title>Electric - LatAm</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="description" content="vCard & Resume Template" />
-	<meta name="keywords" content="vcard, resposnive, resume, personal, card, cv, cards, portfolio" />
-	<meta name="author" content="beshleyua" />
-	
-	<!--
-		Load Fonts
-	-->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=cyrillic" rel="stylesheet">
-	
-	<!--
-		Load CSS
-	-->
-	<link rel="stylesheet" href="css/basic.css" />
-	<link rel="stylesheet" href="css/layout.css" />
-	<link rel="stylesheet" href="css/blogs.css" />
-	<link rel="stylesheet" href="css/line-awesome.css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" />
-	<link rel="stylesheet" href="css/animate.css" />
-	<link rel="stylesheet" href="css/simplebar.css" />
-	<link rel="newest stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<html>
+	<head>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	
-	<!-- theme colors -->
-	<link rel="stylesheet" href="css/theme-colors/green.css" />
-	<!--<link rel="stylesheet" href="css/theme-colors/blue.css" />-->
-	<!--<link rel="stylesheet" href="css/theme-colors/red.css" />-->
-	<!--<link rel="stylesheet" href="css/theme-colors/orange.css" />-->
-	<!--<link rel="stylesheet" href="css/theme-colors/pink.css" />-->
-	<!--<link rel="stylesheet" href="css/theme-colors/purple.css" />-->
-	
-	<!--[if lt IE 9]>
-	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	
-	<!--
-		Favicons
-	-->
-	<link rel="shortcut icon" href="images/favicons/favicon.ico">
-	<script>
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
-		$(document).ready(function() {
-			$(".js-otro-tokenizer").select2({
-			tags: true,
-			tokenSeparators: [',', ' '],
-			maximumSelectionLength: 15,
-			placeholder: 'Indique hasta 15 estudios.'
-		});
-	});
-	</script>
-</head>
+		<title>ElectroniConecta</title>	
 
-<body>
+		<meta name="keywords" content="ElectroniConecta, Electronicos, Electricos" />
+		<meta name="description" content="ElectroniConecta">
+		<meta name="author" content="Adolfoo2">
 
-	<div class="page">
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-		<!--
-			Preloader
-		-->
-		<div class="preloader">
-			<div class="centrize full-width">
-				<div class="vertical-center">
-					<div class="spinner">
-						<div class="double-bounce1"></div>
-						<div class="double-bounce2"></div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+		<!-- Web Fonts  -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400&display=swap" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
+		<link rel="stylesheet" href="vendor/animate/animate.compat.css">
+		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/theme-elements.css">
+		<link rel="stylesheet" href="css/theme-blog.css">
+		<link rel="stylesheet" href="css/theme-shop.css">
+
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css">
 		
-		<!--
-			Header
-		-->
-		<header class="header">
-
-			<!-- logo -->
-			<div class="logo">
-				<a href="#"><span>P</span></a>
-			</div>
-
-			<!-- menu 
-			<div class="top-menu">
-				<ul>
-					<li class="active">
-						<a href="./index.html">
-							<span class="icon la la-home"></span>
-							<span class="link">Home</span>
-						</a>
-					</li>
-					<li>
-						<a href="./perfil.html">
-							<span class="icon la la-user"></span>
-							<span class="link">Perfil</span>
-						</a>
-					</li>
-					<li>
-						<a href="#resume-card">
-							<span class="icon la la-gear"></span>
-							<span class="link">Resume</span>
-						</a>
-					</li>
-					<li>
-						<a href="#works-card">
-							<span class="icon la la-eye"></span>
-							<span class="link">Portfolio</span>
-						</a>
-					</li>
-					<li>
-						<a href="#blog-card">
-							<span class="icon la la-newspaper-o"></span>
-							<span class="link">Blog</span>
-						</a>
-					</li>
-					<li>
-						<a href="#contacts-card">
-							<span class="icon la la-envelope"></span>
-							<span class="link">Contacts</span>
-						</a>
-					</li>
-				</ul>
-			</div>-->
-
-			<!-- Started socials -->
-			<div class="social">
-				<a target="_blank" href="https://facebook.com/"><span class="icon la la-facebook"></span></a>
-			</div>
-
-			<!-- Mobile Menu -->
-			<span class="menu-btn">
-				<span class="m-line"></span>
-			</span>
-
-		</header>
-
-		<!--
-			Container
-		-->
-		
+		<!-- Demo CSS -->
 
 
-			<!--
-				Card - Started
-			-->
-			<div class="card-inner card-started active" id="home-card">
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/skin-corporate-5.css"> 
 
-				<div class="row card-container">
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css">
 
-					<!--
-						Card Wrap
-					-->
-					<div class="card-wrap col col-m-12 col-t-12 col-d-12 col-d-lg-12" data-simplebar>
-						
-						<!-- About Image 
-						<div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-6" style="background-image: url(images/profile.jpg);"></div>
-						-->
-						<!--
-							Inner Top
-						-->
-						
-						<div class="content inner-top">
-							<div class="row">
-								
-								<div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-									<div class="title-bg">  </div>
-									<div class="text">
-										<p>
-											<strong>Crear una cuenta</strong>
+		<!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+			
+		<script>
+			$(document).ready(function() {
+				$(".rut").inputmask({mask: "9[9.999.999]-[9|K|k]" });
+				$("#telefono").inputmask({"mask": "+999 9 999 9999"});
+				$("#telefonoE").inputmask({"mask": "+999 9 999 9999"});
+				$(".js-otro-tokenizer").select2({
+					tags: true,
+					tokenSeparators: [',', ' '],
+					maximumSelectionLength: 15,
+					placeholder: 'Indique hasta 15 Áreas.'
+				});
+				$(".carreras-estudiante").select2({
+					tags: true,
+					tokenSeparators: [',', ' '],
+					maximumSelectionLength: 5,
+					placeholder: 'Carreras.'
+				});
+				$(".titulos-profesionales").select2({
+					tags: true,
+					tokenSeparators: [',', ' '],
+					maximumSelectionLength: 15,
+					placeholder: 'Títulos Profesionales.'
+				});
+				$(".area-servicio").select2({
+					tags: true,
+					tokenSeparators: [',', ' '],
+					maximumSelectionLength: 15,
+					placeholder: 'Areas de Servicios.'
+				});
+				$(".nivel-estudio").select2({
+					tags: false,
+					tokenSeparators: [',', ' '],
+					maximumSelectionLength: 15,
+					placeholder: 'Nivel Estudio.'
+				});
+				$(".giroE").select2({
+					tags: true,
+					tokenSeparators: [',', ' '],
+					maximumSelectionLength: 5,
+					placeholder: 'Giro.'
+				});
+			// In your Javascript (external .js resource or <script> tag)
+			
+
+			});
+		</script>
+		<script> 
+
+		</script> 
+	</head>
+	
+	<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+		<div id="header"></div>
+			<div role="main" class="main shop py-4">
+
+				<div class="container py-4">
+
+					<div class="row justify-content-center">
+						<div class="col-md-8 col-lg-8 mb-5 mb-lg-0">	
+							<div class="alert alert-success" id="alertsinc" style="display:none">
+								<strong><i class="far fa-thumbs-up"></i> Has sincronizado tu cuenta con Gmail!</strong> Rellena los siguientes campos para continuar.
+							</div>
+							<div class="alert alert-danger" id="alerterror" style="display:none">
+								<strong><i class="fas fa-cat"></i> Faltan campos obligatorios por llenar</strong> <span id="txt-error-alert"></span>.
+							</div>
+							<section class="card card-admin form-wizard" id="w2">
+
+								<header class="card-header">
+									<div class="card-actions">
+										<a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+										<a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+									</div>
+
+									<h2 class="card-title">Registrarse</h2>
+								</header>
+								<div class="tabs">
+									<ul class="nav nav-tabs nav-justify" id="pasos">
+										<li class="nav-item active">
+											<a href="#w2-account" data-toggle="tab" class="nav-link text-center">
+												<span class="badge badge-primary">1</span>
+												Datos Esenciales
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="#w2-profile" data-toggle="tab" class="nav-link text-center">
+												<span class="badge badge-primary">2</span>
+												Datos Extras
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="#w2-confirm" data-toggle="tab" class="nav-link text-center">
+												<span class="badge badge-primary">3</span>
+												Documentos
+											</a>
+										</li>
+									</ul>
+									<form class="form-horizontal" novalidate="novalidate" id="form-register">
+										<div class="tab-content" id="list-pasos">
 											
-											<div class="row">
-												<div class="col col-m-12 col-t-12 col-d-12 col-d-lg-6">
-				
-													<!-- form -->
-
-													
-													<div class="contact_form card-box">
-														<form class="pt-3">
-
-
-															<div class="col-m-12 col-t-12 col-d-12 col-d-lg-6">
-																<div class="col m6 offset-m3 center-align">
-																	<div class="white-text">Comienza con tu cuenta gratuita </p></div>
-																		<a class="oauth-container btn darken-4 white black-text" onClick="google()" style="text-transform:none">
-																			
-																				<img width="20px" style="margin-top:0px; margin-right:10px" alt="Google sign-in" 
-																					src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-																			
-																			Continuar con Google
-																		</a>
-																		<br>
-																	</div>
-																<!--<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-																	<div class="group-val">
-																		<input type="text" name="name" placeholder="Full Name" />
-																	</div>
-																</div>-->
-																<br><br>
-																	
-
-																<div class="input-group col">
-																	<span class="white-text center-align">O</span><br>
-																</div>
-
-																<div class="input-group mb-3 form-group">
-																	<div class="input-group-prepend">
-																		
-																		<label class="input-group-text" for="inputGroupSelect01">Tipo de usuario</label>
-																	</div>
-																	<select class="custom-select" id="tipo_usuario" onchange="tipoChange()">
-																		<option selected>Selecciona un tipo</option>
-																		<option value="estudiante">Estudiante</option>
-																		<option value="profesional">Profesional</option>
-																		<option value="prestador">Prestador de servicios</option>
-																		<option value="empresa">Empresa</option>
-																	</select>
-																</div>
-
-																
-															</div>
-
-															
-															<div class="col-m-12 col-t-12 col-d-12 col-d-lg-8 align-left " style="color:blanchedalmond" id=radio >
-																<div class="custom-control custom-radio" onchange="areaOff()">
-																	<input type="radio" id="areaRadio1" name="customRadio" class="custom-control-input"  value="electricidad">
-																	<label  style='font-size: 16px;' class="custom-control-label " for="areaRadio1">Electricidad</label>
-																</div>
-																<div class="custom-control custom-radio" onchange="areaOff()">
-																	<input type="radio" id="areaRadio2" name="customRadio" class="custom-control-input" value="electronica">
-																	<label  style='font-size: 16px;' class="custom-control-label" for="areaRadio2">Electrónica</label>
-																</div>
-																<div class="custom-control custom-radio" onchange="areaOff()">
-																	<input type="radio" id="areaRadio3" name="customRadio" class="custom-control-input" value="telecomunicaciones">
-																	<label  style='font-size: 16px;' class="custom-control-label" for="areaRadio3">Telecomunicaciones</label>
-																</div>
-																<div class="custom-control custom-radio" onchange="areaOff()">
-																	<input type="radio" id="areaRadio4" name="customRadio" class="custom-control-input" value="automatizacion">
-																	<label  style='font-size: 16px;' class="custom-control-label" for="areaRadio4">Automatización</label>
-																</div>
-																<div class="custom-control custom-radio" onchange="areaOn()">
-																	<input type="radio" id="areaRadio5" name="customRadio" class="custom-control-input" value="otros">
-																	<label style='font-size: 16px;' class="custom-control-label" for="areaRadio5">Otros</label>
-																	
-																</div>
-															</div>
-															<div style="display:none" id="otro" class='col-md-6 mb-6 align-left' style="color:black" >
-																<select style ="width: 250px;"  class="js-otro-tokenizer form-control" multiple="multiple" id='otros'>
-																	<option value="seguridad">Seguridad</option>
-																	<option value="mecanica">Mecánica</option>
-																	<option value="derecho">Derecho</option>
-																	<option value="prevencion">Prevención</option>
-																  </select>
-															</div><br>
-																<div class="col-md-6 mb-6 align-left" style="color:blanchedalmond">
-																	<div class="group-val" id="datos">
-																	
-																	</div>
-															</div>
-															
-															<div class="mt-3">
-																<button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="button" onClick="iniciar(this.form)">Continuar<span class="icon"><i class="la la-arrow-right"></i></span></button>
-															  </div>
-														</form>
-														<div class="alert-success">
-															<p> </p>
+											<!-- PASO 1 -->
+											<div id="paso1" class="tab-pane p-3 active">
+												<div class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1">Tipo de Usuario*</label>
+													<div class="col-sm-8">
+														<select data-plugin-selecttwo="" class="form-control populate custom-select" id="tipo_usuario" onchange="tipoChange()" required>
+															<option selected disabled>Selecciona un tipo</option>
+															<option value="estudiante">Estudiante</option>
+															<option value="profesional">Profesional</option>
+															<option value="prestador">Prestador de Servicios</option>
+															<option value="empresa">Empresa</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-lg-3 control-label text-lg-right pt-2">Area*:</label>
+													<div class="col-lg-6">
+														<div class="radio" onchange="areaOff()">
+															<label>
+																<input type="radio" name="customRadio" id="areaRadio1" value="electricidad" checked>
+																Electricidad
+															</label>
+														</div>
+														<div class="radio" onchange="areaOff()">
+															<label>
+																<input type="radio" name="customRadio" id="areaRadio2" value="electronica">
+																Electrónica
+															</label>
+														</div>
+														<div class="radio" onchange="areaOff()">
+															<label>
+																<input type="radio" name="customRadio" id="areaRadio3" value="telecomunicaciones">
+																Telecomunicaciones
+															</label>
+														</div>
+														<div class="radio" onchange="areaOff()">
+															<label>
+																<input type="radio" name="customRadio" id="areaRadio4" value="automatizacion">
+																Automatización
+															</label>
+														</div>
+														<div class="radio" onchange="areaOn()">
+															<label>
+																<input type="radio" name="customRadio" id="areaRadio5" value="otros">
+																Otros
+															</label>
 														</div>
 													</div>
-				
+												</div>
+												<div id="otro" style="display: none;">
+													<div  class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1">Indique Áreas*</label>
+														<div class="col-sm-6">
+															<select style ="width: 250px;"  class="js-otro-tokenizer form-control" multiple="multiple" id='otros'>
+																<option value="seguridad">Seguridad</option>
+																<option value="mecanica">Mecánica</option>
+																<option value="derecho">Derecho</option>
+																<option value="prevencion">Prevención</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<section id="datos-personas" style="display: none;">
+													<h2 class="font-weight-bold text-5 mb-0">Información Básica</h2>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="name">Nombres*</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control" name="first-name" id='name' placeholder='Nombres'>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="apellidop">Apellidos*</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control" name="last-name" id='apellidop' placeholder='Apellido Paterno'>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="apellidom">Apellido Paterno</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control" name="sur-name" id='apellidom' placeholder='Apellido Materno'>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="telefono">Teléfono*</label>
+														<div class="col-sm-8">
+															<div class="input-group">
+																<span class="input-group-prepend">
+																	<span class="input-group-text">
+																		<i class="fas fa-phone"></i>
+																	</span>
+																</span>
+																<input data-plugin-masked-input="" name="phone" data-input-mask="+999 9 999 9999" id='telefono' placeholder='+569 9 999 9999' class="form-control">
+															</div>
+														</div>
+													</div>
+													<div id="passmail">
+														<div class="form-group row">
+															<label class="col-sm-4 control-label text-sm-right pt-1" for="correo">Correo*</label>
+															<div class="col-sm-8 input-group mb-3">
+																<span class="input-group-prepend">
+																	<span class="input-group-text">
+																		<i class="fas fa-envelope"></i>
+																	</span>
+																</span>
+																<input type="email" name="mail" class="form-control" id='correo' placeholder='micorreo@gmail.com'>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-4 for control-label text-sm-right pt-1" for="pass">Contraseña*</label>
+															<div class="col-sm-8">
+																<input type="password" class="form-control" name="pass"  id='pass' placeholder='*******'>
+															</div>
+														</div>														
+													</div>	
+												</section>
+												<section id="datos-empresas" style="display: none;">
+													<h2 class="font-weight-bold text-5 mb-0">Información Básica</h2>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="nameE">Nombre</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control" name="first-nameE" id='nameE' placeholder='Nombre Empresa'>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="telefonoE">Teléfono</label>
+														<div class="col-sm-8">
+															<div class="input-group">
+																<span class="input-group-prepend">
+																	<span class="input-group-text">
+																		<i class="fas fa-phone"></i>
+																	</span>
+																</span>
+																<input data-plugin-masked-input="" name="phoneE" data-input-mask="+999 9 999 9999" id='telefonoE' placeholder='+569 9 999 9999' class="form-control">
+															</div>
+														</div>
+													</div>
+													<div id="passmailE">
+														<div class="form-group row">
+															<label class="col-sm-4 control-label text-sm-right pt-1" for="correoE">Correo</label>
+															<div class="col-sm-8 input-group mb-3">
+																<span class="input-group-prepend">
+																	<span class="input-group-text">
+																		<i class="fas fa-envelope"></i>
+																	</span>
+																</span>
+																<input type="email" name="mailE" class="form-control" id='correoE' placeholder='correoempresa@gmail.com'>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-4 control-label text-sm-right pt-1" for="passE">Contraseña</label>
+															<div class="col-sm-8">
+																<input type="password" class="form-control" name="passE"  id='passE' placeholder='*******'>
+															</div>
+														</div>														
+													</div>					
+												</section>
+											</div>
+											
+											<!-- PASO 2 -->
+											<div id="paso2" class="tab-pane p-3">
+
+												<section id="pas2-estudiante" style="display: none;">
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="rut">R.U.T.*</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control rut" name="first-name" id="rut" required>
+														</div>
+													</div>
+													<div  class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="carreras">Carreras*</label>
+														<div class="col-sm-6">
+															<select class="carreras-estudiante form-control" multiple="multiple" id='carreras'>
+															</select>
+														</div>
+													</div>
+												</section>
+
+												<section id="pas2-profesional" style="display: none;">
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="rutP">R.U.T.*</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control rut" name="rutP" id="rutP" required>
+														</div>
+													</div>
+													<div  class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for ="titulosP">Título Académico*</label>
+														<div class="col-sm-8">
+															<select  class="titulos-profesionales form-control" multiple="multiple" id='titulosP'>
+															</select>
+														</div>
+													</div>
+													<div  class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="nvestudiosP">Nivel Estudio*</label>
+														<div class="col-sm-8">
+															<select  class="nivel-estudio form-control" multiple="multiple" id='nvestudiosP'>
+																<option value="emtp">EMTP (enseñanza media técnico profesional)</option>
+																<option value="tecnico">Técnico de nivel superior</option>
+																<option value="ingeniero">Ingeniero</option>
+																<option value="magister">Magister</option>
+																<option value="doctorado">Doctorado</option>
+																<option value="estudiante">Estudiante</option>
+															</select>
+														</div>
+													</div>
+													<!--
+													<div  class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1">Especialidades de Estudio</label>
+														<div class="col-sm-8">
+															<select  class="especialidades-profesionales form-control" multiple="multiple" id='especialidadesP'>
+															</select>
+														</div>
+													</div>
+													<div  class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1">Áreas de experiencia*</label>
+														<div class="col-sm-8">
+															<select class="areas-experiencia-profesionales form-control" multiple="multiple" id='areasexperienciaP'>
+															</select>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="rutP">Soy certificador</label>
+														<div class="col-sm-8">
+															<div class="input-group mb-3">
+																<span class="input-group-prepend">
+																	<span class="input-group-text">
+																		<input type="checkbox" onchange="change_certificador()">
+																	</span>
+																</span>
+																<input type="text" class="form-control" disabled>
+															</div>
+														</div>
+													</div>
+													-->												
+												</section>
+
+												<section id="pas2-prestadores" style="display: none;">
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="rutPre">R.U.T.*</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control rut" name="rutPre" id="rutPre" required>
+														</div>
+													</div>
+													<div  class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for ="titulosPre">Título Académico*</label>
+														<div class="col-sm-8">
+															<select  class="titulos-profesionales form-control" multiple="multiple" id='titulosPre'>
+															</select>
+														</div>
+													</div>
+													<div  class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="nvestudiosPre">Nivel Estudio*</label>
+														<div class="col-sm-8">
+															<select  class="nivel-estudio form-control" multiple="multiple" id='nvestudiosPre'>
+																<option value="emtp">EMTP (enseñanza media técnico profesional)</option>
+																<option value="tecnico">Técnico de nivel superior</option>
+																<option value="ingeniero">Ingeniero</option>
+																<option value="magister">Magister</option>
+																<option value="doctorado">Doctorado</option>
+																<option value="estudiante">Estudiante</option>
+															</select>
+														</div>
+													</div>										
+												</section>
+
+												<section id="pas2-empresas" style="display: none;">
+													<div class="form-group row">
+														<label class="col-lg-3 control-label text-lg-right pt-2">Tipo de Empresa*:</label>
+														<div class="col-lg-6">
+															<div class="radio">
+																<label>
+																	<input type="radio" name="tipoempresa" id="tipoempresaRadio1" value="juridica" checked>
+																	Persona jurídica 
+																</label>
+															</div>
+															<div class="radio">
+																<label>
+																	<input type="radio" name="tipoempresa" id="tipoempresaRadio2" value="natural">
+																	Persona natural
+																</label>
+															</div>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="rutE">R.U.T. Empresa</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control rut" name="rutE" id="rutE" required>
+														</div>
+													</div>
+													<section id="datos-representante">
+														<h2 class="font-weight-bold text-5 mb-0">Datos Representante Legal</h2>
+														<div class="form-group row">
+															<label class="col-sm-4 control-label text-sm-right pt-1" for="nameRepE">Nombres*</label>
+															<div class="col-sm-8">
+																<input type="text" class="form-control" name="first-nameRepE" id='nameRepE' placeholder='Nombres Representante'>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-4 control-label text-sm-right pt-1" for="lastnameRepE">Apellidos*</label>
+															<div class="col-sm-8">
+																<input type="text" class="form-control" name="last-nameRepE" id='lastnameRepE' placeholder='Apellidos Representante'>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-4 control-label text-sm-right pt-1" for="rutrepE">R.U.T. Representante*</label>
+															<div class="col-sm-8">
+																<input type="text" class="form-control rut" name="rutrepE" id='rutrepE' placeholder='R.U.T. Representante'>
+															</div>
+														</div>
+													</section>	
+													<div  class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for ="giroE">Giro Empresa*</label>
+														<div class="col-sm-8">
+															<select  class="form-control giroE" multiple="multiple" id='giroE'>
+															</select>
+														</div>
+													</div>	
+													<div  class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for ="areaserviciosE">Areas de Servicios*</label>
+														<div class="col-sm-8">
+															<select  class="area-servicio form-control" multiple="multiple" id='areaserviciosE'>
+															</select>
+														</div>
+													</div>	
+													<div class="form-group row">
+														<label class="col-lg-3 control-label text-lg-right pt-2">Tipos de Servicios*:</label>
+														<div class="col-lg-6">
+															<div class="radio">
+																<label>
+																	<input type="radio" name="serviciosRadio" id="serviciosRadio1" value="servicios" checked>
+																	Servicios
+																</label>
+															</div>
+															<div class="radio">
+																<label>
+																	<input type="radio" name="serviciosRadio" id="serviciosRadio2" value="productos">
+																	Productos
+																</label>
+															</div>
+															<div class="radio">
+																<label>
+																	<input type="radio" name="serviciosRadio" id="serviciosRadio3" value="servicios-productos">
+																	Servicios y Productos
+																</label>
+															</div>
+															
+														</div>
+													</div>												
+
+												</section>
+											</div>
+
+											<!-- PASO 3 -->
+											<div id="paso3" class="tab-pane p-3">
+												<div class="form-group row">
+													<label class="col-lg-3 control-label text-lg-right pt-2" id="txt-archivo">Subir Documentos</label>
+													<div class="col-lg-9">
+														<div class="fileupload fileupload-new" data-provides="fileupload">
+															<div class="input-append">
+																<div class="uneditable-input">
+																	<span class="fileupload-preview"></span>
+																</div>
+																<span class="btn btn-default btn-file">
+																	<span id="txtUpload" class="fileupload-exists">Seleccionar Archivo</span>
+																	<!--<span class="fileupload-new">Seleccionar Archivo</span>-->
+																	<input type="file" id="fileButton">
+
+																</span>
+																<!--<a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Eliminar</a>-->
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
-										
+										</div>
 									</div>
-
-									<div class="circle-bts">
-										<!--<a href="#"><span></span></a>-->
-										
-									</div>
-								</div>
+									<div class="card-footer">
+										<div class="form-group row">
+											<div class="col-sm-10">
+												<ul class="nav nav-tabs nav-justify">
+													<li class="nav-item">
+														<button type="button" class="btn btn-modern btn-secondary rounded-0 mb-2" id="btn-volver" disabled>Volver</button>
+													</li>
+													<li class="nav-item">
+														<button type="button" class="btn btn-modern btn-tertiary rounded-0 mb-2" id="btn-siguiente" >Siguiente</button>
+													</li>
+												</ul>
+											</div>
+											<div class="col-sm-2">
+												<ul class="nav nav-tabs justify-content-end">
+													<li class="nav-item">
+														<button type="button" class="btn btn-modern btn-success rounded-0 mb-2" id="btn-finalizar" disabled>Finalizar</button>
+													</li>
+												</ul>
+											</div>
+										</div>								
+							</form>
+						</div>
+						<div id="gmail">
+							<div class="divider">
+								<span class="bg-light px-4 position-absolute left-50pct top-50pct transform3dxy-n50">O</span>
 							</div>
+							<a href="#" onClick="google()" class="btn btn-danger btn-modern btn-block text-transform-none rounded-0 font-weight-bold align-items-center d-inline-flex justify-content-center text-3 py-3" data-loading-text="Cargando..."><i class="far fa-envelope text-5 mr-2"></i> Registrarse con Gmail</a>
 						</div>
-
-					</div>
-					
+					</section>
 				</div>
-			</div>
-		
-			</div>
-			
-			<script>
-				function tipoChange() {
-				  	var tipo = document.getElementById("tipo_usuario").value;
-					var nombre =     "<div class='mb-6' >"+
-						"<label style='font-size: 16px;' for='name'>Nombre</label>"+
-						"<input type='text' class='form-control' id='name' placeholder='Nombre' required></div>";
-					var apellidop =    "<div class='mb-6'>"+
-						"<label style='font-size: 16px; for='apellidop'>Apellido Paterno</label>"+
-						"<input type='text' class='form-control' id='apellidop' placeholder='Apellido Paterno' required></div>";
-					var apellidom =   "<div class='mb-6'>"+
-						"<label style='font-size: 16px; for='apellidom'>Apellido Materno</label>"+
-						"<input type='text' class='form-control' id='apellidom' placeholder='Apellido Materno' required></div>";
-					var telefono =   "<div class='mb-6'>"+
-						"<label style='font-size: 16px; for='telefono'>Teléfono</label>"+
-						"<input type='number' class='form-control' id='telefono' placeholder='5612312300' required></div>";
-					var correo =     "<div class='form-group'><div class='mb-6'>"+
-						"<label style='font-size: 16px; for='correo'>Correo</label>"+
-						"<input type='email' class='form-control' id='correo' placeholder='micorreo@gmail.com' required></div></div>";
-					var pass =     "<div class='form-group'><div class='mb-6'>"+
-						"<label style='font-size: 16px; for='pass'>Contraseña</label>"+
-						"<input type='password' class='form-control' id='pass' placeholder='*******' required></div></div>";
-				  if(tipo!="empresa"){
-				  	document.getElementById("datos").innerHTML = nombre+apellidop+apellidom+telefono+correo+pass;
-				  }else{
-					var nombreE =     "<div class='mb-6'>"+
-						"<label style='font-size: 16px; for='name'>Nombre Empresa</label>"+
-						"<input type='text' class='form-control' id='name' placeholder='Nombre' required></div>";
-					var correoE =     "<div class='form-group'><div class='mb-6'>"+
-						"<label style='font-size: 16px; for='correo'>Correo Empresa</label>"+
-						"<input type='email' class='form-control' id='correo' placeholder='micorreo@gmail.com' required></div></div>";
-					document.getElementById("datos").innerHTML = nombreE+telefono+correoE+pass; 
-				  }
-				}
-
-				function areaOff() {
-				  	document.getElementById('otro').style.display = "none";
-				}
-
-				function areaOn() {
-					  document.getElementById('otro').style.display = "block";
-					  document.getElementById('otro').style.color = "black";
-					  //document.getElementById('otro').style ="width: 180px;"
-				}
-			</script>
-			<!-- 
-				Lines Grid
-			-->
-			<div class="lines-grid">
-				<div class="row">
-					<div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
-					<div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3">
-						<div class="lines">
-							<div class="line-1"></div>
-							<div class="line-2" style="animation-delay: 10s;"></div>
-						</div>
-					</div>
-					<div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3">
-						<div class="lines">
-							<div class="line-1"></div>
-						</div>
-					</div>
-					<div class="col col-m-0 col-t-0 col-d-0 col-d-lg-3">
-						<div class="lines">
-							<div class="line-1"></div>
-							<div class="line-2" style="animation-delay: 0s;"></div>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 
 		</div>
+
 	</div>
-	
-	<!--
-		jQuery Scripts
-	-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.validate.js"></script>
-	<script src="js/jquery.magnific-popup.js"></script>
-	<script src="js/imagesloaded.pkgd.js"></script>
-	<script src="js/masonry.pkgd.js"></script>
-	<script src="js/masonry-filter.js"></script>
-	<script src="js/simplebar.js"></script>
-	<script src="js/typed.js"></script>
-	
 
-	
-	<!--
-		Main Scripts
-	-->
-	<script src="js/scripts.js"></script>
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-</body>
+ 
+	<footer id="footer"></footer>
+</div>
+
+		<!-- Vendor -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
+		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+		<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>
+		<script src="vendor/popper/umd/popper.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="vendor/common/common.min.js"></script>
+		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
+		<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
+		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+		<script src="vendor/isotope/jquery.isotope.min.js"></script>
+		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="vendor/vide/jquery.vide.min.js"></script>
+		<script src="vendor/vivus/vivus.min.js"></script>
+
+		<!--(remove-empty-lines-end)-->
+
+		
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="js/theme.js"></script>
+
+		<!-- Current Page Vendor and Views -->
+		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+		<!-- Theme Custom -->
+		<script src="js/custom.js"></script>
 
 
+		<!-- Theme Initialization Files -->
+		<script src="js/theme.init.js"></script>
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		 -->
+		 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet">
+		 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+		 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+	</body>
 
 </script> 
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
@@ -405,6 +631,61 @@
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
 <script>
+	function tipoChange() {
+		var tipo = document.getElementById("tipo_usuario").value;
+		var section1 = document.getElementById("datos-personas");
+		var section2 = document.getElementById("datos-empresas");
+		var pass2_est = document.getElementById("pas2-estudiante");
+		var pass2_pro = document.getElementById("pas2-profesional");
+		var pass2_pre = document.getElementById("pas2-prestadores");
+		var pass2_emp = document.getElementById("pas2-empresas");
+		var txt_doc = document.getElementById("txt-archivo");
+		if(tipo == "empresa"){
+			section1.style.display = "none";
+			section2.style.display = "block";
+			pass2_emp.style.display = "block";
+			pass2_pro.style.display = "none";
+			pass2_pre.style.display = "none";
+			pass2_est.style.display = "none";
+			txt_doc.textContent = "DNI o Documentode Identificación del Representante";
+		}else{
+			section1.style.display = "block";
+			section2.style.display = "none";
+			switch(tipo){
+				case "estudiante":
+					pass2_emp.style.display = "none";
+					pass2_pro.style.display = "none";
+					pass2_pre.style.display = "none";
+					pass2_est.style.display = "block";
+					txt_doc.textContent = "Certificado de Alumno Regular";
+					break;
+				case "profesional":
+					pass2_emp.style.display = "none";
+					pass2_pro.style.display = "block";
+					pass2_pre.style.display = "none";
+					pass2_est.style.display = "none";
+					txt_doc.textContent = "Certificado de Estudios o Título Profesional";
+					break;
+				case "prestador":
+					pass2_emp.style.display = "none";
+					pass2_pro.style.display = "none";
+					pass2_pre.style.display = "block";
+					pass2_est.style.display = "none";
+					txt_doc.textContent = "Certificado de Estudios o Título Profesional";
+					break;
+			}
+		}
+	}
+
+	function areaOff() {
+		document.getElementById('otro').style.display = "none";
+	}
+
+	function areaOn() {
+		document.getElementById('otro').style.display = "inline";
+	}
+
+
   // Initialize Firebase
   var config = {
 	apiKey: "AIzaSyBdAIe1K0LqZ7Vwm0g1uK2G-dB_fd6ClPo",
@@ -427,6 +708,558 @@ var storageRef = firebase.storage().ref();
 </script>
 
 <script type="text/javascript">
+$(document).ready(function() {   
+  $("#btn-siguiente").click(function() {
+		var form = document.getElementById("form-register");
+		var index = $("#pasos").find('li.active').index();
+		if(!validar(form,index+1)){
+			document.getElementById('alerterror').style.display = "block";
+			setTimeout(function() { document.getElementById("alerterror").style.display = "none"; }, 5000);
+		}else{
+			if(index+1 != 0){
+				$("#btn-volver").prop( "disabled", false );
+			}else{
+				$("#btn-volver").prop( "disabled", true );
+			}
+			if(index+1 != 2){
+				$("#btn-siguiente").prop( "disabled", false );
+			}else{
+				$("#btn-finalizar").prop( "disabled", false );
+				$("#btn-siguiente").prop( "disabled", true );
+			}
+			$("#pasos").find('li.active').removeClass("active");
+			$("#pasos").children().eq(index+1).addClass("active");
+			$("#list-pasos").children().eq(index).removeClass("active");
+			$("#list-pasos").children().eq(index+1).addClass("active");
+		}
+  	});
+	$("#btn-volver").click(function() {	
+		var form = document.getElementById("form-register");
+		var index = $("#pasos").find('li.active').index();
+		if(index-1 != 0){
+			$("#btn-volver").prop( "disabled", false );
+		}else{
+			$("#btn-volver").prop( "disabled", true );
+		}
+		if(index-1 != 2){
+			$("#btn-finalizar").prop( "disabled", true );
+			$("#btn-siguiente").prop( "disabled", false );
+		}else{
+			$("#btn-siguiente").prop( "disabled", true );
+		}
+		$("#pasos").children().eq(index).removeClass("active");
+		$("#pasos").children().eq(index-1).addClass("active");
+		$("#list-pasos").children().eq(index).removeClass("active");
+		$("#list-pasos").children().eq(index-1).addClass("active");
+	});
+
+	$("#btn-finalizar").click(function() {	
+		var form = document.getElementById("form-register");
+		var tipo = form.tipo_usuario.value;
+		var area = form.customRadio.value;
+		var otro = document.getElementById('otro').style.display;
+		
+		if(tipo=="empresa"){
+			var telefono = form.telefonoE.value;
+			var email = form.correoE.value;
+			var nombre = form.nameE.value;
+			var password = form.passE.value;
+			
+			//paso 2
+			var rut = form.rutE.value;
+			var nameRepE = form.nameRepE.value;
+			var lastnameRepE = form.lastnameRepE.value;
+			var rutrepE = form.rutrepE.value;
+
+			var aux = $('#giroE').select2('data');
+			var auxString = "";
+			for(var i = 0;i< aux.length;i++){
+				auxString = auxString+aux[i].text;
+				if((i+1)!=aux.length){
+					auxString = auxString+"¿";
+				}
+			}
+			var giroE = auxString;
+			aux = $('#areaserviciosE').select2('data');
+			auxString = "";
+			for(var i = 0;i< aux.length;i++){
+				auxString = auxString+aux[i].text;
+				if((i+1)!=aux.length){
+					auxString = auxString+"¿";
+				}
+			}
+			var areaserviciosE = auxString;
+
+			var serviciosRadio = form.serviciosRadio.value;
+		}else if(tipo=="estudiante"){
+			var apellidom = form.apellidom.value;
+			var apellidop = form.apellidop.value;
+
+			var telefono = form.telefono.value;
+			var email = form.correo.value;
+			var nombre = form.name.value;
+			var password = form.pass.value;
+
+			//paso 2
+
+			var rut = form.rut.value;
+			var aux = $('#carreras').select2('data');
+			var auxString = "";
+			for(var i = 0;i< aux.length;i++){
+				auxString = auxString+aux[i].text;
+				if((i+1)!=aux.length){
+					auxString = auxString+"¿";
+				}
+			}
+			var carreras=auxString;
+		}else if(tipo=="profesional"){
+			var apellidom = form.apellidom.value;
+			var apellidop = form.apellidop.value;
+
+			var telefono = form.telefono.value;
+			var email = form.correo.value;
+			var nombre = form.name.value;
+			var password = form.pass.value;
+			
+			//paso 2
+			var rut = form.rutP.value;
+
+			var aux = $('#titulosP').select2('data');
+			var auxString = "";
+			for(var i = 0;i< aux.length;i++){
+				auxString = auxString+aux[i].text;
+				if((i+1)!=aux.length){
+					auxString = auxString+"¿";
+				}
+			}
+			var titulos = auxString;
+			aux = $('#nvestudiosP').select2('data');
+			auxString = "";
+			for(var i = 0;i< aux.length;i++){
+				auxString = auxString+aux[i].text;
+				if((i+1)!=aux.length){
+					auxString = auxString+"¿";
+				}
+			}
+			var nvestudios = auxString;
+		}else if(tipo=="prestador"){
+			var apellidom = form.apellidom.value;
+			var apellidop = form.apellidop.value;
+
+			var telefono = form.telefono.value;
+			var email = form.correo.value;
+			var nombre = form.name.value;
+			var password = form.pass.value;
+			
+			//paso 2
+
+			var rut = form.rutPre.value;
+			var aux = $('#titulosPre').select2('data');
+			var auxString = "";
+			for(var i = 0;i< aux.length;i++){
+				auxString = auxString+aux[i].text;
+				if((i+1)!=aux.length){
+					auxString = auxString+"¿";
+				}
+			}
+			var titulos = auxString;
+			aux = $('#nvestudiosPre').select2('data');
+			auxString = "";
+			for(var i = 0;i< aux.length;i++){
+				auxString = auxString+aux[i].text;
+				if((i+1)!=aux.length){
+					auxString = auxString+"¿";
+				}
+			}
+			var nvestudios = auxString;
+		}
+		email = email.toLowerCase();
+		email = email.trim();
+		var flag = true;
+		var flagOtro = false;
+		var activada = false;
+		if(otro =="block"){
+			flagOtro = true;
+			var otros = $('.js-otro-tokenizer').select2('data');
+			var otrosString = "";
+			for(var i = 0;i< otros.length;i++){
+				otrosString = otrosString+otros[i].text;
+				if((i+1)!=otros.length){
+					otrosString = otrosString+"¿";
+				}
+			}
+
+			if(otrosString ==""){
+				//alert("Ingrese al menos un campo en otros"); 
+				flag = false;
+			}else{
+				area=otrosString;
+			}
+		}
+		if(tipo !="empresa" && (telefono =="" || area =="" || nombre =="" ||  apellidom =="" ||  apellidop =="" )){
+			//alert("Ingrese todos los campos"); 
+			flag = false;
+		}
+		if(tipo =="empresa" && (telefono =="" || area =="" || nombre =="")){
+			//alert("Ingrese todos los campos"); 
+			flag = false;
+		}
+		//formateador de datos (?)
+		//dato, en publico, en privado, editable por el usuario
+		if(flag){
+			if(!conGmail){	
+				if(email =="" || pass ==""){
+					alert("Indique su correo y clave"); 
+				}else{
+					firebase.auth().createUserWithEmailAndPassword(email, password).then(function(result) {
+					//guardar en BD
+						var user = firebase.auth().currentUser;
+						var userID = user.uid;
+						if(tipo =="empresa"){
+							db.collection('users').doc(userID).set({
+								userID: userID,
+								telefono : {dato: telefono, publico: false, privado: true, editable: true},
+								email : {dato: email, publico: true, privado: true, editable: true},
+								nombre : {dato: nombre, publico: true, privado: true, editable: false},
+								tipo : {dato: tipo, publico: false, privado: false, editable: false},
+								area : {dato: area, publico: false, privado: true, editable: true},
+								activada:activada,
+								nivel:0,
+								rut : {dato: rut, publico: false, privado: true, editable: false},
+								nameRepE : {dato: nameRepE, publico: false, privado: true, editable: true},
+								lastnameRepE : {dato: lastnameRepE, publico: false, privado: true, editable: true},
+								rutrepE : {dato: rutrepE, publico: false, privado: true, editable: true},
+								giroE : {dato: giroE, publico: false, privado: true, editable: true},
+								areaserviciosE : {dato: areaserviciosE, publico: false, privado: true, editable: true},
+								servicios : {dato: serviciosRadio, publico: false, privado: true, editable: true}
+							}).then(function(docRef) {
+								console.log("registro exitoso");
+								uploadFile(userID); 
+							})
+						}
+						if(tipo=="estudiante"){
+							console.log("Estudiantisimo!!");
+							console.log(rut);
+							console.log(carreras);
+							console.log("tel: "+telefono);
+							console.log("apeM: "+apellidom);
+							console.log("apeP: "+apellidop);
+							console.log("email: "+email);
+							console.log("nombre: "+nombre);
+							console.log("area: "+area);
+							db.collection('users').doc(userID).set({
+								userID: userID,
+								telefono : {dato: telefono, publico: false, privado: true, editable: true},
+								email : {dato: email, publico: true, privado: true, editable: true},
+								nombre : {dato: nombre, publico: true, privado: true, editable: false},
+								tipo : {dato: tipo, publico: false, privado: false, editable: false},
+								area : {dato: area, publico: false, privado: true, editable: true},
+								apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
+								apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
+								activada:activada,
+								nivel:0,
+								rut : 		{dato: rut, publico: false, privado: false, editable: false},
+								carreras : 	{dato: carreras, publico: true, privado: true, editable: false}
+							}).then(function(docRef) {
+								console.log("registro exitoso");
+								uploadFile(userID); 
+							})
+						}else{
+							db.collection('users').doc(userID).set({
+								userID: userID,
+								telefono : {dato: telefono, publico: false, privado: true, editable: true},
+								email : {dato: email, publico: true, privado: true, editable: true},
+								nombre : {dato: nombre, publico: true, privado: true, editable: false},
+								tipo : {dato: tipo, publico: false, privado: false, editable: false},
+								area : {dato: area, publico: false, privado: true, editable: true},
+								apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
+								apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
+								activada:activada,
+								nivel:0,
+								rut : {dato: rut, publico: false, privado: false, editable: false},
+								titulos : {dato: titulos, publico: true, privado: true, editable: false},
+								nvestudios : {dato: nvestudios, publico: true, privado: true, editable: false}
+							}).then(function(docRef) {
+								console.log("registro exitoso");
+								uploadFile(userID); 
+							})			
+						}
+					
+					}).catch(function(error) {
+					// Handle Errors here.
+					var errorMessage = error.message;
+					//console.log(errorMessage);
+					if(errorMessage=="Password should be at least 6 characters"){
+						alert("Clave demasiado débil"); 
+					}
+					if(errorMessage=="The email address is already in use by another account."){
+						alert("El correo ya está siendo utilizado por otra cuenta."); 
+					}
+					// ...
+					});
+				}
+			}else{
+				//registro con GMAIL
+				//guardar en BD
+				var user = firebase.auth().currentUser;
+				var userID = user.uid;
+				if(tipo =="empresa"){
+					db.collection('users').doc(userID).set({
+						userID: userID,
+						telefono : {dato: telefono, publico: false, privado: true, editable: true},
+						email : {dato: email, publico: true, privado: true, editable: true},
+						nombre : {dato: nombre, publico: true, privado: true, editable: false},
+						tipo : {dato: tipo, publico: false, privado: false, editable: false},
+						area : {dato: area, publico: false, privado: true, editable: true},
+						activada:activada,
+						nivel:0,
+						rut : {dato: rut, publico: false, privado: true, editable: false},
+						nameRepE : {dato: nameRepE, publico: false, privado: true, editable: true},
+						lastnameRepE : {dato: lastnameRepE, publico: false, privado: true, editable: true},
+						rutrepE : {dato: rutrepE, publico: false, privado: true, editable: true},
+						giroE : {dato: giroE, publico: false, privado: true, editable: true},
+						areaserviciosE : {dato: areaserviciosE, publico: false, privado: true, editable: true},
+						serviciosRadio : {dato: serviciosRadio, publico: false, privado: true, editable: true}
+					}).then(function(docRef) {
+						console.log("registro exitoso");
+						uploadFile(userID); 
+					})
+				}else if(tipo=="estudiante"){
+					db.collection('users').doc(userID).set({
+						userID: userID,
+						telefono : {dato: telefono, publico: false, privado: true, editable: true},
+						email : {dato: email, publico: true, privado: true, editable: true},
+						nombre : {dato: nombre, publico: true, privado: true, editable: false},
+						tipo : {dato: tipo, publico: false, privado: false, editable: false},
+						area : {dato: area, publico: false, privado: true, editable: true},
+						apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
+						apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
+						activada:activada,
+						nivel:0,
+						rut : {dato: rut, publico: false, privado: false, editable: false},
+						carreras : {dato: carreras, publico: true, privado: true, editable: false}
+					}).then(function(docRef) {
+						console.log("registro exitoso");
+						uploadFile(userID); 
+					})
+				}else{
+					db.collection('users').doc(userID).set({
+						userID: userID,
+						telefono : {dato: telefono, publico: false, privado: true, editable: true},
+						email : {dato: email, publico: true, privado: true, editable: true},
+						nombre : {dato: nombre, publico: true, privado: true, editable: false},
+						tipo : {dato: tipo, publico: false, privado: false, editable: false},
+						area : {dato: area, publico: false, privado: true, editable: true},
+						apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
+						apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
+						activada:activada,
+						nivel:0,
+						rut : {dato: rut, publico: false, privado: false, editable: false},
+						titulos : {dato: titulos, publico: true, privado: true, editable: false},
+						nvestudios : {dato: nvestudios, publico: true, privado: true, editable: false}
+					}).then(function(docRef) {
+						console.log("registro exitoso");
+						uploadFile(userID); 
+					})			
+				}
+				
+			}
+		}
+  
+	});
+	
+
+});
+
+	function validar(form,paso){
+		var flag = true;
+		var tipo = form.tipo_usuario.value;
+		if(paso == 1){			
+			var area = form.customRadio.value;
+			var otro = document.getElementById('otro').style.display;
+
+			if(tipo=="empresa"){
+				var telefono = form.telefonoE.value;
+				var email = form.correoE.value;
+				var nombre = form.nameE.value;
+				var password = form.passE.value;
+			}else{
+				var apellidom = form.apellidom.value;
+				var apellidop = form.apellidop.value;
+
+				var telefono = form.telefono.value;
+				var email = form.correo.value;
+				var nombre = form.name.value;
+				var password = form.pass.value;
+			}
+			if(email != null)	{
+				email = email.toLowerCase();
+				email = email.trim();
+			}else{
+				flag = false;
+			}
+			
+			
+			var activada = false;
+			if(otro =="block"){
+				var otros = $('.js-otro-tokenizer').select2('data');
+				if(otros.length<1){
+					$("#txt-error-alert").textContent = "Ingrese al menos un campo en otros"; 
+					flag = false;
+				}
+			}
+			if(tipo !="empresa" && (telefono =="" || area =="" || nombre =="" ||  apellidom =="" ||  apellidop =="" )){
+				$("#txt-error-alert").textContent = "Ingrese todos los campos"; 
+				flag = false;
+			}
+			if(tipo =="empresa" && (telefono =="" || area =="" || nombre =="")){
+				$("#txt-error-alert").textContent = "Ingrese todos los campos"; 
+				flag = false;
+			}
+			//formateador de datos (?)
+			//dato, en publico, en privado, editable por el usuario
+			if(flag){
+				if(!conGmail){	
+					if(email =="" || pass ==""){
+						$("#txt-error-alert").textContent = "Indique su correo y clave"; 
+						flag = false;
+					}
+				}
+			}
+			return flag;
+		}else if(paso == 2){
+			if(tipo=="empresa"){				
+				//paso 2
+				var rut = form.rutE.value;
+				var nameRepE = form.nameRepE.value;
+				var lastnameRepE = form.lastnameRepE.value;
+				var rutrepE = form.rutrepE.value;
+				if(nameRepE == "" || lastnameRepE == "" || rutrepE==""){
+					flag = false;
+					$("#txt-error-alert").textContent = "Rellene los campos del representante"; 
+				}
+				var aux = $('#giroE').select2('data');
+				if(aux.length<1){
+					flag = false;
+					$("#txt-error-alert").textContent = "Rellene el Giro y las Áreas de servicio de la empresa"; 
+				}
+				var auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var giroE = auxString;
+				aux = $('#areaserviciosE').select2('data');
+				if(aux.length<1){
+					flag = false;
+					$("#txt-error-alert").textContent = "Rellene el Giro y las Áreas de servicio de la empresa"; 
+				}
+				auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var areaserviciosE = auxString;
+
+				var serviciosRadio = form.serviciosRadio.value;
+			}else if(tipo=="estudiante"){
+				//paso 2
+				var rut = form.rut.value;
+				if(rut == ""){
+					flag = false;
+					$("#txt-error-alert").textContent = "Debe proporcionar su R.U.T."; 
+				}
+				var aux = $('.carreras-estudiante').select2('data');
+				if(aux.length<1){
+					flag = false;
+					$("#txt-error-alert").textContent = "Complete al menos una Carrera"; 
+				}
+				var auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var carreras=auxString;
+			}else if(tipo=="profesional"){
+				//paso 2
+				var rut = form.rutP.value;
+				if(rut == ""){
+					flag = false;
+					$("#txt-error-alert").textContent = "Debe proporcionar su R.U.T."; 
+				}
+
+				var aux = $('#titulosP').select2('data');
+				if(aux.length<1){
+					flag = false;
+					$("#txt-error-alert").textContent = "Complete con al menos un Título y un Nivel de Estudio"; 
+				}
+				var auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var titulos = auxString;
+				aux = $('#nvestudiosP').select2('data');
+				if(aux.length<1){
+					flag = false;
+					$("#txt-error-alert").textContent = "Complete con al menos un Título y un Nivel de Estudio"; 
+				}
+				auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var nvestudios = auxString;
+			}else if(tipo=="prestador"){
+				//paso 2
+
+				var rut = form.rutPre.value;
+				if(rut == ""){
+					flag = false;
+					$("#txt-error-alert").textContent = "Debe proporcionar su R.U.T."; 
+				}
+				var aux = $('#titulosPre').select2('data');
+				if(aux.length<1){
+					flag = false;
+					$("#txt-error-alert").textContent = "Complete con al menos un Título y un Nivel de Estudio"; 
+				}
+				var auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var titulos = auxString;
+				aux = $('#nvestudiosPre').select2('data');
+				if(aux.length<1){
+					flag = false;
+					$("#txt-error-alert").textContent = "Complete con al menos un Título y un Nivel de Estudio"; 
+				}
+				auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var nvestudios = auxString;
+			}
+			return flag
+		}
+	}
+
+	var conGmail = false;
   	function google(){				
 		var provider = new firebase.auth.GoogleAuthProvider();
 		firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -434,7 +1267,7 @@ var storageRef = firebase.storage().ref();
 			var token = result.credential.accessToken;
 			// The signed-in user info.
 			var user = result.user;
-			// ...
+			window.location.href = 'registro.html';
 		
 		}).catch(function(error) {
 			// Handle Errors here.
@@ -449,144 +1282,71 @@ var storageRef = firebase.storage().ref();
 		});
 	}
 
-	function iniciar(form){
-		var tipo = form.tipo_usuario.value;
-		var telefono = form.telefono.value;
-		var area = form.customRadio.value;
-		var email = form.correo.value;
-		var nombre = form.name.value;
-		var otro = document.getElementById('otro').style.display;
-		if(tipo=="empresa"){
+	$(function(){
+		$( "#header" ).load( "header.html", function() {
+			auth.onAuthStateChanged(user => {
+			var user = firebase.auth().currentUser;
+				if(user===null){
+					//se espera que este aqui
+					document.getElementById('login').style.display = "block";
+					document.getElementById('register').style.display = "block";
 
-		}else{
-			var apellidom = form.apellidom.value;
-			var apellidop = form.apellidop.value;
-		}
-		//console.log(area);
-		
-		var password = form.pass.value;
-		email = email.toLowerCase();
-		email = email.trim();
-		var flag = true;
-		var flagOtro = false;
-		var activada = false;
-		if(otro =="block"){
-			flagOtro = true;
-			var otros = $('.js-otro-tokenizer').select2('data');
-			var otrosString = "";
-			for(var i = 0;i< otros.length;i++){
-				otrosString = otrosString+otros[i].text;
-				if((i+1)!=otros.length){
-					otrosString = otrosString+",";
-				}
-			}
-
-			if(otrosString ==""){
-				alert("Ingrese al menos un campo en otros"); 
-				flag = false;
-			}else{
-				area=otrosString;
-			}
-		}
-		if(tipo !="empresa" && (telefono =="" || area =="" || email =="" || nombre =="" ||  apellidom =="" ||  apellidop =="" )){
-			alert("Ingrese todos los campos"); 
-			flag = false;
-		}
-		if(tipo =="empresa" && (telefono =="" || area =="" || email =="" || nombre =="")){
-			alert("Ingrese todos los campos"); 
-			flag = false;
-		}
-		if(flag){
-			firebase.auth().createUserWithEmailAndPassword(email, password).then(function(result) {
-				//guardar en BD
-				var user = firebase.auth().currentUser;
-				var userID = user.uid;
-				if(tipo =="empresa"){
-					db.collection('users').doc(userID).set({
-						userID: userID,
-						telefono : telefono,
-						email : email,
-						nombre : nombre,
-						tipo : tipo,
-						area:area,
-						faseregistro:1,
-						activada:activada,
-						nivel:0
-					}).then(function(docRef) {
-						//pasar a segunda hoja empresa
-						window.location.href = 'registro2em.html';
-					})
+					document.getElementById('logout').style.display = "none";
+					document.getElementById('editProfile').style.display = "none";
 				}else{
-					db.collection('users').doc(userID).set({
-						userID: userID,
-						telefono : telefono,
-						email : email,
-						nombre : nombre,
-						tipo : tipo,
-						area:area,
-						apellidom:apellidom,
-						apellidop,apellidop,
-						faseregistro:1,
-						activada:activada,
-						nivel:0
-					}).then(function(docRef) {
-						//pasar a segunda hoja
-						if(tipo =="estudiante"){
-							window.location.href = 'registro2e.html';
+					document.getElementById('logout').style.display = "block";
+					document.getElementById('login').style.display = "none";
+					document.getElementById('register').style.display = "none";
+					document.getElementById('editProfile').style.display = "none";
+
+					var docRef = db.collection("users").doc(user.uid);
+					docRef.get().then(function(doc) {
+						if(doc.data()===undefined){
+							console.log("google");
+							//si apreto el boton de gmail y no tiene cuenta, debe estar aqui!
+							conGmail = true;
+							document.getElementById('alertsinc').style.display = "block";
+							document.getElementById('passmail').style.display = "none";
+							document.getElementById('gmail').style.display = "none";
 						}else{
-							window.location.href = 'registro2p.html';
+							document.getElementById('editProfile').style.display = "block";
+							//si esta aqui es porque apreto el boton y TIENE CUENTA
+							//TODO redirigir a la hoja de perfil?
+							
 						}
 					})
 				}
-    		
-  			}).catch(function(error) {
-			// Handle Errors here.
-			var errorMessage = error.message;
-			//console.log(errorMessage);
-			if(errorMessage=="Password should be at least 6 characters"){
-				alert("Clave demasiado débil"); 
-			}
-			if(errorMessage=="The email address is already in use by another account."){
-				alert("El correo ta está siendo utilizado"); 
-			}
-			// ...
 			});
-		}
-  
-	}
-	auth.onAuthStateChanged(user => {
-    var user = firebase.auth().currentUser;
-    if(user===null){
-		//se espera que este aqui
+		});
+		$( "#footer" ).load( "footer.html", function() {})
+	});
 
-	}else{
-		var docRef = db.collection("users").doc(user.uid);
-      	docRef.get().then(function(doc) {
-			if(doc.data()===undefined){
-				console.log("google");
-				window.location.href = 'registroG.html';
-			}else{    		
-				var faseregistro = doc.data().faseregistro;
-				var tipo = doc.data().tipo;
-				if(faseregistro==2){
-						window.location.href = 'registro3.html';
-				}else if(faseregistro==3){
-					//ya habia temrinado el registro
-					window.location.href = 'perfil.html';
-				}else if(faseregistro==1){
-					if(tipo=="estudiante"){
-						window.location.href = 'registro2e.html';
-					}else if(tipo=="empresa"){
-						window.location.href = 'registro2em.html';
-					}else{
-						window.location.href = 'registro2p.html';
-					}
-				}	
-			}
-	  	})
-	}
-})
-  
-	  </script>
-	
+	const fileButton = document.getElementById('fileButton');
+	//const txtUpload = document.getElementById('txtUpload');
+	fileButton.addEventListener('change', function(){
+		//document.getElementById('txtUpload')="Cambiar";
+	})
+
+
+	function uploadFile(id) {
+		var fileButton = document.getElementById("fileButton");
+		var file = fileButton.files[0];
+		//ver caso que no hay file!!!
+		var storageRef = firebase.storage().ref('documentoregistro/'+id);
+		var task = storageRef.put(file);
+		task.on('state_changed', function progress(snapshot) {
+			//var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+			//uploader.value = percentage;
+		}, function error(err) {
+
+
+		},function complete() {
+			//redirect
+			console.log("eeeexito")
+		});
+	} 
+
+</script>
+
+	  
 </html>
