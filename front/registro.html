@@ -110,448 +110,451 @@
 	
 	<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
 		<div id="header"></div>
-			<div role="main" class="main shop py-4">
+		<div role="main" class="main shop py-4">
 
-				<div class="container py-4">
+			<div class="container py-4">
 
-					<div class="row justify-content-center">
-						<div class="col-md-8 col-lg-8 mb-5 mb-lg-0">	
-							<div class="alert alert-success" id="alertsinc" style="display:none">
-								<strong><i class="far fa-thumbs-up"></i> Has sincronizado tu cuenta con Gmail!</strong> Rellena los siguientes campos para continuar.
-							</div>
-							<div class="alert alert-danger" id="alerterror" style="display:none">
-								<strong><i class="fas fa-cat"></i> Faltan campos obligatorios por llenar</strong> <span id="txt-error-alert"></span>.
-							</div>
-							<section class="card card-admin form-wizard" id="w2">
+				<div class="row justify-content-center">
+					<div class="col-md-8 col-lg-8 mb-5 mb-lg-0">	
+						<div class="alert alert-success" id="alertsinc" style="display:none">
+							<strong><i class="far fa-thumbs-up"></i> Has sincronizado tu cuenta con Gmail!</strong> Rellena los siguientes campos para continuar.
+						</div>
+						<div class="alert alert-danger" id="alerterror" style="display:none">
+							<strong><i class="fa fa-exclamation-triangle"></i> Faltan campos obligatorios por llenar</strong> <span id="txt-error-alert"></span>.
+						</div>
+						<div class="alert alert-danger" id="alerterrorFormato" style="display:none">
+							<strong><i class="fa fa-exclamation-triangle"></i> El tipo de archivo no es válido. Solo archivos de imagen o PDF</strong> <span id="txt-error-alert"></span>.
+						</div>
+						<section class="card card-admin form-wizard" id="w2">
 
-								<header class="card-header">
-									<div class="card-actions">
-										<a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
-										<a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
-									</div>
+							<header class="card-header">
+								<div class="card-actions">
+									<a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+									<a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+								</div>
 
-									<h2 class="card-title">Registrarse</h2>
-								</header>
-								<div class="tabs">
-									<ul class="nav nav-tabs nav-justify" id="pasos">
-										<li class="nav-item active">
-											<a href="#w2-account" data-toggle="tab" class="nav-link text-center">
-												<span class="badge badge-primary">1</span>
-												Datos Esenciales
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="#w2-profile" data-toggle="tab" class="nav-link text-center">
-												<span class="badge badge-primary">2</span>
-												Datos Extras
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="#w2-confirm" data-toggle="tab" class="nav-link text-center">
-												<span class="badge badge-primary">3</span>
-												Documentos
-											</a>
-										</li>
-									</ul>
-									<form class="form-horizontal" novalidate="novalidate" id="form-register">
-										<div class="tab-content" id="list-pasos">
-											
-											<!-- PASO 1 -->
-											<div id="paso1" class="tab-pane p-3 active">
+								<h2 class="card-title">Registrarse</h2>
+							</header>
+							<div class="tabs">
+								<ul class="nav nav-tabs nav-justify" id="pasos">
+									<li class="nav-item active">
+										<a href="#w2-account" data-toggle="tab" class="nav-link text-center">
+											<span class="badge badge-primary">1</span>
+											Datos Esenciales
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#w2-profile" data-toggle="tab" class="nav-link text-center">
+											<span class="badge badge-primary">2</span>
+											Datos Extras
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#w2-confirm" data-toggle="tab" class="nav-link text-center">
+											<span class="badge badge-primary">3</span>
+											Documentos
+										</a>
+									</li>
+								</ul>
+								<form class="form-horizontal" novalidate="novalidate" id="form-register">
+									<div class="tab-content" id="list-pasos">
+										
+										<!-- PASO 1 -->
+										<div id="paso1" class="tab-pane p-3 active">
+											<div class="form-group row">
+												<label class="col-sm-4 control-label text-sm-right pt-1">Tipo de Usuario*</label>
+												<div class="col-sm-8">
+													<select data-plugin-selecttwo="" class="form-control populate custom-select" id="tipo_usuario" onchange="tipoChange()" required>
+														<option selected disabled>Selecciona un tipo</option>
+														<option value="estudiante">Estudiante</option>
+														<option value="profesional">Profesional</option>
+														<option value="prestador">Prestador de Servicios</option>
+														<option value="empresa">Empresa</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-lg-3 control-label text-lg-right pt-2">Area*:</label>
+												<div class="col-lg-6">
+													<div class="radio" onchange="areaOff()">
+														<label>
+															<input type="radio" name="customRadio" id="areaRadio1" value="electricidad" checked>
+															Electricidad
+														</label>
+													</div>
+													<div class="radio" onchange="areaOff()">
+														<label>
+															<input type="radio" name="customRadio" id="areaRadio2" value="electronica">
+															Electrónica
+														</label>
+													</div>
+													<div class="radio" onchange="areaOff()">
+														<label>
+															<input type="radio" name="customRadio" id="areaRadio3" value="telecomunicaciones">
+															Telecomunicaciones
+														</label>
+													</div>
+													<div class="radio" onchange="areaOff()">
+														<label>
+															<input type="radio" name="customRadio" id="areaRadio4" value="automatizacion">
+															Automatización
+														</label>
+													</div>
+													<div class="radio" onchange="areaOn()">
+														<label>
+															<input type="radio" name="customRadio" id="areaRadio5" value="otros">
+															Otros
+														</label>
+													</div>
+												</div>
+											</div>
+											<div id="otro" style="display: none;">
+												<div  class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1">Indique Áreas*</label>
+													<div class="col-sm-6">
+														<select style ="width: 250px;"  class="js-otro-tokenizer form-control" multiple="multiple" id='otros'>
+															<option value="seguridad">Seguridad</option>
+															<option value="mecanica">Mecánica</option>
+															<option value="derecho">Derecho</option>
+															<option value="prevencion">Prevención</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<section id="datos-personas" style="display: none;">
+												<h2 class="font-weight-bold text-5 mb-0">Información Básica</h2>
 												<div class="form-group row">
-													<label class="col-sm-4 control-label text-sm-right pt-1">Tipo de Usuario*</label>
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="name">Nombres*</label>
 													<div class="col-sm-8">
-														<select data-plugin-selecttwo="" class="form-control populate custom-select" id="tipo_usuario" onchange="tipoChange()" required>
-															<option selected disabled>Selecciona un tipo</option>
+														<input type="text" class="form-control" name="first-name" id='name' placeholder='Nombres'>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="apellidop">Apellido Paterno*</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="last-name" id='apellidop' placeholder='Apellido Paterno'>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="apellidom">Apellido Paterno</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="sur-name" id='apellidom' placeholder='Apellido Materno'>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="telefono">Teléfono*</label>
+													<div class="col-sm-8">
+														<div class="input-group">
+															<span class="input-group-prepend">
+																<span class="input-group-text">
+																	<i class="fas fa-phone"></i>
+																</span>
+															</span>
+															<input data-plugin-masked-input="" name="phone" data-input-mask="+999 9 999 9999" id='telefono' placeholder='+569 9 999 9999' class="form-control">
+														</div>
+													</div>
+												</div>
+												<div id="passmail">
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="correo">Correo*</label>
+														<div class="col-sm-8 input-group mb-3">
+															<span class="input-group-prepend">
+																<span class="input-group-text">
+																	<i class="fas fa-envelope"></i>
+																</span>
+															</span>
+															<input type="email" name="mail" class="form-control" id='correo' placeholder='micorreo@gmail.com'>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-sm-4 for control-label text-sm-right pt-1" for="pass">Contraseña*</label>
+														<div class="col-sm-8">
+															<input type="password" class="form-control" name="pass"  id='pass' placeholder='*******'>
+														</div>
+													</div>														
+												</div>	
+											</section>
+											<section id="datos-empresas" style="display: none;">
+												<h2 class="font-weight-bold text-5 mb-0">Información Básica</h2>
+												<div class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="nameE">Nombre</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="first-nameE" id='nameE' placeholder='Nombre Empresa'>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="telefonoE">Teléfono</label>
+													<div class="col-sm-8">
+														<div class="input-group">
+															<span class="input-group-prepend">
+																<span class="input-group-text">
+																	<i class="fas fa-phone"></i>
+																</span>
+															</span>
+															<input data-plugin-masked-input="" name="phoneE" data-input-mask="+999 9 999 9999" id='telefonoE' placeholder='+569 9 999 9999' class="form-control">
+														</div>
+													</div>
+												</div>
+												<div id="passmailE">
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="correoE">Correo</label>
+														<div class="col-sm-8 input-group mb-3">
+															<span class="input-group-prepend">
+																<span class="input-group-text">
+																	<i class="fas fa-envelope"></i>
+																</span>
+															</span>
+															<input type="email" name="mailE" class="form-control" id='correoE' placeholder='correoempresa@gmail.com'>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="passE">Contraseña</label>
+														<div class="col-sm-8">
+															<input type="password" class="form-control" name="passE"  id='passE' placeholder='*******'>
+														</div>
+													</div>														
+												</div>					
+											</section>
+										</div>
+										
+										<!-- PASO 2 -->
+										<div id="paso2" class="tab-pane p-3">
+
+											<section id="pas2-estudiante" style="display: none;">
+												<div class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="rut">R.U.T.*</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control rut" name="first-name" id="rut" required>
+													</div>
+												</div>
+												<div  class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="carreras">Carreras*</label>
+													<div class="col-sm-6">
+														<select class="carreras-estudiante form-control" multiple="multiple" id='carreras'>
+														</select>
+													</div>
+												</div>
+											</section>
+
+											<section id="pas2-profesional" style="display: none;">
+												<div class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="rutP">R.U.T.*</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control rut" name="rutP" id="rutP" required>
+													</div>
+												</div>
+												<div  class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for ="titulosP">Título Académico*</label>
+													<div class="col-sm-8">
+														<select  class="titulos-profesionales form-control" multiple="multiple" id='titulosP'>
+														</select>
+													</div>
+												</div>
+												<div  class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="nvestudiosP">Nivel Estudio*</label>
+													<div class="col-sm-8">
+														<select  class="nivel-estudio form-control" multiple="multiple" id='nvestudiosP'>
+															<option value="emtp">EMTP (enseñanza media técnico profesional)</option>
+															<option value="tecnico">Técnico de nivel superior</option>
+															<option value="ingeniero">Ingeniero</option>
+															<option value="magister">Magister</option>
+															<option value="doctorado">Doctorado</option>
 															<option value="estudiante">Estudiante</option>
-															<option value="profesional">Profesional</option>
-															<option value="prestador">Prestador de Servicios</option>
-															<option value="empresa">Empresa</option>
+														</select>
+													</div>
+												</div>
+												<!--
+												<div  class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1">Especialidades de Estudio</label>
+													<div class="col-sm-8">
+														<select  class="especialidades-profesionales form-control" multiple="multiple" id='especialidadesP'>
+														</select>
+													</div>
+												</div>
+												<div  class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1">Áreas de experiencia*</label>
+													<div class="col-sm-8">
+														<select class="areas-experiencia-profesionales form-control" multiple="multiple" id='areasexperienciaP'>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 control-label text-lg-right pt-2">Area*:</label>
-													<div class="col-lg-6">
-														<div class="radio" onchange="areaOff()">
-															<label>
-																<input type="radio" name="customRadio" id="areaRadio1" value="electricidad" checked>
-																Electricidad
-															</label>
-														</div>
-														<div class="radio" onchange="areaOff()">
-															<label>
-																<input type="radio" name="customRadio" id="areaRadio2" value="electronica">
-																Electrónica
-															</label>
-														</div>
-														<div class="radio" onchange="areaOff()">
-															<label>
-																<input type="radio" name="customRadio" id="areaRadio3" value="telecomunicaciones">
-																Telecomunicaciones
-															</label>
-														</div>
-														<div class="radio" onchange="areaOff()">
-															<label>
-																<input type="radio" name="customRadio" id="areaRadio4" value="automatizacion">
-																Automatización
-															</label>
-														</div>
-														<div class="radio" onchange="areaOn()">
-															<label>
-																<input type="radio" name="customRadio" id="areaRadio5" value="otros">
-																Otros
-															</label>
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="rutP">Soy certificador</label>
+													<div class="col-sm-8">
+														<div class="input-group mb-3">
+															<span class="input-group-prepend">
+																<span class="input-group-text">
+																	<input type="checkbox" onchange="change_certificador()">
+																</span>
+															</span>
+															<input type="text" class="form-control" disabled>
 														</div>
 													</div>
 												</div>
-												<div id="otro" style="display: none;">
-													<div  class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1">Indique Áreas*</label>
-														<div class="col-sm-6">
-															<select style ="width: 250px;"  class="js-otro-tokenizer form-control" multiple="multiple" id='otros'>
-																<option value="seguridad">Seguridad</option>
-																<option value="mecanica">Mecánica</option>
-																<option value="derecho">Derecho</option>
-																<option value="prevencion">Prevención</option>
-															</select>
-														</div>
-													</div>
-												</div>
-												<section id="datos-personas" style="display: none;">
-													<h2 class="font-weight-bold text-5 mb-0">Información Básica</h2>
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="name">Nombres*</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" name="first-name" id='name' placeholder='Nombres'>
-														</div>
-													</div>
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="apellidop">Apellidos*</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" name="last-name" id='apellidop' placeholder='Apellido Paterno'>
-														</div>
-													</div>
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="apellidom">Apellido Paterno</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" name="sur-name" id='apellidom' placeholder='Apellido Materno'>
-														</div>
-													</div>
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="telefono">Teléfono*</label>
-														<div class="col-sm-8">
-															<div class="input-group">
-																<span class="input-group-prepend">
-																	<span class="input-group-text">
-																		<i class="fas fa-phone"></i>
-																	</span>
-																</span>
-																<input data-plugin-masked-input="" name="phone" data-input-mask="+999 9 999 9999" id='telefono' placeholder='+569 9 999 9999' class="form-control">
-															</div>
-														</div>
-													</div>
-													<div id="passmail">
-														<div class="form-group row">
-															<label class="col-sm-4 control-label text-sm-right pt-1" for="correo">Correo*</label>
-															<div class="col-sm-8 input-group mb-3">
-																<span class="input-group-prepend">
-																	<span class="input-group-text">
-																		<i class="fas fa-envelope"></i>
-																	</span>
-																</span>
-																<input type="email" name="mail" class="form-control" id='correo' placeholder='micorreo@gmail.com'>
-															</div>
-														</div>
-														<div class="form-group row">
-															<label class="col-sm-4 for control-label text-sm-right pt-1" for="pass">Contraseña*</label>
-															<div class="col-sm-8">
-																<input type="password" class="form-control" name="pass"  id='pass' placeholder='*******'>
-															</div>
-														</div>														
-													</div>	
-												</section>
-												<section id="datos-empresas" style="display: none;">
-													<h2 class="font-weight-bold text-5 mb-0">Información Básica</h2>
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="nameE">Nombre</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" name="first-nameE" id='nameE' placeholder='Nombre Empresa'>
-														</div>
-													</div>
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="telefonoE">Teléfono</label>
-														<div class="col-sm-8">
-															<div class="input-group">
-																<span class="input-group-prepend">
-																	<span class="input-group-text">
-																		<i class="fas fa-phone"></i>
-																	</span>
-																</span>
-																<input data-plugin-masked-input="" name="phoneE" data-input-mask="+999 9 999 9999" id='telefonoE' placeholder='+569 9 999 9999' class="form-control">
-															</div>
-														</div>
-													</div>
-													<div id="passmailE">
-														<div class="form-group row">
-															<label class="col-sm-4 control-label text-sm-right pt-1" for="correoE">Correo</label>
-															<div class="col-sm-8 input-group mb-3">
-																<span class="input-group-prepend">
-																	<span class="input-group-text">
-																		<i class="fas fa-envelope"></i>
-																	</span>
-																</span>
-																<input type="email" name="mailE" class="form-control" id='correoE' placeholder='correoempresa@gmail.com'>
-															</div>
-														</div>
-														<div class="form-group row">
-															<label class="col-sm-4 control-label text-sm-right pt-1" for="passE">Contraseña</label>
-															<div class="col-sm-8">
-																<input type="password" class="form-control" name="passE"  id='passE' placeholder='*******'>
-															</div>
-														</div>														
-													</div>					
-												</section>
-											</div>
-											
-											<!-- PASO 2 -->
-											<div id="paso2" class="tab-pane p-3">
+												-->												
+											</section>
 
-												<section id="pas2-estudiante" style="display: none;">
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="rut">R.U.T.*</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control rut" name="first-name" id="rut" required>
-														</div>
-													</div>
-													<div  class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="carreras">Carreras*</label>
-														<div class="col-sm-6">
-															<select class="carreras-estudiante form-control" multiple="multiple" id='carreras'>
-															</select>
-														</div>
-													</div>
-												</section>
-
-												<section id="pas2-profesional" style="display: none;">
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="rutP">R.U.T.*</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control rut" name="rutP" id="rutP" required>
-														</div>
-													</div>
-													<div  class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for ="titulosP">Título Académico*</label>
-														<div class="col-sm-8">
-															<select  class="titulos-profesionales form-control" multiple="multiple" id='titulosP'>
-															</select>
-														</div>
-													</div>
-													<div  class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="nvestudiosP">Nivel Estudio*</label>
-														<div class="col-sm-8">
-															<select  class="nivel-estudio form-control" multiple="multiple" id='nvestudiosP'>
-																<option value="emtp">EMTP (enseñanza media técnico profesional)</option>
-																<option value="tecnico">Técnico de nivel superior</option>
-																<option value="ingeniero">Ingeniero</option>
-																<option value="magister">Magister</option>
-																<option value="doctorado">Doctorado</option>
-																<option value="estudiante">Estudiante</option>
-															</select>
-														</div>
-													</div>
-													<!--
-													<div  class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1">Especialidades de Estudio</label>
-														<div class="col-sm-8">
-															<select  class="especialidades-profesionales form-control" multiple="multiple" id='especialidadesP'>
-															</select>
-														</div>
-													</div>
-													<div  class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1">Áreas de experiencia*</label>
-														<div class="col-sm-8">
-															<select class="areas-experiencia-profesionales form-control" multiple="multiple" id='areasexperienciaP'>
-															</select>
-														</div>
-													</div>
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="rutP">Soy certificador</label>
-														<div class="col-sm-8">
-															<div class="input-group mb-3">
-																<span class="input-group-prepend">
-																	<span class="input-group-text">
-																		<input type="checkbox" onchange="change_certificador()">
-																	</span>
-																</span>
-																<input type="text" class="form-control" disabled>
-															</div>
-														</div>
-													</div>
-													-->												
-												</section>
-
-												<section id="pas2-prestadores" style="display: none;">
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="rutPre">R.U.T.*</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control rut" name="rutPre" id="rutPre" required>
-														</div>
-													</div>
-													<div  class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for ="titulosPre">Título Académico*</label>
-														<div class="col-sm-8">
-															<select  class="titulos-profesionales form-control" multiple="multiple" id='titulosPre'>
-															</select>
-														</div>
-													</div>
-													<div  class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="nvestudiosPre">Nivel Estudio*</label>
-														<div class="col-sm-8">
-															<select  class="nivel-estudio form-control" multiple="multiple" id='nvestudiosPre'>
-																<option value="emtp">EMTP (enseñanza media técnico profesional)</option>
-																<option value="tecnico">Técnico de nivel superior</option>
-																<option value="ingeniero">Ingeniero</option>
-																<option value="magister">Magister</option>
-																<option value="doctorado">Doctorado</option>
-																<option value="estudiante">Estudiante</option>
-															</select>
-														</div>
-													</div>										
-												</section>
-
-												<section id="pas2-empresas" style="display: none;">
-													<div class="form-group row">
-														<label class="col-lg-3 control-label text-lg-right pt-2">Tipo de Empresa*:</label>
-														<div class="col-lg-6">
-															<div class="radio">
-																<label>
-																	<input type="radio" name="tipoempresa" id="tipoempresaRadio1" value="juridica" checked>
-																	Persona jurídica 
-																</label>
-															</div>
-															<div class="radio">
-																<label>
-																	<input type="radio" name="tipoempresa" id="tipoempresaRadio2" value="natural">
-																	Persona natural
-																</label>
-															</div>
-														</div>
-													</div>
-													<div class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for="rutE">R.U.T. Empresa</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control rut" name="rutE" id="rutE" required>
-														</div>
-													</div>
-													<section id="datos-representante">
-														<h2 class="font-weight-bold text-5 mb-0">Datos Representante Legal</h2>
-														<div class="form-group row">
-															<label class="col-sm-4 control-label text-sm-right pt-1" for="nameRepE">Nombres*</label>
-															<div class="col-sm-8">
-																<input type="text" class="form-control" name="first-nameRepE" id='nameRepE' placeholder='Nombres Representante'>
-															</div>
-														</div>
-														<div class="form-group row">
-															<label class="col-sm-4 control-label text-sm-right pt-1" for="lastnameRepE">Apellidos*</label>
-															<div class="col-sm-8">
-																<input type="text" class="form-control" name="last-nameRepE" id='lastnameRepE' placeholder='Apellidos Representante'>
-															</div>
-														</div>
-														<div class="form-group row">
-															<label class="col-sm-4 control-label text-sm-right pt-1" for="rutrepE">R.U.T. Representante*</label>
-															<div class="col-sm-8">
-																<input type="text" class="form-control rut" name="rutrepE" id='rutrepE' placeholder='R.U.T. Representante'>
-															</div>
-														</div>
-													</section>	
-													<div  class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for ="giroE">Giro Empresa*</label>
-														<div class="col-sm-8">
-															<select  class="form-control giroE" multiple="multiple" id='giroE'>
-															</select>
-														</div>
-													</div>	
-													<div  class="form-group row">
-														<label class="col-sm-4 control-label text-sm-right pt-1" for ="areaserviciosE">Areas de Servicios*</label>
-														<div class="col-sm-8">
-															<select  class="area-servicio form-control" multiple="multiple" id='areaserviciosE'>
-															</select>
-														</div>
-													</div>	
-													<div class="form-group row">
-														<label class="col-lg-3 control-label text-lg-right pt-2">Tipos de Servicios*:</label>
-														<div class="col-lg-6">
-															<div class="radio">
-																<label>
-																	<input type="radio" name="serviciosRadio" id="serviciosRadio1" value="servicios" checked>
-																	Servicios
-																</label>
-															</div>
-															<div class="radio">
-																<label>
-																	<input type="radio" name="serviciosRadio" id="serviciosRadio2" value="productos">
-																	Productos
-																</label>
-															</div>
-															<div class="radio">
-																<label>
-																	<input type="radio" name="serviciosRadio" id="serviciosRadio3" value="servicios-productos">
-																	Servicios y Productos
-																</label>
-															</div>
-															
-														</div>
-													</div>												
-
-												</section>
-											</div>
-
-											<!-- PASO 3 -->
-											<div id="paso3" class="tab-pane p-3">
+											<section id="pas2-prestadores" style="display: none;">
 												<div class="form-group row">
-													<label class="col-lg-3 control-label text-lg-right pt-2" id="txt-archivo">Subir Documentos</label>
-													<div class="col-lg-9">
-														<div class="fileupload fileupload-new" data-provides="fileupload">
-															<div class="input-append">
-																<div class="uneditable-input">
-																	<span class="fileupload-preview"></span>
-																</div>
-																<span class="btn btn-default btn-file">
-																	<span id="txtUpload" class="fileupload-exists">Seleccionar Archivo</span>
-																	<!--<span class="fileupload-new">Seleccionar Archivo</span>-->
-																	<input type="file" id="fileButton">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="rutPre">R.U.T.*</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control rut" name="rutPre" id="rutPre" required>
+													</div>
+												</div>
+												<div  class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for ="titulosPre">Título Académico*</label>
+													<div class="col-sm-8">
+														<select  class="titulos-profesionales form-control" multiple="multiple" id='titulosPre'>
+														</select>
+													</div>
+												</div>
+												<div  class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="nvestudiosPre">Nivel Estudio*</label>
+													<div class="col-sm-8">
+														<select  class="nivel-estudio form-control" multiple="multiple" id='nvestudiosPre'>
+															<option value="emtp">EMTP (enseñanza media técnico profesional)</option>
+															<option value="tecnico">Técnico de nivel superior</option>
+															<option value="ingeniero">Ingeniero</option>
+															<option value="magister">Magister</option>
+															<option value="doctorado">Doctorado</option>
+															<option value="estudiante">Estudiante</option>
+														</select>
+													</div>
+												</div>										
+											</section>
 
-																</span>
-																<!--<a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Eliminar</a>-->
+											<section id="pas2-empresas" style="display: none;">
+												<div class="form-group row">
+													<label class="col-lg-3 control-label text-lg-right pt-2">Tipo de Empresa*:</label>
+													<div class="col-lg-6">
+														<div class="radio">
+															<label>
+																<input type="radio" name="tipoempresa" id="tipoempresaRadio1" value="juridica" checked>
+																Persona jurídica 
+															</label>
+														</div>
+														<div class="radio">
+															<label>
+																<input type="radio" name="tipoempresa" id="tipoempresaRadio2" value="natural">
+																Persona natural
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="rutE">R.U.T. Empresa</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control rut" name="rutE" id="rutE" required>
+													</div>
+												</div>
+												<section id="datos-representante">
+													<h2 class="font-weight-bold text-5 mb-0">Datos Representante Legal</h2>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="nameRepE">Nombres*</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control" name="first-nameRepE" id='nameRepE' placeholder='Nombres Representante'>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="lastnameRepE">Apellidos*</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control" name="last-nameRepE" id='lastnameRepE' placeholder='Apellidos Representante'>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-sm-4 control-label text-sm-right pt-1" for="rutrepE">R.U.T. Representante*</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control rut" name="rutrepE" id='rutrepE' placeholder='R.U.T. Representante'>
+														</div>
+													</div>
+												</section>	
+												<div  class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for ="giroE">Giro Empresa*</label>
+													<div class="col-sm-8">
+														<select  class="form-control giroE" multiple="multiple" id='giroE'>
+														</select>
+													</div>
+												</div>	
+												<div  class="form-group row">
+													<label class="col-sm-4 control-label text-sm-right pt-1" for ="areaserviciosE">Areas de Servicios*</label>
+													<div class="col-sm-8">
+														<select  class="area-servicio form-control" multiple="multiple" id='areaserviciosE'>
+														</select>
+													</div>
+												</div>	
+												<div class="form-group row">
+													<label class="col-lg-3 control-label text-lg-right pt-2">Tipos de Servicios*:</label>
+													<div class="col-lg-6">
+														<div class="radio">
+															<label>
+																<input type="radio" name="serviciosRadio" id="serviciosRadio1" value="servicios" checked>
+																Servicios
+															</label>
+														</div>
+														<div class="radio">
+															<label>
+																<input type="radio" name="serviciosRadio" id="serviciosRadio2" value="productos">
+																Productos
+															</label>
+														</div>
+														<div class="radio">
+															<label>
+																<input type="radio" name="serviciosRadio" id="serviciosRadio3" value="servicios-productos">
+																Servicios y Productos
+															</label>
+														</div>
+														
+													</div>
+												</div>												
+
+											</section>
+										</div>
+
+										<!-- PASO 3 -->
+										<div id="paso3" class="tab-pane p-3">
+											<div class="form-group row">
+												<label class="col-lg-3 control-label text-lg-right pt-2" id="txt-archivo">Subir Documentos</label>
+												<div class="col-lg-9">
+													<div class="fileupload fileupload-new" data-provides="fileupload">
+														<div class="input-append">
+															<div class="uneditable-input">
+																<span class="fileupload-preview"></span>
 															</div>
+															<span class="btn btn-default btn-file">
+																<span id="txtUpload" class="fileupload-exists">Seleccionar Archivo</span>
+																<!--<span class="fileupload-new">Seleccionar Archivo</span>-->
+																<input type="file" id="fileButton" accept="image/*,application/pdf">
+
+															</span>
+															<!--<a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Eliminar</a>-->
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-									<div class="card-footer">
-										<div class="form-group row">
-											<div class="col-sm-10">
-												<ul class="nav nav-tabs nav-justify">
-													<li class="nav-item">
-														<button type="button" class="btn btn-modern btn-secondary rounded-0 mb-2" id="btn-volver" disabled>Volver</button>
-													</li>
-													<li class="nav-item">
-														<button type="button" class="btn btn-modern btn-tertiary rounded-0 mb-2" id="btn-siguiente" >Siguiente</button>
-													</li>
-												</ul>
-											</div>
-											<div class="col-sm-2">
-												<ul class="nav nav-tabs justify-content-end">
-													<li class="nav-item">
-														<button type="button" class="btn btn-modern btn-success rounded-0 mb-2" id="btn-finalizar" disabled>Finalizar</button>
-													</li>
-												</ul>
-											</div>
-										</div>								
-							</form>
+								</div>
+								<div class="card-footer">
+									<div class="form-group row">
+										<div class="col-sm-10">
+											<ul class="nav nav-tabs nav-justify">
+												<li class="nav-item">
+													<button type="button" class="btn btn-modern btn-secondary rounded-0 mb-2" id="btn-volver" disabled>Volver</button>
+												</li>
+												<li class="nav-item">
+													<button type="button" class="btn btn-modern btn-tertiary rounded-0 mb-2" id="btn-siguiente" >Siguiente</button>
+												</li>
+											</ul>
+										</div>
+										<div class="col-sm-2">
+											<ul class="nav nav-tabs justify-content-end">
+												<li class="nav-item">
+													<button type="button" class="btn btn-modern btn-success rounded-0 mb-2" id="btn-finalizar" disabled>Finalizar</button>
+												</li>
+											</ul>
+										</div>
+									</div>								
+						</form>
 						</div>
 						<div id="gmail">
 							<div class="divider">
@@ -559,18 +562,14 @@
 							</div>
 							<a href="#" onClick="google()" class="btn btn-danger btn-modern btn-block text-transform-none rounded-0 font-weight-bold align-items-center d-inline-flex justify-content-center text-3 py-3" data-loading-text="Cargando..."><i class="far fa-envelope text-5 mr-2"></i> Registrarse con Gmail</a>
 						</div>
-					</section>
+						</section>
+					</div>
 				</div>
-				
+		
 			</div>
 
 		</div>
-
-	</div>
-
- 
-	<footer id="footer"></footer>
-</div>
+		<footer id="footer"></footer>
 
 		<!-- Vendor -->
 		<script src="vendor/jquery/jquery.min.js"></script>
@@ -686,28 +685,29 @@
 	}
 
 
-  // Initialize Firebase
-  var config = {
-	apiKey: "AIzaSyBdAIe1K0LqZ7Vwm0g1uK2G-dB_fd6ClPo",
-	authDomain: "electric-latam.firebaseapp.com",
-	databaseURL: "https://electric-latam.firebaseio.com",
-	projectId: "electric-latam",
-	storageBucket: "electric-latam.appspot.com",
-  };
-  
-  firebase.initializeApp(config);
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBdAIe1K0LqZ7Vwm0g1uK2G-dB_fd6ClPo",
+		authDomain: "electric-latam.firebaseapp.com",
+		databaseURL: "https://electric-latam.firebaseio.com",
+		projectId: "electric-latam",
+		storageBucket: "electric-latam.appspot.com",
+	};
+	
+	firebase.initializeApp(config);
 
-  // make auth and firestore references
-  const auth = firebase.auth();
-  const db = firebase.firestore();
+	// make auth and firestore references
+	const auth = firebase.auth();
+	const db = firebase.firestore();
 
-var storageRef = firebase.storage().ref();
+	var storageRef = firebase.storage().ref();
 
-  var database = firebase.database();
+ 	var database = firebase.database();
 
 </script>
 
 <script type="text/javascript">
+var validFile= true;
 $(document).ready(function() {   
   $("#btn-siguiente").click(function() {
 		var form = document.getElementById("form-register");
@@ -758,314 +758,309 @@ $(document).ready(function() {
 		var tipo = form.tipo_usuario.value;
 		var area = form.customRadio.value;
 		var otro = document.getElementById('otro').style.display;
-		
-		if(tipo=="empresa"){
-			var telefono = form.telefonoE.value;
-			var email = form.correoE.value;
-			var nombre = form.nameE.value;
-			var password = form.passE.value;
-			
-			//paso 2
-			var rut = form.rutE.value;
-			var nameRepE = form.nameRepE.value;
-			var lastnameRepE = form.lastnameRepE.value;
-			var rutrepE = form.rutrepE.value;
-
-			var aux = $('#giroE').select2('data');
-			var auxString = "";
-			for(var i = 0;i< aux.length;i++){
-				auxString = auxString+aux[i].text;
-				if((i+1)!=aux.length){
-					auxString = auxString+"¿";
-				}
-			}
-			var giroE = auxString;
-			aux = $('#areaserviciosE').select2('data');
-			auxString = "";
-			for(var i = 0;i< aux.length;i++){
-				auxString = auxString+aux[i].text;
-				if((i+1)!=aux.length){
-					auxString = auxString+"¿";
-				}
-			}
-			var areaserviciosE = auxString;
-
-			var serviciosRadio = form.serviciosRadio.value;
-		}else if(tipo=="estudiante"){
-			var apellidom = form.apellidom.value;
-			var apellidop = form.apellidop.value;
-
-			var telefono = form.telefono.value;
-			var email = form.correo.value;
-			var nombre = form.name.value;
-			var password = form.pass.value;
-
-			//paso 2
-
-			var rut = form.rut.value;
-			var aux = $('#carreras').select2('data');
-			var auxString = "";
-			for(var i = 0;i< aux.length;i++){
-				auxString = auxString+aux[i].text;
-				if((i+1)!=aux.length){
-					auxString = auxString+"¿";
-				}
-			}
-			var carreras=auxString;
-		}else if(tipo=="profesional"){
-			var apellidom = form.apellidom.value;
-			var apellidop = form.apellidop.value;
-
-			var telefono = form.telefono.value;
-			var email = form.correo.value;
-			var nombre = form.name.value;
-			var password = form.pass.value;
-			
-			//paso 2
-			var rut = form.rutP.value;
-
-			var aux = $('#titulosP').select2('data');
-			var auxString = "";
-			for(var i = 0;i< aux.length;i++){
-				auxString = auxString+aux[i].text;
-				if((i+1)!=aux.length){
-					auxString = auxString+"¿";
-				}
-			}
-			var titulos = auxString;
-			aux = $('#nvestudiosP').select2('data');
-			auxString = "";
-			for(var i = 0;i< aux.length;i++){
-				auxString = auxString+aux[i].text;
-				if((i+1)!=aux.length){
-					auxString = auxString+"¿";
-				}
-			}
-			var nvestudios = auxString;
-		}else if(tipo=="prestador"){
-			var apellidom = form.apellidom.value;
-			var apellidop = form.apellidop.value;
-
-			var telefono = form.telefono.value;
-			var email = form.correo.value;
-			var nombre = form.name.value;
-			var password = form.pass.value;
-			
-			//paso 2
-
-			var rut = form.rutPre.value;
-			var aux = $('#titulosPre').select2('data');
-			var auxString = "";
-			for(var i = 0;i< aux.length;i++){
-				auxString = auxString+aux[i].text;
-				if((i+1)!=aux.length){
-					auxString = auxString+"¿";
-				}
-			}
-			var titulos = auxString;
-			aux = $('#nvestudiosPre').select2('data');
-			auxString = "";
-			for(var i = 0;i< aux.length;i++){
-				auxString = auxString+aux[i].text;
-				if((i+1)!=aux.length){
-					auxString = auxString+"¿";
-				}
-			}
-			var nvestudios = auxString;
-		}
-		email = email.toLowerCase();
-		email = email.trim();
-		var flag = true;
-		var flagOtro = false;
-		var activada = false;
-		if(otro =="block"){
-			flagOtro = true;
-			var otros = $('.js-otro-tokenizer').select2('data');
-			var otrosString = "";
-			for(var i = 0;i< otros.length;i++){
-				otrosString = otrosString+otros[i].text;
-				if((i+1)!=otros.length){
-					otrosString = otrosString+"¿";
-				}
-			}
-
-			if(otrosString ==""){
-				//alert("Ingrese al menos un campo en otros"); 
-				flag = false;
-			}else{
-				area=otrosString;
-			}
-		}
-		if(tipo !="empresa" && (telefono =="" || area =="" || nombre =="" ||  apellidom =="" ||  apellidop =="" )){
-			//alert("Ingrese todos los campos"); 
-			flag = false;
-		}
-		if(tipo =="empresa" && (telefono =="" || area =="" || nombre =="")){
-			//alert("Ingrese todos los campos"); 
-			flag = false;
-		}
-		//formateador de datos (?)
-		//dato, en publico, en privado, editable por el usuario
-		if(flag){
-			if(!conGmail){	
-				if(email =="" || pass ==""){
-					alert("Indique su correo y clave"); 
-				}else{
-					firebase.auth().createUserWithEmailAndPassword(email, password).then(function(result) {
-					//guardar en BD
-						var user = firebase.auth().currentUser;
-						var userID = user.uid;
-						if(tipo =="empresa"){
-							db.collection('users').doc(userID).set({
-								userID: userID,
-								telefono : {dato: telefono, publico: false, privado: true, editable: true},
-								email : {dato: email, publico: true, privado: true, editable: true},
-								nombre : {dato: nombre, publico: true, privado: true, editable: false},
-								tipo : {dato: tipo, publico: false, privado: false, editable: false},
-								area : {dato: area, publico: false, privado: true, editable: true},
-								activada:activada,
-								nivel:0,
-								rut : {dato: rut, publico: false, privado: true, editable: false},
-								nameRepE : {dato: nameRepE, publico: false, privado: true, editable: true},
-								lastnameRepE : {dato: lastnameRepE, publico: false, privado: true, editable: true},
-								rutrepE : {dato: rutrepE, publico: false, privado: true, editable: true},
-								giroE : {dato: giroE, publico: false, privado: true, editable: true},
-								areaserviciosE : {dato: areaserviciosE, publico: false, privado: true, editable: true},
-								servicios : {dato: serviciosRadio, publico: false, privado: true, editable: true}
-							}).then(function(docRef) {
-								console.log("registro exitoso");
-								uploadFile(userID); 
-							})
-						}
-						if(tipo=="estudiante"){
-							console.log("Estudiantisimo!!");
-							console.log(rut);
-							console.log(carreras);
-							console.log("tel: "+telefono);
-							console.log("apeM: "+apellidom);
-							console.log("apeP: "+apellidop);
-							console.log("email: "+email);
-							console.log("nombre: "+nombre);
-							console.log("area: "+area);
-							db.collection('users').doc(userID).set({
-								userID: userID,
-								telefono : {dato: telefono, publico: false, privado: true, editable: true},
-								email : {dato: email, publico: true, privado: true, editable: true},
-								nombre : {dato: nombre, publico: true, privado: true, editable: false},
-								tipo : {dato: tipo, publico: false, privado: false, editable: false},
-								area : {dato: area, publico: false, privado: true, editable: true},
-								apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
-								apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
-								activada:activada,
-								nivel:0,
-								rut : 		{dato: rut, publico: false, privado: false, editable: false},
-								carreras : 	{dato: carreras, publico: true, privado: true, editable: false}
-							}).then(function(docRef) {
-								console.log("registro exitoso");
-								uploadFile(userID); 
-							})
-						}else{
-							db.collection('users').doc(userID).set({
-								userID: userID,
-								telefono : {dato: telefono, publico: false, privado: true, editable: true},
-								email : {dato: email, publico: true, privado: true, editable: true},
-								nombre : {dato: nombre, publico: true, privado: true, editable: false},
-								tipo : {dato: tipo, publico: false, privado: false, editable: false},
-								area : {dato: area, publico: false, privado: true, editable: true},
-								apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
-								apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
-								activada:activada,
-								nivel:0,
-								rut : {dato: rut, publico: false, privado: false, editable: false},
-								titulos : {dato: titulos, publico: true, privado: true, editable: false},
-								nvestudios : {dato: nvestudios, publico: true, privado: true, editable: false}
-							}).then(function(docRef) {
-								console.log("registro exitoso");
-								uploadFile(userID); 
-							})			
-						}
-					
-					}).catch(function(error) {
-					// Handle Errors here.
-					var errorMessage = error.message;
-					//console.log(errorMessage);
-					if(errorMessage=="Password should be at least 6 characters"){
-						alert("Clave demasiado débil"); 
-					}
-					if(errorMessage=="The email address is already in use by another account."){
-						alert("El correo ya está siendo utilizado por otra cuenta."); 
-					}
-					// ...
-					});
-				}
-			}else{
-				//registro con GMAIL
-				//guardar en BD
-				var user = firebase.auth().currentUser;
-				var userID = user.uid;
-				if(tipo =="empresa"){
-					db.collection('users').doc(userID).set({
-						userID: userID,
-						telefono : {dato: telefono, publico: false, privado: true, editable: true},
-						email : {dato: email, publico: true, privado: true, editable: true},
-						nombre : {dato: nombre, publico: true, privado: true, editable: false},
-						tipo : {dato: tipo, publico: false, privado: false, editable: false},
-						area : {dato: area, publico: false, privado: true, editable: true},
-						activada:activada,
-						nivel:0,
-						rut : {dato: rut, publico: false, privado: true, editable: false},
-						nameRepE : {dato: nameRepE, publico: false, privado: true, editable: true},
-						lastnameRepE : {dato: lastnameRepE, publico: false, privado: true, editable: true},
-						rutrepE : {dato: rutrepE, publico: false, privado: true, editable: true},
-						giroE : {dato: giroE, publico: false, privado: true, editable: true},
-						areaserviciosE : {dato: areaserviciosE, publico: false, privado: true, editable: true},
-						serviciosRadio : {dato: serviciosRadio, publico: false, privado: true, editable: true}
-					}).then(function(docRef) {
-						console.log("registro exitoso");
-						uploadFile(userID); 
-					})
-				}else if(tipo=="estudiante"){
-					db.collection('users').doc(userID).set({
-						userID: userID,
-						telefono : {dato: telefono, publico: false, privado: true, editable: true},
-						email : {dato: email, publico: true, privado: true, editable: true},
-						nombre : {dato: nombre, publico: true, privado: true, editable: false},
-						tipo : {dato: tipo, publico: false, privado: false, editable: false},
-						area : {dato: area, publico: false, privado: true, editable: true},
-						apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
-						apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
-						activada:activada,
-						nivel:0,
-						rut : {dato: rut, publico: false, privado: false, editable: false},
-						carreras : {dato: carreras, publico: true, privado: true, editable: false}
-					}).then(function(docRef) {
-						console.log("registro exitoso");
-						uploadFile(userID); 
-					})
-				}else{
-					db.collection('users').doc(userID).set({
-						userID: userID,
-						telefono : {dato: telefono, publico: false, privado: true, editable: true},
-						email : {dato: email, publico: true, privado: true, editable: true},
-						nombre : {dato: nombre, publico: true, privado: true, editable: false},
-						tipo : {dato: tipo, publico: false, privado: false, editable: false},
-						area : {dato: area, publico: false, privado: true, editable: true},
-						apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
-						apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
-						activada:activada,
-						nivel:0,
-						rut : {dato: rut, publico: false, privado: false, editable: false},
-						titulos : {dato: titulos, publico: true, privado: true, editable: false},
-						nvestudios : {dato: nvestudios, publico: true, privado: true, editable: false}
-					}).then(function(docRef) {
-						console.log("registro exitoso");
-						uploadFile(userID); 
-					})			
-				}
+		if(validFile){
+			if(tipo=="empresa"){
+				var telefono = form.telefonoE.value;
+				var email = form.correoE.value;
+				var nombre = form.nameE.value;
+				var password = form.passE.value;
 				
+				//paso 2
+				var rut = form.rutE.value;
+				var nameRepE = form.nameRepE.value;
+				var lastnameRepE = form.lastnameRepE.value;
+				var rutrepE = form.rutrepE.value;
+
+				var aux = $('#giroE').select2('data');
+				var auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var giroE = auxString;
+				aux = $('#areaserviciosE').select2('data');
+				auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var areaserviciosE = auxString;
+
+				var serviciosRadio = form.serviciosRadio.value;
+			}else if(tipo=="estudiante"){
+				var apellidom = form.apellidom.value;
+				var apellidop = form.apellidop.value;
+
+				var telefono = form.telefono.value;
+				var email = form.correo.value;
+				var nombre = form.name.value;
+				var password = form.pass.value;
+
+				//paso 2
+
+				var rut = form.rut.value;
+				var aux = $('#carreras').select2('data');
+				var auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var carreras=auxString;
+			}else if(tipo=="profesional"){
+				var apellidom = form.apellidom.value;
+				var apellidop = form.apellidop.value;
+
+				var telefono = form.telefono.value;
+				var email = form.correo.value;
+				var nombre = form.name.value;
+				var password = form.pass.value;
+				
+				//paso 2
+				var rut = form.rutP.value;
+
+				var aux = $('#titulosP').select2('data');
+				var auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var titulos = auxString;
+				aux = $('#nvestudiosP').select2('data');
+				auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var nvestudios = auxString;
+			}else if(tipo=="prestador"){
+				var apellidom = form.apellidom.value;
+				var apellidop = form.apellidop.value;
+
+				var telefono = form.telefono.value;
+				var email = form.correo.value;
+				var nombre = form.name.value;
+				var password = form.pass.value;
+				
+				//paso 2
+
+				var rut = form.rutPre.value;
+				var aux = $('#titulosPre').select2('data');
+				var auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var titulos = auxString;
+				aux = $('#nvestudiosPre').select2('data');
+				auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var nvestudios = auxString;
 			}
+			email = email.toLowerCase();
+			email = email.trim();
+			var flag = true;
+			var flagOtro = false;
+			var activada = false;
+			if(otro =="inline"){
+				flagOtro = true;
+				var otros = $('.js-otro-tokenizer').select2('data');
+				var otrosString = "";
+				for(var i = 0;i< otros.length;i++){
+					otrosString = otrosString+otros[i].text;
+					if((i+1)!=otros.length){
+						otrosString = otrosString+"¿";
+					}
+				}
+
+				if(otrosString ==""){
+					//alert("Ingrese al menos un campo en otros"); 
+					flag = false;
+				}else{
+					area=otrosString;
+				}
+			}
+			if(tipo !="empresa" && (telefono =="" || area =="" || nombre =="" ||  apellidom =="" ||  apellidop =="" )){
+				//alert("Ingrese todos los campos"); 
+				flag = false;
+			}
+			if(tipo =="empresa" && (telefono =="" || area =="" || nombre =="")){
+				//alert("Ingrese todos los campos"); 
+				flag = false;
+			}
+			//formateador de datos (?)
+			//dato, en publico, en privado, editable por el usuario
+			if(flag){
+				if(!conGmail){	
+					if(email =="" || pass ==""){
+						alert("Indique su correo y clave"); 
+					}else{
+						firebase.auth().createUserWithEmailAndPassword(email, password).then(function(result) {
+						//guardar en BD
+							var user = firebase.auth().currentUser;
+							var userID = user.uid;
+							if(tipo =="empresa"){
+								db.collection('users').doc(userID).set({
+									userID: userID,
+									telefono : {dato: telefono, publico: false, privado: true, editable: true},
+									email : {dato: email, publico: true, privado: true, editable: true},
+									nombre : {dato: nombre, publico: true, privado: true, editable: false},
+									tipo : {dato: tipo, publico: false, privado: false, editable: false},
+									area : {dato: area, publico: false, privado: true, editable: true},
+									activada:activada,
+									nivel:0,
+									rut : {dato: rut, publico: false, privado: true, editable: false},
+									nameRepE : {dato: nameRepE, publico: false, privado: true, editable: true},
+									lastnameRepE : {dato: lastnameRepE, publico: false, privado: true, editable: true},
+									rutrepE : {dato: rutrepE, publico: false, privado: true, editable: true},
+									giroE : {dato: giroE, publico: false, privado: true, editable: true},
+									areaserviciosE : {dato: areaserviciosE, publico: false, privado: true, editable: true},
+									servicios : {dato: serviciosRadio, publico: false, privado: true, editable: true}
+								}).then(function(docRef) {
+									console.log("registro exitoso");
+									uploadFile(userID); 
+								})
+							}
+							if(tipo=="estudiante"){
+								db.collection('users').doc(userID).set({
+									userID: userID,
+									telefono : {dato: telefono, publico: false, privado: true, editable: true},
+									email : {dato: email, publico: true, privado: true, editable: true},
+									nombre : {dato: nombre, publico: true, privado: true, editable: false},
+									tipo : {dato: tipo, publico: false, privado: false, editable: false},
+									area : {dato: area, publico: false, privado: true, editable: true},
+									apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
+									apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
+									activada:activada,
+									nivel:0,
+									rut : 		{dato: rut, publico: false, privado: false, editable: false},
+									carreras : 	{dato: carreras, publico: true, privado: true, editable: false}
+								}).then(function(docRef) {
+									console.log("registro exitoso");
+									uploadFile(userID); 
+								})
+							}else{
+								db.collection('users').doc(userID).set({
+									userID: userID,
+									telefono : {dato: telefono, publico: false, privado: true, editable: true},
+									email : {dato: email, publico: true, privado: true, editable: true},
+									nombre : {dato: nombre, publico: true, privado: true, editable: false},
+									tipo : {dato: tipo, publico: false, privado: false, editable: false},
+									area : {dato: area, publico: false, privado: true, editable: true},
+									apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
+									apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
+									activada:activada,
+									nivel:0,
+									rut : {dato: rut, publico: false, privado: false, editable: false},
+									titulos : {dato: titulos, publico: true, privado: true, editable: false},
+									nvestudios : {dato: nvestudios, publico: true, privado: true, editable: false}
+								}).then(function(docRef) {
+									console.log("registro exitoso");
+									uploadFile(userID); 
+								})			
+							}
+						
+						}).catch(function(error) {
+						// Handle Errors here.
+						var errorMessage = error.message;
+						//console.log(errorMessage);
+						if(errorMessage=="Password should be at least 6 characters"){
+							alert("Clave demasiado débil"); 
+						}
+						if(errorMessage=="The email address is already in use by another account."){
+							alert("El correo ya está siendo utilizado por otra cuenta."); 
+						}
+						// ...
+						});
+					}
+				}else{
+					//registro con GMAIL
+					//guardar en BD
+					var user = firebase.auth().currentUser;
+					var userID = user.uid;
+					if(tipo =="empresa"){
+						email = user.email;
+						db.collection('users').doc(userID).set({
+							userID: userID,
+							telefono : {dato: telefono, publico: false, privado: true, editable: true},
+							email : {dato: email, publico: true, privado: true, editable: true},
+							nombre : {dato: nombre, publico: true, privado: true, editable: false},
+							tipo : {dato: tipo, publico: false, privado: false, editable: false},
+							area : {dato: area, publico: false, privado: true, editable: true},
+							activada:activada,
+							nivel:0,
+							rut : {dato: rut, publico: false, privado: true, editable: false},
+							nameRepE : {dato: nameRepE, publico: false, privado: true, editable: true},
+							lastnameRepE : {dato: lastnameRepE, publico: false, privado: true, editable: true},
+							rutrepE : {dato: rutrepE, publico: false, privado: true, editable: true},
+							giroE : {dato: giroE, publico: false, privado: true, editable: true},
+							areaserviciosE : {dato: areaserviciosE, publico: false, privado: true, editable: true},
+							serviciosRadio : {dato: serviciosRadio, publico: false, privado: true, editable: true}
+						}).then(function(docRef) {
+							console.log("registro exitoso");
+							uploadFile(userID); 
+						})
+					}else if(tipo=="estudiante"){
+						db.collection('users').doc(userID).set({
+							userID: userID,
+							telefono : {dato: telefono, publico: false, privado: true, editable: true},
+							email : {dato: email, publico: true, privado: true, editable: true},
+							nombre : {dato: nombre, publico: true, privado: true, editable: false},
+							tipo : {dato: tipo, publico: false, privado: false, editable: false},
+							area : {dato: area, publico: false, privado: true, editable: true},
+							apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
+							apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
+							activada:activada,
+							nivel:0,
+							rut : {dato: rut, publico: false, privado: false, editable: false},
+							carreras : {dato: carreras, publico: true, privado: true, editable: false}
+						}).then(function(docRef) {
+							console.log("registro exitoso");
+							uploadFile(userID); 
+						})
+					}else{
+						db.collection('users').doc(userID).set({
+							userID: userID,
+							telefono : {dato: telefono, publico: false, privado: true, editable: true},
+							email : {dato: email, publico: true, privado: true, editable: true},
+							nombre : {dato: nombre, publico: true, privado: true, editable: false},
+							tipo : {dato: tipo, publico: false, privado: false, editable: false},
+							area : {dato: area, publico: false, privado: true, editable: true},
+							apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
+							apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
+							activada:activada,
+							nivel:0,
+							rut : {dato: rut, publico: false, privado: false, editable: false},
+							titulos : {dato: titulos, publico: true, privado: true, editable: false},
+							nvestudios : {dato: nvestudios, publico: true, privado: true, editable: false}
+						}).then(function(docRef) {
+							console.log("registro exitoso");
+							uploadFile(userID); 
+						})			
+					}
+					
+				}
+			}
+		}else{
+			//archivo invalido, borrar
+			console.log("invalid file")
 		}
-  
 	});
 	
 
@@ -1311,7 +1306,7 @@ $(document).ready(function() {
 						}else{
 							document.getElementById('editProfile').style.display = "block";
 							//si esta aqui es porque apreto el boton y TIENE CUENTA
-							//TODO redirigir a la hoja de perfil?
+							window.location.href = 'perfil.html';
 							
 						}
 					})
@@ -1325,27 +1320,71 @@ $(document).ready(function() {
 	//const txtUpload = document.getElementById('txtUpload');
 	fileButton.addEventListener('change', function(){
 		//document.getElementById('txtUpload')="Cambiar";
+		ValidateFile();
 	})
 
 
 	function uploadFile(id) {
 		var fileButton = document.getElementById("fileButton");
+		//console.log(fileButton);
 		var file = fileButton.files[0];
 		//ver caso que no hay file!!!
-		var storageRef = firebase.storage().ref('documentoregistro/'+id);
-		var task = storageRef.put(file);
-		task.on('state_changed', function progress(snapshot) {
-			//var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
-			//uploader.value = percentage;
-		}, function error(err) {
+		if(file===undefined || file===null){
+		//no hay file
+			window.location.href = 'perfil.html';
+		}else{
+			var storageRef = firebase.storage().ref('documentoregistro/'+id);
+			var task = storageRef.put(file);
+			task.on('state_changed', function progress(snapshot) {
+				//var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+				//uploader.value = percentage;
+			}, function error(err) {
 
 
-		},function complete() {
-			//redirect
-			console.log("eeeexito")
-		});
+			},function complete() {
+				//redirect
+				window.location.href = 'perfil.html';
+			});
+		}
+
 	} 
 
+   
+function ValidateFile() {
+	var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png", ".pdf"]; 
+    var fileButton = document.getElementById("fileButton");
+	var oInput = fileButton.files[0];
+	if(oInput===undefined || oInput===null ){
+		//no hay file
+
+	}else{
+		var sFileName = oInput.name;
+		if (sFileName.length > 0) {
+			var blnValid = false;
+			for (var j = 0; j < _validFileExtensions.length; j++) {
+				var sCurExtension = _validFileExtensions[j];
+				if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+					blnValid = true;
+					break;
+				}
+			}
+			
+			if (!blnValid) {
+				document.getElementById('alerterrorFormato').style.display = "block";
+				//borrar archivo
+				document.getElementById('fileButton').value= null;
+				setTimeout(function() { document.getElementById("alerterrorFormato").style.display = "none"; }, 8000);
+				validFile = true;
+				console.log("false");
+				return false;
+			}
+		}
+	}
+	
+	console.log("true");
+	validFile = true;
+    return true;
+}
 </script>
 
 	  
