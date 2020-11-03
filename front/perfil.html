@@ -76,6 +76,11 @@
 			.edit a {
 				color: black;
 			}
+			@media (min-width: 65px){
+			.modal-dialog {
+				max-width: 600px;
+				}
+			}
 		</style>
 
 		<!-- Head Libs -->
@@ -145,9 +150,6 @@
 												</ul>
 											</nav>
 										</div>
-										<button class="btn header-btn-collapse-nav text-color-light border-radius-0" data-toggle="collapse" data-target=".header-nav-main nav">
-											<i class="fas fa-bars"></i>
-										</button>
 									</div>
 								</div>
 							</div>
@@ -172,20 +174,22 @@
 								<span class="custom-text-color-1 text-uppercase" id="carreras"></span>
 								<span class="custom-text-color-1 text-uppercase mb-3" id="centro-estudios"></span>
 								<span class="custom-text-color-1 text-uppercase">
-									<strong class="text-color-light">Previous: </strong>
-									Front-End Developer at Porto
+									<strong class="text-color-light">Trabajo Previo: </strong>
+									<span id="last-job" style="display: inline;"></span>
 									<a data-hash href="#experience" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1 ml-2">View More</a>
 								</span>
+								<!--
 								<span class="custom-text-color-1 text-uppercase">
-									<strong class="text-color-light">Education: </strong>
-									Porto School
+									<strong class="text-color-light">Estudio Previo: </strong>
+									<span id="last-studycenter" style="display: inline;"></span>
 									<a data-hash href="#education" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1 ml-2">View More</a>
 								</span>
+								-->
 							</span>
 						</div>
-						<div class="col-lg-2 col-xl-3 d-none d-lg-block">
+						<div class="col-lg-2 col-xl-3 d-lg-block">
 							<div class="form-group row">
-								<div class="col-lg-6">
+								<div class="col-lg-10">
 									<span class="custom-text-color-1 text-uppercase" id="tipo_usuario">
 										<strong class="text-color-light"></strong>
 									</span>
@@ -261,57 +265,51 @@
 					<div class="row">
 						<div class="col">
 
-							<div class="custom-box-details bg-color-light custom-box-shadow-1 col-lg-6 ml-5 mb-5 mb-lg-4 float-right clearfix">
-								<h4>Personal Details</h4>
+							<div class="custom-box-details bg-color-light custom-box-shadow-1 col-lg-7 ml-6 mb-5 mb-lg-4 float-right clearfix">
+								<h4>Detalles Personales</h4>
 								<div class="row">
 									<div class="col-md-6">
 										<ul class="custom-list-style-1 p-0 mb-0">
 											<li>
-												<span class="text-color-dark">Birthday:</span>
-												<span class="custom-text-color-2">1990 October 2</span>
+												<span class="text-color-dark">Email:</span>
+												<span class="custom-text-color-2" id="email"></span>
 											</li>
 											<li>
-												<span class="text-color-dark">Marital:</span>
-												<span class="custom-text-color-2">Single</span>
+												<span class="text-color-dark">Teléfono:</span>
+												<span class="custom-text-color-2" id="phone"></span>
 											</li>
 											<li>
-												<span class="text-color-dark">Nationality:</span>
-												<span class="custom-text-color-2">American</span>
+												<span class="text-color-dark">Disponibilidad para trabajar:</span>
+												<span class="custom-text-color-2" id="disp-work"></span>
 											</li>
+											
 										</ul>
 									</div>
 									<div class="col-md-6">
 										<ul class="custom-list-style-1 p-0 mb-0">
 											<li>
-												<span class="text-color-dark">Skype:</span>
-												<span class="custom-text-color-2"><a class="custom-text-color-2" href="skype:yourskype?chat">yourskype</a></span>
+												<span class="text-color-dark">Ciudad:</span>
+												<span class="custom-text-color-2" id="ciudad"></span>
 											</li>
 											<li>
-												<span class="text-color-dark">PHONE:</span>
-												<span class="custom-text-color-2"><a class="custom-text-color-2" href="tel:123456789">123-456-789</a></span>
+												<span class="text-color-dark">Región:</span>
+												<span class="custom-text-color-2" id="region"></span>
 											</li>
 											<li>
-												<span class="text-color-dark">EMAIL:</span>
-												<span class="custom-text-color-2"><a class="custom-text-color-2" href="mailto:me@domain.com">me@domain.com</a></span>
+												<span class="text-color-dark">Disponibilidad de contratación:</span>
+												<span class="custom-text-color-2" id="disp-contratation"></span>
 											</li>
+											
 										</ul>
 									</div>
 								</div>
 							</div>
 
-							<h2 class="text-color-dark font-weight-extra-bold text-uppercase">About Me</h2>
+							<h2 class="text-color-dark font-weight-extra-bold text-uppercase">Sobre Mí</h2>
 
-							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+							<p id="aboutme"></p>
 
-							<div class="about-me-more" id="aboutMeMore">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu. Praesent aliquam velit vel libero dictum, non sollicitudin lectus mollis. Morbi sollicitudin auctor gravida. Vivamus vitae dui non lorem euismod pretium. Morbi congue sem sed ex iaculis, nec mattis felis pretium. Nullam molestie libero id odio blandit sodales. Suspendisse non mauris et felis molestie placerat aliquet a risus. Aliquam ac leo tempus, hendrerit eros mollis, gravida est.</p>
-
-								<p>Proin euismod ipsum a tellus condimentum dapibus. Integer porttitor felis elit, eget rutrum ligula commodo quis. Praesent ultricies neque eu mi congue blandit. Nulla feugiat feugiat aliquet. Morbi sed mattis erat. Nullam scelerisque molestie eros, id tristique felis iaculis non. Duis pellentesque neque eget iaculis varius. Donec at nisl semper, aliquam est id, tincidunt lacus. Donec at erat purus.</p>
-
-								<p>Morbi tincidunt nunc non diam porta, at fermentum orci bibendum. Donec arcu nisi, ornare nec commodo vitae, sollicitudin sed magna. Cras sit amet justo et nulla pulvinar laoreet. Phasellus scelerisque, metus id posuere vulputate, diam tellus iaculis sapien, eget scelerisque ipsum libero convallis velit. Duis lorem ligula, faucibus quis tellus nec, fringilla ultricies leo. Etiam tempus congue magna. Suspendisse porta dictum tortor, eu volutpat ipsum eleifend nec. Aliquam dapibus lorem luctus, cursus libero imperdiet, mattis nunc. Sed in ipsum diam. Quisque efficitur metus purus, vitae fermentum lacus venenatis id.</p>
-							</div>
-
-							<a id="aboutMeMoreBtn" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1" href="#">View More</a>
+							<!--<a id="aboutMeMoreBtn" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1" href="#">View More</a>-->
 
 						</div>
 					</div>
@@ -718,87 +716,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col">
-							<h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">My Blog</h2>
-
+							<h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">Portafolios </h2>
+							<button class="btn btn-modern btn-primary" data-toggle="modal" data-target="#form-modalNuevoPortafolio">
+								Nuevo Portafolio
+							</button><br>
 							<div class="row">
-								<div class="col-lg-6 mb-5 mb-lg-0">
-									<article class="thumb-info custom-thumb-info-2 custom-box-shadow-1 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="0" data-appear-animation-duration="1s">
-										<div class="thumb-info-wrapper">
-											<a href="#">
-												<img src="img/demos/resume/blog/blog-1.jpg" alt class="img-fluid" />
-											</a>
-										</div>
-										<div class="thumb-info-caption">
-											<div class="thumb-info-caption-text">
-												<h4 class="mb-2">
-													<a href="#" class="text-decoration-none text-color-dark font-weight-semibold">
-														Design Driven
-													</a>
-												</h4>
-												<p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapib...</p>
-											</div>
-											<hr class="solid m-0 mt-4 mb-2">
-											<div class="row justify-content-between">
-												<div class="col-auto custom-blog-post-date text-uppercase font-weight-semibold text-color-dark text-2">
-													July 12-2020
-												</div>
-												<div class="col-auto custom-blog-post-share text-uppercase font-weight-semibold text-color-dark text-2">
-													Share:
-													<ul class="mb-0">
-														<li>
-															<a class="item-facebook text-decoration-none text-uppercase" href="#" title="Share on Facebook">Facebook</a>
-														</li>
-														<li>
-															<a class="item-twitter text-decoration-none text-uppercase" href="#" title="Share on Twitter">Twitter</a>
-														</li>
-														<li>
-															<a class="item-google-plus text-decoration-none text-uppercase" href="#" title="Share on Google Plus">Google Plus</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</article>
-								</div>
-								<div class="col-lg-6">
-									<article class="thumb-info custom-thumb-info-2 custom-box-shadow-1 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="0" data-appear-animation-duration="1s">
-										<div class="thumb-info-wrapper">
-											<a href="#">
-												<img src="img/demos/resume/blog/blog-2.jpg" alt class="img-fluid" />
-											</a>
-										</div>
-										<div class="thumb-info-caption">
-											<div class="thumb-info-caption-text">
-												<h4 class="mb-2">
-													<a href="#" class="text-decoration-none text-color-dark font-weight-semibold">
-														UI, UX Concepts
-													</a>
-												</h4>
-												<p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique...</p>
-											</div>
-											<hr class="solid m-0 mt-4 mb-2">
-											<div class="row justify-content-between">
-												<div class="col-auto custom-blog-post-date text-uppercase font-weight-semibold text-color-dark text-2">
-													July 12-2020
-												</div>
-												<div class="col-auto custom-blog-post-share text-uppercase font-weight-semibold text-color-dark text-2">
-													Share:
-													<ul class="mb-0">
-														<li>
-															<a class="item-facebook text-decoration-none text-uppercase" href="#" title="Share on Facebook">Facebook</a>
-														</li>
-														<li>
-															<a class="item-twitter text-decoration-none text-uppercase" href="#" title="Share on Twitter">Twitter</a>
-														</li>
-														<li>
-															<a class="item-google-plus text-decoration-none text-uppercase" href="#" title="Share on Google Plus">Google Plus</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</article>
-								</div>
+								<div class="row" id="portafolios"></div>
+								
 							</div>
 						</div>
 						<div class="col-lg-12 col-sm-12 pt-4 mt-4 text-center">
@@ -912,7 +836,6 @@
 		</div>
 		</div>	
 
-
 		<div class="row align-items-center">
 			<div class="col-sm-3">
 
@@ -923,16 +846,8 @@
 
 			</div>
 			<div class="col-sm-9">
-
 				<button class="btn btn-modern btn-primary" data-toggle="modal" data-target="#formModal">
 					Modal Section 1
-					<!--Nombre y apellido: Obtenido desde el registro. Título del perfil
-						Foto: Solicitar carga de foto de perfil
-						*Tipo de usuario: Obtenido del registro
-						Carrera: Obtenido desde el registro
-						Áreas de especialidad:
-						Centro de formación o universidad: (campo a rellenar o descargar base para seleccionar?) 
-					-->
 				</button>
 
 				<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
@@ -943,44 +858,354 @@
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 							<div class="modal-body">
-								<form id="demo-form" class="mb-4" novalidate="novalidate">
+								<form id="form-modal1" class="mb-4" novalidate="novalidate">
 									<div class="form-group row align-items-center">
 										<label class="col-sm-3 text-left text-sm-right mb-0">Nombre</label>
 										<div class="col-sm-9">
 											<input id="nombreModal" type="text" name="name" class="form-control" value="" required/>
-											Disponible en perfil: <input type="checkbox" checked > Publico
-											<input type="checkbox" > Privado
+											<br>
+											Disponible en perfil: <input id="checknombrePu" type="checkbox" > Público
+											<input id="checknombrePr"  type="checkbox" > Privado
 										</div>
 
 									</div>
+									<hr>
 									<div class="form-group row align-items-center">
-										<label class="col-sm-3 text-left text-sm-right mb-0">Email</label>
+										<label class="col-sm-3 text-left text-sm-right mb-0">Tipo de cuenta</label>
 										<div class="col-sm-9">
-											<input type="email" name="email" class="form-control" placeholder="Type your email..." required/>
+											<input id="tipoUsuarioModal" type="text" name="tipoUsuario" class="form-control" value=""/>
+											<br>Disponible en perfil: <input id="checktipoUsuarioPu" type="checkbox" > Público
+											<input id="checktipoUsuarioPr"  type="checkbox" > Privado
 										</div>
 									</div>
+									<hr>
 									<div class="form-group row align-items-center">
-										<label class="col-sm-3 text-left text-sm-right mb-0">URL</label>
+										<label class="col-sm-3 text-left text-sm-right mb-0">Carrera</label>
 										<div class="col-sm-9">
-											<input type="url" name="url" class="form-control" placeholder="Type an URL..." />
+
+											<select class="carreras-estudiante form-control" multiple="multiple" id='carreraModal'>
+											</select>
+											<br>Disponible en perfil: <input id="checkcarreraPu" type="checkbox" > Público
+											<input id="checkcarreraPr"  type="checkbox" > Privado
 										</div>
 									</div>
-									<div class="form-group row">
-										<label class="col-sm-3 text-left text-sm-right mb-0">Comment</label>
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Áreas</label>
 										<div class="col-sm-9">
-											<textarea rows="5" class="form-control" placeholder="Type your comment..." required></textarea>
+											<select class="form-control" multiple="multiple" id='areasModal'>
+											</select>
+											<br>Disponible en perfil: <input id="checkareasPu" type="checkbox" > Público
+											<input id="checkareasPr"  type="checkbox" > Privado
 										</div>
 									</div>
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Centros de estudio</label>
+										<div class="col-sm-9">
+
+											<select class="form-control" multiple="multiple" id='centrosModal'>
+											</select>
+											Disponible en perfil: <input id="checkcentrosPu" type="checkbox" > Público
+											<input id="checkcentrosPr"  type="checkbox" > Privado
+										</div>
+									</div>
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Foto de perfil</label>
+										
+										<div class="col-sm-9 fileupload fileupload-new" data-provides="fileupload">
+											<div class="input-append">
+												<div class="uneditable-input">
+													<span class="fileupload-preview"></span>
+												</div>
+												<span class="btn btn-default btn-file">
+													<span id="txtUpload" class="fileupload-exists">Seleccionar Archivo</span>
+													<!--<span class="fileupload-new">Seleccionar Archivo</span>-->
+													<input type="file" id="fileButton" accept="image/*,application/pdf">
+
+												</span>
+												<!--<a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Eliminar</a>-->
+											</div>
+										</div>
+									</div>
+
 								</form>
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save Changes</button>
+								<button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" id="btn-guardar1">Guardar cambios</button>
 							</div>
 						</div>
 					</div>
 				</div>
-				
+			</div>
+
+			<div class="col-sm-9">
+				<button class="btn btn-modern btn-primary" data-toggle="modal" data-target="#formModal2">
+					Modal Section 2
+				</button>
+
+				<div class="modal fade" id="formModal2" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="formModalLabel">Datos Extras</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							</div>
+							<div class="modal-body">
+								<form id="form-modal2" class="mb-4" novalidate="novalidate">
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0" for="emailModal">Email</label>
+										<div class="col-sm-9">
+											<input id="emailModal" type="email" name="name" class="form-control" value="" required/>
+											<br>
+											Disponible en perfil: <input id="checkemailPu" type="checkbox" > Público
+											<input id="checkemailPr"  type="checkbox" > Privado
+										</div>
+									</div>
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0" for="telModal">Teléfono</label>
+										<div class="col-sm-9">
+											<input id="telModal" type="text" name="telModal" class="form-control" value="" required/>
+											<br>
+											Disponible en perfil: <input id="checktelPu" type="checkbox" > Público
+											<input id="checktelPr"  type="checkbox" > Privado
+										</div>
+									</div>
+									<hr>
+									<div class="form-group row">
+										<label class="col-lg-3 control-label text-lg-right pt-2">Disponibilidad de horario*:</label>
+										<div class="col-lg-9"  id ="dispHor">
+											<div class="radio">
+												<label>
+													<input type="radio" name="disponibilidad-horario" id="horarioRadio1" value="Full time" checked>
+													Full time
+												</label>
+											</div>
+											<div class="radio">
+												<label>
+													<input type="radio" name="disponibilidad-horario" id="horarioRadio2" value="Part time">
+													Part time
+												</label>
+											</div>
+											<div class="radio">
+												<label>
+													<input type="radio" name="disponibilidad-horario" id="horarioRadio3" value="Eventual">
+													Eventual
+												</label>
+											</div>
+											<br>
+											Disponible en perfil: <input id="checkdishPu" type="checkbox" > Público
+											<input id="checkdishPr"  type="checkbox" > Privado
+										</div>
+									</div>
+									<hr>
+									<div class="form-group row">
+										<label class="col-lg-3 control-label text-lg-right pt-2">Disponibilidad de Contratación*:</label>
+										<div class="col-lg-9"  id ="dispCon">
+											<div class="radio">
+												<label>
+													<input type="radio" name="disponibilidad-contratacion" id="contratacionRadio1" value="Indefinida" checked>
+													Indefinida
+												</label>
+											</div>
+											<div class="radio">
+												<label>
+													<input type="radio" name="disponibilidad-contratacion" id="contratacionRadio2" value="Temporal">
+													Temporal
+												</label>
+											</div>
+											<div class="radio">
+												<label>
+													<input type="radio" name="disponibilidad-contratacion" id="contratacionRadio3" value="Por obra o servicio">
+													Por obra o servicio
+												</label>
+											</div>
+											<div class="radio">
+												<label>
+													<input type="radio" name="disponibilidad-contratacion" id="contratacionRadio4" value="Eventual">
+													Eventual
+												</label>
+											</div>
+											<div class="radio">
+												<label>
+													<input type="radio" name="disponibilidad-contratacion" id="contratacionRadio5" value="De formación y aprendizaje">
+													De formación y aprendizaje
+												</label>
+											</div>
+											<div class="radio">
+												<label>
+													<input type="radio" name="disponibilidad-contratacion" id="contratacionRadio6" value="Práctica laboral">
+													Práctica laboral
+												</label>
+											</div>
+											<br>
+										Disponible en perfil: <input id="checkdiscPu" type="checkbox" > Público
+										<input id="checkdiscPr"  type="checkbox" > Privado
+										</div>
+									</div>
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0" for="ciudadModal">Ciudad</label>
+										<div class="col-sm-9">
+											<input id="ciudadModal" type="text" name="ciudad" class="form-control" value="" required/>
+											<br>
+											Disponible en perfil: <input id="checkciudadPu" type="checkbox" > Público
+											<input id="checkciudadPr"  type="checkbox" > Privado
+										</div>
+									</div>
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0" for="regionModal">Región</label>
+										<div class="col-sm-9">
+											<input id="regionModal" type="text" name="region" class="form-control" value="" required/>
+											<br>
+											Disponible en perfil: <input id="checkregionPu" type="checkbox" > Público
+											<input id="checkregionPr"  type="checkbox" > Privado
+										</div>
+									</div>
+									<hr>
+									<div class="form-group row">
+										<label class="col-lg-3 control-label text-lg-right pt-2" for="aboutmemodal">Textarea</label>
+										<div class="col-lg-8">
+											<textarea class="form-control" id="aboutmemodal" rows="3" data-plugin-maxlength="" maxlength="500" style="margin-top: 0px; margin-bottom: 0px; height: 135px;"></textarea>
+											<p>
+												Cantidad máxima de Carácteres: <span style="display: inline;" id= "left-chars">500</span>
+											</p>
+											<br>
+											Disponible en perfil: <input id="checkaboutPu" type="checkbox" > Público
+											<input id="checkaboutPr"  type="checkbox" > Privado
+										</div>
+										
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" id="btn-guardar2">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="col-sm-9">
+
+
+				<div class="modal fade" id="form-modalNuevoPortafolio" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="formModalLabel">Datos Portafolio</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							</div>
+							<div class="modal-body">
+								<form id="form-modalNP" class="mb-4" novalidate="novalidate">
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Título</label>
+										<div class="col-sm-9">
+											<input id="tituloNuevoPortafolioModal" type="text" name="titulo" class="form-control" value="" required/>
+										</div>
+
+									</div>
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Enlace</label>
+										<div class="col-sm-9">
+											<input id="enlaceNuevoPortafolioModal" type="text" name="enlace" class="form-control" value=""/>
+
+										</div>
+									</div>
+
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Descripción</label>
+										<div class="col-sm-9">
+											<textarea id="descripcionNuevoPortafolioModal" rows="5" class="form-control"></textarea>
+
+										</div>
+									</div>
+
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Disponible en perfil: </label>
+										<div class="col-sm-9">
+											</select>
+											<br> <input id="checkNuevoPortafolioPu" type="checkbox" > Público
+											<input id="checkNuevoPortafolioPr"  type="checkbox" > Privado
+										</div>
+									</div>
+
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" id="btn-nuevoPortfolio">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-9">
+
+
+				<div class="modal fade" id="form-modalEditPortafolio" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="formModalLabel">Datos Portafolio</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							</div>
+							<div class="modal-body">
+								<form id="form-modalNPEdit" class="mb-4" novalidate="novalidate">
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Título</label>
+										<div class="col-sm-9">
+											<input id="idEditPortafolioModal" value="" type="hidden"/>
+											<input id="tituloEditPortafolioModal" type="text" name="titulo" class="form-control" value="" required/>
+										</div>
+
+									</div>
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Enlace</label>
+										<div class="col-sm-9">
+											<input id="enlaceEditPortafolioModal" type="text" name="enlace" class="form-control" value=""/>
+
+										</div>
+									</div>
+
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Descripción</label>
+										<div class="col-sm-9">
+											<textarea id="descripcionEditPortafolioModal" rows="5" class="form-control" value=""></textarea>
+
+										</div>
+									</div>
+
+									<hr>
+									<div class="form-group row align-items-center">
+										<label class="col-sm-3 text-left text-sm-right mb-0">Disponible en perfil: </label>
+										<div class="col-sm-9">
+											</select>
+											<br> <input id="checkEditPortafolioPu" type="checkbox" > Público
+											<input id="checkEditPortafolioPr"  type="checkbox" > Privado
+										</div>
+									</div>
+
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" id="btn-EditPortfolio">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -1042,12 +1267,17 @@
 
 
 	</body>
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+
 	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
 	<script>
+		
 		// Initialize Firebase
 		var config = {
 				apiKey: "AIzaSyBdAIe1K0LqZ7Vwm0g1uK2G-dB_fd6ClPo",
@@ -1095,21 +1325,118 @@
 						}else{
 							usuario = doc.data();
 							//console.log(usuario);
-							
+							getPortafolios();
 							var tipo_user = usuario.tipo.dato;
-							var universidad;
-							if(usuario.universidad===undefined){
-								universidad = "CAMPO INCOMPLETO";
-							}else{
-								universidad = toString(usuario.universidad.dato,"¿");
-							}
 							$("#tipo_usuario").text("Perfil " + tipo_user + ":");
 							if(tipo_user != "empresa"){
-								
-								$("#name_user").text(usuario.nombre.dato+" "+usuario.apellidop.dato+" "+usuario.apellidom.dato);
-								$("#area_interes").text("Areas: "+ toString(usuario.area.dato,"¿"));
-								$("#carreras").text("Carrera: "+ toString(usuario.carreras.dato,"¿"));
-								$("#centro-estudios").text("Casa de Estudio: "+ universidad);
+								var nombre = isDefined(usuario.nombre, "input", "");
+								var apep = isDefined(usuario.apellidop, "input", "");
+								var apem = isDefined(usuario.apellidom, "input", "");
+
+								$("#name_user").text(nombre+" "+apep+" "+apem);
+								$("#area_interes").text("Areas: "+ isDefined(usuario.area, "tostring", "¿"));
+								$("#carreras").text("Carrera/s: "+ isDefined(usuario.carreras, "tostring", "¿"));
+								$("#centro-estudios").text("Casa de Estudio/s: "+ isDefined(usuario.centrosEstudio, "tostring", "¿"));
+
+								$("#last-job").text(isDefined(usuario.jobs, "input", "")); // POSIBLENTE CAMBIE
+								//$("#last-studycenter").text(isDefined(usuario.universidad, "input", "")); // POSIBLENTE CAMBIE
+								$("#email").text(isDefined(usuario.email, "input", ""));
+								$("#phone").text(isDefined(usuario.telefono, "input", ""));
+								$("#region").text(isDefined(usuario.region, "input", ""));
+								$("#ciudad").text(isDefined(usuario.ciudad, "input", ""));
+								$("#disp-work").text(isDefined(usuario.disptrabajar, "input", ""));
+								$("#disp-contratation").text(isDefined(usuario.dispcontratacion, "input", ""));
+								$("#aboutme").text(isDefined(usuario.aboutme, "input", ""))
+
+								//MODAL 1
+								if(inputModal(usuario.nombre,'nombreModal','checknombrePr','checknombrePu')){
+									document.getElementById('nombreModal').value = usuario.nombre.dato+" "+usuario.apellidop.dato+" "+usuario.apellidom.dato;
+								}
+
+								if(inputModal(usuario.tipo,'tipoUsuarioModal','checktipoUsuarioPr','checktipoUsuarioPu')){
+									document.getElementById('tipoUsuarioModal').value = usuario.tipo.dato;
+								}
+								if(inputModal(usuario.carreras,'carreraModal','checkcarreraPr','checkcarreraPu')){
+									$("#carreraModal").select2("destroy");
+									var options = isDefined(usuario.carreras, "select2", "¿");
+									for(var i= 0; i<options.length; i++){
+										$("#carreraModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+									}
+									$("#carreraModal").select2({
+										tags: true,
+										allowClear: true,
+										tokenSeparators: [','],
+										maximumSelectionLength: 5,
+										placeholder: 'Carreras.'
+									});
+								}
+								if(inputModal(usuario.area,'areasModal','checkareasPr','checkareasPu')){
+									$("#areasModal").select2("destroy");
+									var options = isDefined(usuario.area, "select2", "¿");
+									for(var i= 0; i<options.length; i++){
+										$("#areasModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+									}
+									$("#areasModal").select2({
+										tags: true,
+										allowClear: true,
+										tokenSeparators: [','],
+										maximumSelectionLength: 15,
+										placeholder: 'Áreas.'
+									});
+								}
+
+								if(inputModal(usuario.centrosEstudio,'centrosModal','checkcentrosPr','checkcentrosPu')){
+									$("#centrosModal").select2("destroy");
+									var options = isDefined(usuario.centrosEstudio, "select2", "¿");
+									for(var i= 0; i<options.length; i++){
+										$("#centrosModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+									}
+									$("#centrosModal").select2({
+										tags: true,
+										allowClear: true,
+										tokenSeparators: [','],
+										maximumSelectionLength: 15,
+										placeholder: 'Centros de estudio.'
+									});
+								}
+
+								//MODAL 2
+								if(inputModal(usuario.email,'emailModal','checkemailPr','checkemailPu')){
+									document.getElementById('emailModal').value = usuario.email.dato;
+								}
+								if(inputModal(usuario.telefono,'telModal','checktelPr','checktelPu')){
+									document.getElementById('telModal').value = usuario.telefono.dato;
+								}
+								if(inputModal(usuario.disptrabajar,'dispHor','checkdishPr','checkdishPu')){
+									//var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
+									var inputs = $("input[name=disponibilidad-horario]");
+									for(var i=0;i<inputs.length;i++){
+										if(inputs[i].value == usuario.disptrabajar.dato)
+											inputs[i].checked = true;
+									}
+								}
+								if(inputModal(usuario.dispcontratacion,'dispCon','checkdiscPr','checkdiscPu')){
+									//var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
+									var inputs = $("input[name=disponibilidad-contratacion]");
+									for(var i=0;i<inputs.length;i++){
+										if(inputs[i].value == usuario.dispcontratacion.dato)
+											inputs[i].checked = true;
+									}
+								}
+								if(inputModal(usuario.ciudad,'ciudadModal','checkciudadPr','checkciudadPu')){
+									document.getElementById('ciudadModal').value = usuario.ciudad.dato;
+								}
+								if(inputModal(usuario.region,'regionModal','checkregionPr','checkregionPu')){
+									document.getElementById('regionModal').value = usuario.region.dato;
+								}
+								if(inputModal(usuario.aboutme,'aboutmemodal','checkaboutPr','checkaboutPu')){
+									document.getElementById('aboutmemodal').value = usuario.aboutme.dato;
+								}
+							}else{
+								//empresa
+								if(inputModal(usuario.nombre,'nombreModal','checknombrePr','checknombrePu')){
+									document.getElementById('nombreModal').value = usuario.nombre.dato;
+								}
 							}							
 							document.getElementById('editProfile').style.display = "block";
 							//si esta aqui es porque esta inciado todo naissu
@@ -1120,14 +1447,9 @@
 								document.getElementById("photoPerfil").src=photo;
 							}
 
-
-							var nombreEditable = usuario.nombre.editable;
-							if(nombreEditable){
-								document.getElementById('nombreModal').value = usuario.nombre.dato;
-							}else{
-								
-							}
-							
+							/*Foto: Solicitar carga de foto de perfil
+							Centro de formación o universidad: (campo a rellenar o descargar base para seleccionar?) 
+							*/
 						}
 					})
 				}
@@ -1151,11 +1473,368 @@
 		return str_aux;
 	}
 
-	
+	function isDefined(string, tipo, sep){
+		var aux_str;
+		if(string===undefined){
+			var aux_str = "CAMPO INCOMPLETO";
+		}else{
+			if(tipo == "input"){
+				aux_str = string.dato;
+			}else if(tipo == "tostring"){
+				aux_str = toString(string.dato, sep);
+			}else if("select2"){
+				aux_str = string.dato.split(sep);
+			}
+		}
+		return aux_str
+	}
+
+
+	function inputModal(dato,campoinput,campopriv,campopublic){
+		if(dato===undefined){
+			//no posee el dato
+		}else{
+			//!dato.editable
+			document.getElementById(campoinput).disabled = !dato.editable;
+			document.getElementById(campopublic).disabled = !dato.editable;
+			document.getElementById(campopriv).disabled = !dato.editable;
+			
+			document.getElementById(campopublic).checked = dato.publico;
+			document.getElementById(campopriv).checked = dato.privado;
+			return true;
+		}
+	}
+
+
+
+	$("#carreraModal").select2({
+		tags: true,
+		allowClear: true,
+		tokenSeparators: [','],
+		maximumSelectionLength: 5,
+		placeholder: 'Carreras.'
+	});
+
+	$("#areasModal").select2({
+		tags: true,
+		allowClear: true,
+		tokenSeparators: [','],
+		maximumSelectionLength: 15,
+		placeholder: 'Áreas.'
+	});
+
+	$("#centrosModal").select2({
+		tags: true,
+		allowClear: true,
+		tokenSeparators: [','],
+		maximumSelectionLength: 15,
+		placeholder: 'Centros de estudio.'
+	});
+
+	function uploadFile() {
+		var fileButton = document.getElementById("fileButton");
+		//console.log(fileButton);
+		var file = fileButton.files[0];
+		//ver caso que no hay file!!!
+		if(file===undefined || file===null){
+		//no hay file nuevo, no hace nada
+			location.reload();
+		}else{
+			var user = firebase.auth().currentUser;
+			var storageRef = firebase.storage().ref('fotosperfil/'+user.uid);
+			var task = storageRef.put(file);
+			task.on('state_changed', function progress(snapshot) {
+				//var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+				//uploader.value = percentage;
+			}, function error(err) {
+
+
+			},function complete() {
+				//redirect
+				var user = firebase.auth().currentUser;
+				storageRef = firebase.storage().ref();
+				storageRef.child('fotosperfil/'+user.uid).getDownloadURL().then(function(url) {
+					user.updateProfile({
+					photoURL: url
+					}).then(function() {
+						location.reload();
+					}).catch(function(error) {
+					// An error happened.
+					});
+					
+				})
+
+			});
+		}
+
+	} 
+
+	$("#aboutmemodal").on('input', function() {	
+		var delta = $("#aboutmemodal").attr("maxlength") - $(this).val().length
+		$("#left-chars").text(delta);
+	});
+
+
+	$("#btn-guardar1").click(function() {	
+		var form = document.getElementById("form-modal1");
+		var aux = $('#carreraModal').select2('data');
+		var auxString = "";
+		for(var i = 0;i< aux.length;i++){
+			auxString = auxString+aux[i].text;
+			if((i+1)!=aux.length){
+				auxString = auxString+"¿";
+			}
+		}
+		var carreras=auxString;
+
+		aux = $('#areasModal').select2('data');
+		auxString = "";
+		for(var i = 0;i< aux.length;i++){
+			auxString = auxString+aux[i].text;
+			if((i+1)!=aux.length){
+				auxString = auxString+"¿";
+			}
+		}
+		var area=auxString;
+
+		aux = $('#centrosModal').select2('data');
+		auxString = ""; 
+		for(var i = 0;i< aux.length;i++){
+			auxString = auxString+aux[i].text;
+			if((i+1)!=aux.length){
+				auxString = auxString+"¿";
+			}
+		}
+		var centrosEstudio=auxString;
+
+		var tipo = form.tipoUsuarioModal.value;
+		var user = firebase.auth().currentUser;
+		var updateUser = db.collection("users").doc(user.uid);
+        updateUser.update({
+			tipo : 				{dato: tipo, 			publico: form.checktipoUsuarioPu.checked, 	privado: form.checktipoUsuarioPr.checked, 		editable: usuario.tipo.editable},
+			area : 				{dato: area, 			publico: form.checkareasPu.checked, 		privado: form.checkareasPr.checked, 			editable: usuario.area.editable},
+			centrosEstudio : 	{dato: centrosEstudio, 	publico: form.checkcentrosPu.checked, 		privado: form.checkcentrosPr.checked, 			editable: true},
+			carreras : 			{dato: carreras, 		publico: form.checkcarreraPu.checked, 		privado: form.checkcarreraPr.checked, 			editable: usuario.carreras.editable}
+        }).then(function(error) {
+			if (error) {
+				console.log('HOCURRIÓ UN HORROR')
+			}else {
+				
+				uploadFile();
+				//location.reload() 
+			}
+		})
+	})
+
+	$("#btn-guardar2").click(function() {	
+		var form = document.getElementById("form-modal2");
+		var user = firebase.auth().currentUser;
+		
+		var email = form.emailModal.value;
+		var fono = form.telModal.value;
+		var disp_hor = $("input[name=disponibilidad-horario]:checked").val();
+		var disp_tra = $("input[name=disponibilidad-contratacion]:checked").val();
+		var ciudad = form.ciudadModal.value;
+		var region = form.regionModal.value;
+		var about = form.aboutmemodal.value;
+		
+		var updateUser = db.collection("users").doc(user.uid);
+        updateUser.update({
+			email : 				{dato: email, 			publico: form.checkemailPu.checked, 		privado: form.checkemailPr.checked, 			editable: usuario.email.editable},
+			telefono : 				{dato: fono, 			publico: form.checktelPu.checked, 			privado: form.checktelPr.checked, 				editable: usuario.telefono.editable},
+			disptrabajar : 			{dato: disp_hor, 		publico: form.checkdishPu.checked, 			privado: form.checkdishPr.checked, 				editable: true},
+			dispcontratacion : 		{dato: disp_tra, 		publico: form.checkdiscPu.checked, 			privado: form.checkdiscPr.checked, 				editable: true},
+			ciudad : 				{dato: ciudad, 			publico: form.checkciudadPu.checked, 		privado: form.checkciudadPr.checked, 			editable: true},
+			region : 				{dato: region, 			publico: form.checkregionPu.checked, 		privado: form.checkregionPr.checked, 			editable: true},
+			aboutme : 				{dato: about, 			publico: form.checkaboutPu.checked, 		privado: form.checkaboutPr.checked, 			editable: true}
+		}).then(function(error) {
+			if (error) {
+				console.log('HOCURRIÓ UN HORROR')
+			}else {
+				
+				//uploadFile();
+				location.reload() 
+			}
+		})
+		
+	})
+
+	$("#btn-nuevoPortfolio").click(function() {	
+		var form = document.getElementById("form-modalNP");
+		var titulo = form.tituloNuevoPortafolioModal.value;
+		var enlace = form.enlaceNuevoPortafolioModal.value;
+		var descripcion = form.descripcionNuevoPortafolioModal.value;
+
+		var publico = form.checkNuevoPortafolioPu.checked;
+
+		var privado = form.checkNuevoPortafolioPr.checked;
+		
+		var user = firebase.auth().currentUser;
+
+		//creo portafolios si no existe y le seteo este nuevo portafolio
+		var nuevoPorta = db.collection("users").doc(user.uid).collection("portafolio");
+        nuevoPorta.add({
+			titulo : titulo,
+			enlace : enlace,
+			descripcion : descripcion,
+			publico : publico,
+			privado,privado
+        }).then(function(docRef) {
+			console.log('Nuevo portafolio!')
+			location.reload();
+		})
+		.catch(function(error) {
+			console.error("Error agregando portafolio: ", error);
+		});
+	})
+
+
+	function deletePortafolio(idPorta){
+		var user = firebase.auth().currentUser;
+		db.collection("users").doc(user.uid).collection("portafolio").doc(idPorta).delete().then(function() {
+			console.log("Potafolio eliminado");
+			location.reload();
+		}).catch(function(error) {
+			console.error("Error eliminando documento: ", error);
+		});
+	}
 
 
 	
+	$("#btn-EditPortfolio").click(function() {	
+		var form = document.getElementById("form-modalNPEdit");
+		var idPorta = form.idEditPortafolioModal.value;
+		var titulo = form.tituloEditPortafolioModal.value;
+		var enlace = form.enlaceEditPortafolioModal.value;
+		var descripcion = form.descripcionEditPortafolioModal.value;
+
+		var publico = form.checkEditPortafolioPu.checked;
+
+		var privado = form.checkEditPortafolioPr.checked;
+		
+		var user = firebase.auth().currentUser;
+		
+		var updatePorta = db.collection("users").doc(user.uid).collection("portafolio").doc(idPorta);
+        updatePorta.update({
+			titulo : titulo,
+			enlace : enlace,
+			descripcion : descripcion,
+			publico : publico,
+			privado,privado
+		}).then(function(error) {
+			if (error) {
+				console.log('HOCURRIÓ UN HORROR')
+			}else {
+				
+				//uploadFile();
+				location.reload() 
+			}
+		})
+		
+	})
+
+
+	function generarModalEdit(idPorta){
+		var user = firebase.auth().currentUser;
+		var portafolioRef = db.collection("users").doc(user.uid).collection("portafolio").doc(idPorta);
+		portafolioRef.get().then(function(doc) {
+			//recupero el portafolio para setear el modal editable
+			document.getElementById('tituloEditPortafolioModal').value = doc.data().titulo;
+			document.getElementById('descripcionEditPortafolioModal').value = doc.data().descripcion;
+			document.getElementById('enlaceEditPortafolioModal').value = doc.data().enlace;
+			document.getElementById('checkEditPortafolioPu').value = doc.data().publico;
+			document.getElementById('checkEditPortafolioPr').value = doc.data().privado;
+			document.getElementById('idEditPortafolioModal').value = idPorta;
+		})
+	}
+
+	function getPortafolios() {
+		//console.log("Obtengo portafolios")
+		var user = firebase.auth().currentUser;
+		/*const snapshot = firebase.firestore().collection("users").doc(user.uid).collection("portafolio").get();
+		const documents = [];
+		snapshot.forEach(doc => {
+			var titulo = doc.data().titulo;
+			var descripcion = doc.data().descripcion;
+			var enlace = doc.data().enlace;
+			addPortafolio(titulo,descripcion,enlace,doc.id);
+		});*/
+
+		const events = firebase.firestore().collection("users").doc(user.uid).collection("portafolio")
+		events.get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				var titulo = doc.data().titulo;
+				var descripcion = doc.data().descripcion;
+				var enlace = doc.data().enlace;
+				addPortafolio(titulo,descripcion,enlace,doc.id);
+			})
+		})
+		
+
+
+	}
+
+	function addPortafolio(titulo,descripcion,enlace,id) {//col-lg-6
+		var html = //'<div class=" mb-5 mb-lg-0">'+
+						'<article class="thumb-info custom-thumb-info-2 custom-box-shadow-1 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="0" data-appear-animation-duration="1s" style="animation-duration: 1s; animation-delay: 0ms;">'+
+							'<div class="thumb-info-wrapper">'+
+								'<a href="#">'+
+									'<img src="'+enlace+'" alt="" class="img-fluid">'+
+								'</a>'+
+							'</div>'+
+							'<div class="thumb-info-caption">'+
+								'<div class="thumb-info-caption-text">'+
+									'<h4 class="mb-2">'+
+										'<a href="#" class="text-decoration-none text-color-dark font-weight-semibold">'+
+											titulo+
+										'</a>'+
+									'</h4>'+
+										'<p class="custom-text-color-2">'+descripcion+'</p>'+
+								'</div>'+
+								'<hr class="solid m-0 mt-4 mb-2">'+
+								'<div class="row justify-content-between">'+
+									'<div class="col-auto custom-blog-post-share text-uppercase font-weight-semibold text-color-dark text-2">'+
+										'<ul class="mb-0">'+
+											'<li>'+
+												'<a data-id="'+id+'" data-toggle="modal" data-target="#form-modalEditPortafolio" class="editPortafolio item-twitter text-decoration-none text-uppercase" href="#" title="Editar">Editar Portafolio</a>'+
+											'</li>'+
+											'<li>'+
+												'<a data-id="'+id+'" class="eliminarportafolio item-google-plus text-decoration-none text-uppercase" href="#" title="Eliminar">Eliminar Portafolio</a>'+
+											'</li>'+
+										'</ul>'+
+									'</div>'+
+								'</div>'+
+							'</div>'+
+						'</article>';
+					//'</div>';
+
+		var p = document.getElementById('portafolios');
+		//newElement.setAttribute('id', elementId);
+		var newElement = document.createElement("div");
+		newElement.classList.add("col-lg-6");
+		newElement.classList.add("mb-5");//col-lg-6 mb-5 mb-lg-0
+		newElement.classList.add("mb-lg-0");
+		newElement.innerHTML = html;
+		p.appendChild(newElement);
+
+	
+	}
+
+	$('body').on('click', 'a.editPortafolio', function() {
+		var  id = $( this ).attr("data-id");
+		generarModalEdit(id);
+	});
+
+	$('body').on('click', 'a.eliminarportafolio', function() {
+		var  id = $( this ).attr("data-id");
+		var r = confirm("¿Está seguro de querer eliminar este porfaolio?");
+		if (r == true) {
+			deletePortafolio(id);
+		} else {
+			console.log("Cancelado por el usuario");
+		}
+		
+	});
+
 	</script>	
-
-	  
 </html>
