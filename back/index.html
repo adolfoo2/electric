@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Admin</b>ElectricLATAM</a>
+    <a href="#"><b>Admin</b>ElectriConecta</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -131,8 +131,28 @@ var storageRef = firebase.storage().ref();
 
     // log the user in
     auth.signInWithEmailAndPassword(email, password).then(function(result) {
+
+
     
-      window.location.href = 'dashboard.html';
+      var docRef = db.collection("users").doc(user.uid);
+					docRef.get().then(function(doc) {
+						if(doc.data()===undefined){
+							//console.log("google");
+							//si apreto el boton de gmail y no tiene cuenta, debe estar aqui!
+							//pal registrar
+							//window.location.href = 'registro.html';
+						}else{
+							usuario = doc.data();
+							//console.log(usuario);
+							var nivel = usuario.nivel;
+              if(nivel == 99){
+                window.location.href = 'dashboard.html';
+              }else{
+                console.log("Permisos insuficientes")
+              }
+            }
+          })
+
     }).catch(function(error) {
                 //enciendo pantalla y apago gif
       //document.getElementById('pantalla').style.display = "block";
@@ -142,19 +162,33 @@ var storageRef = firebase.storage().ref();
       alert("La clave es incorrecta o el usuario no existe."); 
     });
   }
-
   auth.onAuthStateChanged(user => {
-    if (user) {
-      //document.getElementById('pantalla').style.display = "block";
-      //document.getElementById('loadingGif').style.display = "none";
-      window.location.href = 'dashboard.html';
-    }else{
-      //enciendo pantalla y apago gif
-      //document.getElementById('pantalla').style.display = "block";
-      //document.getElementById('loadingGif').style.display = "none";
-      //window.location.href = 'login.html';
-    } 
-  });
+			var user = firebase.auth().currentUser;
+				if(user===null){
+					//si esta aqui, pa ajuera
+					//window.location.href = 'index.html';
+				}else{
+					var docRef = db.collection("users").doc(user.uid);
+					docRef.get().then(function(doc) {
+						if(doc.data()===undefined){
+							console.log("google");
+							//si apreto el boton de gmail y no tiene cuenta, debe estar aqui!
+							//pal registrar
+							//window.location.href = 'registro.html';
+						}else{
+							usuario = doc.data();
+							//console.log(usuario);
+							var nivel = usuario.nivel;
+              if(nivel == 99){
+                window.location.href = 'dashboard.html';
+              }else{
+                console.log("Permisos insuficientes")
+              }
+            }
+          })
+        }
+
+    });
 
 </script>
 </html>

@@ -38,9 +38,9 @@ to get the desired effect
       <li class="nav-item d-none d-sm-inline-block">
         <a href="dashboard.html" class="nav-link">Inicio</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+      <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contacto</a>
-      </li>
+      </li>-->
     </ul>
 
     <!-- SEARCH FORM -->
@@ -93,7 +93,7 @@ to get the desired effect
     <a href="dashboard.html" class="brand-link">
       <img src="dist/img/logo.png" alt="Electric Latam Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Electric Latam</span>
+      <span class="brand-text font-weight-light">ElectriConecta</span>
     </a>
 
     <!-- Sidebar -->
@@ -104,7 +104,7 @@ to get the desired effect
           <img src="dist/img/user2-160x160.jpg" class="img-admin img-circle elevation-2" alt="Imagen admin">
         </div>
         <div class="info">
-          <a href="#" class="name-admin d-block">NombreUsuario</a>
+          <a id="nombre" href="#" class="name-admin d-block">NombreUsuario</a>
         </div>
       </div>
 
@@ -134,12 +134,12 @@ to get the desired effect
 
           <li class="nav-header">PERFIL</li>
           
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-user text-lg"></i>
               <p>Modificar Perfil</p>
             </a>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a href="#" class="nav-link" id="logout">
               <i class="nav-icon fa fa-sign-out-alt text-danger"></i>
@@ -268,7 +268,7 @@ to get the desired effect
             <!-- small card -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3 class= "user-registers">0</h3>
+                <h3  id="usuarios" class= "user-registers">0</h3>
                 <p>Usuarios Registrados</p>
               </div>
               <div class="icon">
@@ -284,7 +284,7 @@ to get the desired effect
             <!-- small card -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3 class="companies">0</h3>
+                <h3  id="empresas" class="companies">0</h3>
 
                 <p>Empresas Registradas</p>
               </div>
@@ -301,7 +301,7 @@ to get the desired effect
             <!-- small card -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3 class="revisions">3</h3>
+                <h3 id="revisiones" class="revisions">3</h3>
 
                 <p>Revisiones Pendientes</p>
               </div>
@@ -318,7 +318,7 @@ to get the desired effect
             <!-- small card -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3 class="users">0</h3>
+                <h3  id="usuariosTotales" class="users">0</h3>
 
                 <p>Todos los usuarios</p>
               </div>
@@ -412,17 +412,66 @@ function dummy(form){
 
 }
 auth.onAuthStateChanged(user => {
-    if (user) {
-      //document.getElementById('pantalla').style.display = "block";
-      //document.getElementById('loadingGif').style.display = "none";
-      //window.location.href = 'dashboard.html';
-    }else{
-      //enciendo pantalla y apago gif
-      //document.getElementById('pantalla').style.display = "block";
-      //document.getElementById('loadingGif').style.display = "none";
-      window.location.href = 'login.html';
-    } 
-});
+			var user = firebase.auth().currentUser;
+				if(user===null){
+					//si esta aqui, pa ajuera
+					window.location.href = 'index.html';
+				}else{
+					var docRef = db.collection("users").doc(user.uid);
+					docRef.get().then(function(doc) {
+						if(doc.data()===undefined){
+              window.location.href = 'index.html';
+						}else{
+							usuario = doc.data();
+							//console.log(usuario);
+							var nivel = usuario.nivel;
+              if(nivel == 99){
+                //setear valores de la pagina
+                document.getElementById('nombre').innerHTML = usuario.nombre;
+                var user = firebase.auth().currentUser;
+                const users = firebase.firestore().collection("users")
+                var tipo;
+                var nivel;
+                var empresasT = 0;
+                var usuariosT = 0;
+                users.get().then((querySnapshot) => {
+                  querySnapshot.forEach((doc) => {
+                    tipo = doc.data().tipo.dato;
+                    nivel = doc.data().nivel;
+                    if(nivel<10){
+                      if(tipo==="empresa"){
+                        empresasT++;
+                      }else{
+                        usuariosT++;
+                      }
+                    }
+                  })
+                  //var html1 = "<div class='owl-dots disabled'></div>"
+                  //var p = document.getElementById('portafolios');
+                  //p.innerHTML = html1;
+                }).then(function(docRef) {
+                    document.getElementById('usuarios').innerHTML = usuariosT;
+                    document.getElementById('empresas').innerHTML = empresasT;
+                    document.getElementById('usuariosTotales').innerHTML = usuariosT+empresasT;
+
+
+
+								  })
+
+
+
+
+
+              }else{
+                console.log("Permisos insuficientes");
+                window.location.href = 'index.html';
+                
+              }
+            }
+          })
+        }
+
+    });
 
 const logout = document.querySelector('#logout');
         logout.addEventListener('click', (e) => {
