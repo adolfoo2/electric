@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Electric Latam | Panel</title>
+  <title>ElectriConecta | Usuarios</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- IonIcons -->
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
+  <link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css">
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -38,9 +39,9 @@ to get the desired effect
       <li class="nav-item d-none d-sm-inline-block">
         <a href="dashboard.html" class="nav-link">Inicio</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+      <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contacto</a>
-      </li>
+      </li>-->
     </ul>
 
     <!-- SEARCH FORM -->
@@ -62,12 +63,12 @@ to get the desired effect
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">7</span>
+          <span id="notificaciones" class="badge badge-warning navbar-badge">0</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">7 Notificaciones</span>
+          <span id="validacionesPendientes" class="dropdown-item dropdown-header">0 validaciones pendientes</span>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <!--<a href="#" class="dropdown-item">
             <i class="fas fa-envelope mr-2"></i> 4 nuevos mensajes
             <span class="float-right text-muted text-sm">3 mins</span>
           </a>
@@ -75,27 +76,25 @@ to get the desired effect
             <i class="fas fa-file mr-2"></i> 3 new reports
             <span class="float-right text-muted text-sm">2 days</span>
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">Ver todas las Notificaciones</a>
+          <div class="dropdown-divider"></div>-->
+          <a href="validaciones.html" class="dropdown-item dropdown-footer">Administrar</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
-            class="fas fa-th-large"></i></a>
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i class="fas fa-th-large"></i></a>
       </li>
     </ul>
   </nav>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
+
+  <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    
-            
     <!-- Brand Logo -->
     <a href="dashboard.html" class="brand-link">
-      <img src="dist/img/logo.png" alt="Electric Latam Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">Electric Latam</span>
+      <img src="dist/img/logo.png" alt="Electric Latam Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">ElectriConecta</span>
     </a>
 
     <!-- Sidebar -->
@@ -103,10 +102,10 @@ to get the desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-admin img-circle elevation-2" alt="Imagen admin">
+          <img id="imageadmin" src="https://i.stack.imgur.com/34AD2.jpg" class="img-admin img-circle elevation-2" alt="Imagen admin">
         </div>
         <div class="info">
-          <a href="#" class="name-admin d-block">NombreUsuario</a>
+          <a id="nombre" href="#" class="name-admin d-block">Cargando...</a>
         </div>
       </div>
 
@@ -136,12 +135,12 @@ to get the desired effect
 
           <li class="nav-header">PERFIL</li>
           
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-user text-lg"></i>
               <p>Modificar Perfil</p>
             </a>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a href="#" class="nav-link" id="logout">
               <i class="nav-icon fa fa-sign-out-alt text-danger"></i>
@@ -198,10 +197,655 @@ to get the desired effect
           <!-- /.card-tools -->
         </div>
         <!-- /.card-header -->
+
+
+
+
+
+
+
+
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card card-primary">
+                  <div class="card-body">
+                    <div>
+                      <!--<div class="btn-group w-100 mb-2"> 
+                        <a class="btn btn-info active" href="javascript:void(0)" data-filter="all"> Todos </a>
+                        <a class="btn btn-info" href="javascript:void(0)" data-filter="estudiante"> Estudiantes </a>
+                        <a class="btn btn-info" href="javascript:void(0)" data-filter="profesional"> Profesionales </a>
+                        <a class="btn btn-info" href="javascript:void(0)" data-filter="prestador"> Prestadores de servicios </a>
+                        <a class="btn btn-info" href="javascript:void(0)" data-filter="empresa"> Empresas </a>
+                      </div>
+                      <div class="mb-2">
+                        <a class="btn btn-secondary" href="javascript:void(0)" data-shuffle> Barajar </a>
+                        <div class="float-right">
+                          <select class="custom-select" style="width: auto;" data-sortOrder>
+                            <option value="index"> Sort by Position </option>
+                            <option value="sortData"> Sort by Custom Data </option>
+                          </select>
+                          <div class="btn-group">
+                            <a class="btn btn-default" href="javascript:void(0)" data-sortAsc> Ascending </a>
+                            <a class="btn btn-default" href="javascript:void(0)" data-sortDesc> Descending </a>
+                          </div>
+                        </div>
+                      </div>-->
+                    </div>
+                    <div>
+                      <div id="listausuarios" class="filter-container p-6 row">
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="dummy">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="visibility: hidden" class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Cargando...
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Cargando...</b></h2>
+                                  <p class="text-muted text-sm"><b>Cargando...</b> Poeta </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> Ver/editar perfil
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                       <!-- <div class="filtr-item col-12 col-sm-6 col-md-4 d-flex align-items-stretch" data-category="profesional" data-sort="maik">
+                          <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                              Digital Strategist
+                            </div>
+                            <div class="card-body pt-0">
+                              <div class="row">
+                                <div class="col-7">
+                                  <h2 class="lead"><b>Nicole Pearson</b></h2>
+                                  <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                                  </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                  <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                  <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-primary">
+                                  <i class="fas fa-user"></i> View Profile
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>-->
+
+
+                      </div>
+                    </div>
+    
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+
+
         <div class="card-body pb-0">
-          <div class="row d-flex align-items-stretch">
+          <div  class="row d-flex align-items-stretch">
             
-          <!--LISTA USUARIOS-->
+          <!--LISTA USUARIOS
+            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+              <div class="card bg-light">
+                <div class="card-header text-muted border-bottom-0">
+                  Digital Strategist
+                </div>
+                <div class="card-body pt-0">
+                  <div class="row">
+                    <div class="col-7">
+                      <h2 class="lead"><b>Nicole Pearson</b></h2>
+                      <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
+                      <ul class="ml-4 mb-0 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                      </ul>
+                    </div>
+                    <div class="col-5 text-center">
+                      <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="text-right">
+                    <a href="#" class="btn btn-sm bg-teal">
+                      <i class="fas fa-comments"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-primary">
+                      <i class="fas fa-user"></i> View Profile
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
             <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
               <div class="card bg-light">
@@ -234,74 +878,13 @@ to get the desired effect
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
-              <div class="card bg-light">
-                <div class="card-header text-muted border-bottom-0">
-                  Digital Strategist
-                </div>
-                <div class="card-body pt-0">
-                  <div class="row">
-                    <div class="col-7">
-                      <h2 class="lead"><b>Nicole Pearson</b></h2>
-                      <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
-                      <ul class="ml-4 mb-0 fa-ul text-muted">
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
-                      </ul>
-                    </div>
-                    <div class="col-5 text-center">
-                      <img src="dist/img/user2-160x160.jpg" alt="" class="img-circle img-fluid">
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <div class="text-right">
-                    <a href="#" class="btn btn-sm bg-teal">
-                      <i class="fas fa-comments"></i>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-primary">
-                      <i class="fas fa-user"></i> View Profile
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
-              <div class="card bg-light">
-                <div class="card-header text-muted border-bottom-0">
-                  Digital Strategist
-                </div>
-                <div class="card-body pt-0">
-                  <div class="row">
-                    <div class="col-7">
-                      <h2 class="lead"><b>Nicole Pearson</b></h2>
-                      <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
-                      <ul class="ml-4 mb-0 fa-ul text-muted">
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
-                      </ul>
-                    </div>
-                    <div class="col-5 text-center">
-                      <img src="dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <div class="text-right">
-                    <a href="#" class="btn btn-sm bg-teal">
-                      <i class="fas fa-comments"></i>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-primary">
-                      <i class="fas fa-user"></i> View Profile
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </div>-->
+
+
+
           </div>
         </div>
-        <!-- /.card-body -->
+        <!-- /.card-body 
         <div class="card-footer">
           <nav aria-label="Contacts Page Navigation">
             <ul class="pagination justify-content-center m-0">
@@ -315,7 +898,7 @@ to get the desired effect
               <li class="page-item"><a class="page-link" href="#">8</a></li>
             </ul>
           </nav>
-        </div>
+        </div>-->
         <!-- /.card-footer -->
       </div>
       <!-- /.card -->
@@ -339,27 +922,32 @@ to get the desired effect
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE -->
-<script src="dist/js/adminlte.js"></script>
+<!-- jQuery UI -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Ekko Lightbox -->
+<script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- Filterizr-->
+<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- Page specific script -->
+
 
 <!-- OPTIONAL SCRIPTS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-<script src="dist/js/demo.js"></script>
-<script src="dist/js/pages/dashboard3.js"></script>
 </body>
 
 </script> 
-<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -384,29 +972,154 @@ var storageRef = firebase.storage().ref();
   // update firestore settings
   db.settings({ timestampsInSnapshots: true });
 </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 
 <script type="text/javascript">
 
 
-function dummy(form){
+$(function () {
 
+})
 
-}
 auth.onAuthStateChanged(user => {
-    if (user) {
-      //document.getElementById('pantalla').style.display = "block";
-      //document.getElementById('loadingGif').style.display = "none";
-      //window.location.href = 'dashboard.html';
-    }else{
-      //enciendo pantalla y apago gif
-      //document.getElementById('pantalla').style.display = "block";
-      //document.getElementById('loadingGif').style.display = "none";
-      window.location.href = 'login.html';
-    } 
-});
+			var user = firebase.auth().currentUser;
+				if(user===null){
+					//si esta aqui, pa ajuera
+					window.location.href = 'index.html';
+				}else{
+          var photo = user.photoURL;
+          if(photo===null){
+            document.getElementById("imageadmin").src="https://i.stack.imgur.com/34AD2.jpg";
+          }else{
+            document.getElementById("imageadmin").src=photo;
+          }
+					var docRef = db.collection("users").doc(user.uid);
+					docRef.get().then(function(doc) {
+						if(doc.data()===undefined){
+              window.location.href = 'index.html';
+						}else{
+							usuario = doc.data();
+							//console.log(usuario);
+							var nivel = usuario.nivel;
+              if(nivel == 99){
+                //setear valores de la pagina
 
+
+                document.getElementById('nombre').innerHTML = usuario.nombre;
+                var user = firebase.auth().currentUser;
+                const users = firebase.firestore().collection("users")
+                var tipo;
+                var nivel;
+                var empresasT = 0;
+                var usuariosT = 0;
+                users.get().then((querySnapshot) => {
+                  querySnapshot.forEach((doc) => {
+                    tipo = doc.data().tipo.dato;
+                    nivel = doc.data().nivel;
+                    if(nivel<10){
+                      if(tipo==="empresa"){
+                        empresasT++;
+                      }else{
+                        usuariosT++;
+                      }
+                    }
+                  })
+                  //var html1 = "<div class='owl-dots disabled'></div>"
+                  //var p = document.getElementById('portafolios');
+                  //p.innerHTML = html1;
+                }).then(function(docRef) {
+                    var listRef = storageRef.child('documentoregistro/');
+                    var cont = 0;
+                    // Find all the prefixes and items.
+                    listRef.listAll().then(function(res) {
+                      /*res.prefixes.forEach(function(folderRef) {
+                        // All the prefixes under listRef.
+                        // You may call listAll() recursively on them.
+                      }); */
+                      res.items.forEach(function(itemRef) {
+                        // All the items under listRef.
+                        cont++
+                      });
+                    }).then(function(res) {
+                      document.getElementById('notificaciones').innerHTML = cont;
+                      document.getElementById('validacionesPendientes').innerHTML = cont+" validaciones pendientes";
+                    }).catch(function(error) {
+                      // Uh-oh, an error occurred!
+                    });
+                  
+                    const events = firebase.firestore().collection("users")
+                    events.get().then((querySnapshot) => {
+                      querySnapshot.forEach((doc) => {
+                        var nivel = doc.data().nivel
+                        if(nivel<30){
+                          var area = doc.data().area.dato;
+                          var tipo = doc.data().tipo.dato;
+                          var activo = doc.data().activada;
+                          var mail = doc.data().email.dato;
+                          if(tipo==="empresa"){
+                            var nombre = doc.data().nombre.dato;
+                            tipo = "Empresa";
+                          }else{
+                            var nombre = doc.data().nombre.dato + " " +doc.data().apellidop.dato + " " + doc.data().apellidom.dato;
+                          }
+                          if(tipo==="estudiante"){
+                            tipo = "Estudiante";
+                          }
+                          if(tipo==="profesional"){
+                            tipo = "Profesional";
+                          }
+                          if(tipo==="prestador"){
+                            tipo = "Prestador de servicios";
+                          }
+                          if(area==="electricidad"){
+                            area = "Electricidad";
+                          }
+                          if(area==="electronica"){
+                            area = "Electronica";
+                          }
+                          if(area==="telecomunicaciones"){
+                            area = "Telecomunicaciones";
+                          }
+                          if(area==="automatizacion"){
+                            area = "Automatizacion";
+                          }
+                          var photoURL = "https://i.stack.imgur.com/34AD2.jpg";
+                          storageRef.child('fotosperfil/'+doc.id).getDownloadURL().then(function(url) {
+                            photoURL=url;
+                          }).then(function() {
+                            console.log("usuario con foto")
+                            addUser(nombre,tipo,mail,area,activo,photoURL,doc.id);
+                          }).catch(function(error) {
+                            addUser(nombre,tipo,mail,area,activo,photoURL,doc.id);
+                          });
+                          
+                        }
+
+                      })
+                    }).then(function(docRef) {
+                        console.log("Usuarios cargados")
+                        $('.filter-container').filterizr({gutterPixels: 3});
+                        
+                    })
+                    
+                  })
+
+              }else{
+                console.log("Permisos insuficientes");
+                window.location.href = 'index.html';
+                
+              }
+            }
+          })
+        }
+
+    });
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
 const logout = document.querySelector('#logout');
         logout.addEventListener('click', (e) => {
           e.preventDefault();
@@ -414,6 +1127,113 @@ const logout = document.querySelector('#logout');
           window.location.href = "login.html";
 
         });
+
+  function MaysPrimera(string){
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+  function toString(string,sep){
+		var area = (string).split(sep); 
+		var str_aux ="";
+		for (var i=0; i < area.length; i++) {
+			if(i==0){
+				str_aux = MaysPrimera(area[i]); 
+			}else{
+				str_aux = str_aux +", " +MaysPrimera(area[i]); 
+			}									
+		}
+		return str_aux;
+	}
+
+  function addUser(nombre,tipo,mail,area,activo,photoURL,id) {
+    var aux_area = toString(area, "¿");
+    var user = firebase.auth().currentUser;
+    var activotxt = "";
+    if(activo){
+      activotxt = '<li class="text-success small"><span class="fa-li"><i class="fa fa-check"></i></span> Validado</li>';
+    }
+		var html = '<div class="card bg-light">'+
+        '<div class="card-header text-muted border-bottom-0">'+
+          tipo+
+          '</div>'+
+          '<div class="card-body pt-0">'+
+            '<div class="row">'+
+              '<div class="col-7">'+
+                '<h2 class="lead"><b>'+nombre+'</b></h2>'+
+                '<p class="text-muted text-sm"><b>'+aux_area+'</b>'+
+                '<ul class="ml-4 mb-0 fa-ul text-muted">'+
+                  activotxt+
+                  '<li class="small"><span class="fa-li"><i class="fa fa-envelope"></i></span> '+mail+'</li>'+
+                  '</ul>'+
+                  '</div>'+
+                  '<div class="col-5 text-center">'+
+                    '<img src="'+photoURL+'" alt="" class="img-circle img-fluid">'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'+
+                    '<div class="card-footer">'+
+                      '<div class="text-right">'+
+                        '<a href="#" data-id="'+id+'" class="borrar btn btn-sm bg-red">'+
+                          '<i class="fa fa-trash-o"></i>Eliminar'+
+                          '</a>'+
+                          '<a href="#" class="btn btn-sm btn-primary">'+
+                            '<i class="fas fa-user"></i> Ver/editar perfil'+
+                            '</a>'+
+                      '</div>'+
+                    '</div>'+
+                '</div>'+
+              '</div>';
+
+		var p = document.getElementById('listausuarios');
+		
+		//newElement.setAttribute('id', elementId);
+		var newElement = document.createElement("div");
+		/*newElement.classList.add("col-lg-6");<div class="    ">
+		newElement.classList.add("mb-5");//col-lg-6 mb-5 mb-lg-0
+    newElement.classList.add("mb-lg-0");*/
+    newElement.setAttribute("data-category",tipo);
+    newElement.setAttribute("data-sort",nombre);
+    newElement.classList.add("col-12");
+    newElement.classList.add("col-sm-6");
+    newElement.classList.add("col-md-4");
+    newElement.classList.add("d-flex"); 
+    newElement.classList.add("align-items-stretch");
+		newElement.innerHTML = html;
+		p.appendChild(newElement);
+    //data-category="estudiante, profesional, prestador, empresa" data-sort="adolfo"
+	
+	}
+
+window.onload = function() {
+	var filterContainer = document.getElementsByClassName('filter-container');
+	if (filterContainer.length > 0) {
+		filterizr = new Filterizr('.filter-container');
+	}
+ 
+}
+
+$('body').on('click', 'a.borrar', function() {
+	var  id = $( this ).attr("data-id");
+  var r = confirm("¿Está seguro de querer eliminar este usuario?");
+		if (r == true) {
+      db.collection("users").doc(id).delete().then(function() {
+        console.log("Usuario eliminado");
+        //eliminar sus documentos e imagenes
+        var deletedoc = storageRef.child("documentoregistro/"+id);
+        deletedoc.delete().then(function() {
+            console.log("Documento eliminado")
+        })
+        var deletePhoto = storageRef.child("fotosperfil/"+id);
+        deletePhoto.delete().then(function() {
+          console.log("Foto eliminada")
+        })
+
+      }).catch(function(error) {
+        console.error("Error eliminando usuario: ", error);
+      });
+    } else {
+			console.log("Cancelado por el usuario");
+		}
+})
 
 </script>
 

@@ -97,7 +97,7 @@
 										<div class="divider">
 											<span class="bg-light px-4 position-absolute left-50pct top-50pct transform3dxy-n50">O</span>
 										</div>
-										<a href="#"  onClick="google()" class="btn btn-danger btn-modern btn-block text-transform-none rounded-0 font-weight-bold align-items-center d-inline-flex justify-content-center text-3 py-3" data-loading-text="Cargando..."><i class="far fa-envelope text-5 mr-2"></i> Ingresar con Gmail</a>
+										<button type="button" id="loginGoogle" class="btn btn-danger btn-modern btn-block text-transform-none rounded-0 font-weight-bold align-items-center d-inline-flex justify-content-center text-3 py-3" data-loading-text="Cargando..."><i class="far fa-envelope text-5 mr-2"></i> Ingresar con Gmail</button>
 									</div>
 								</div>
 							</form>
@@ -228,31 +228,31 @@ function updateTimer(){
     
 }
 
-function google(){				
-	var provider = new firebase.auth.GoogleAuthProvider();
-	firebase.auth().signInWithPopup(provider).then(function(result) {
-		// This gives you a Google Access Token. You can use it to access the Google API.
-		var token = result.credential.accessToken;
-		// The signed-in user info.
-		var user = result.user;
-		// ...
-		console.log(user);
-	
-	}).catch(function(error) {
-		// Handle Errors here.
-		var errorCode = error.code;
-		var errorMessage = error.message;
-		// The email of the user's account used.
-		var email = error.email;
-		// The firebase.auth.AuthCredential type that was used.
-		var credential = error.credential;
-		// ...
-		console.log(errorMessage);
-		document.getElementById('alerta').style.display = "block";
-		count = 3;
-		setInterval(function(){updateTimer()},2000)
+	$("#loginGoogle").click(function(){
+		var provider = new firebase.auth.GoogleAuthProvider();
+		firebase.auth().signInWithPopup(provider).then(function(result) {
+			// This gives you a Google Access Token. You can use it to access the Google API.
+			var token = result.credential.accessToken;
+			// The signed-in user info.
+			var user = result.user;
+			// ...
+			console.log(user);
+		
+		}).catch(function(error) {
+			// Handle Errors here.
+			var errorCode = error.code;
+			var errorMessage = error.message;
+			// The email of the user's account used.
+			var email = error.email;
+			// The firebase.auth.AuthCredential type that was used.
+			var credential = error.credential;
+			// ...
+			console.log(errorMessage);
+			document.getElementById('alerta').style.display = "block";
+			count = 3;
+			setInterval(function(){updateTimer()},2000)
+		});
 	});
-}
 
 	$(function(){
 		$( "#footer" ).load( "footer.html", function() {})
@@ -281,10 +281,15 @@ function google(){
 							window.location.href = 'registro.html';
 						
 						}else{
-							document.getElementById('editProfile').style.display = "block";
-							//si esta aqui es porque apreto el boton y TIENE CUENTA
-							window.location.href = 'perfil.html';
-							
+							if(doc.data().nivel<50){
+								document.getElementById('editProfile').style.display = "block";
+								//si esta aqui es porque apreto el boton y TIENE CUENTA
+								window.location.href = 'perfil.html';
+							}else{
+								//ES ADMIN
+								
+							}
+						
 						}
 					})
 				}

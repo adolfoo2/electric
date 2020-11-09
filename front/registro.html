@@ -241,7 +241,7 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-4 control-label text-sm-right pt-1" for="apellidom">Apellido Paterno</label>
+													<label class="col-sm-4 control-label text-sm-right pt-1" for="apellidom">Apellido Materno*</label>
 													<div class="col-sm-8">
 														<input type="text" class="form-control" name="sur-name" id='apellidom' placeholder='Apellido Materno'>
 													</div>
@@ -635,6 +635,17 @@
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
 <script>
+	function cadenaAleatoria(longitud, caracteres) {
+		longitud = longitud || 16;
+		caracteres = caracteres || "0123456789abcdefghijklmnopqrstuvwxyz";
+
+		var cadena = "";
+		var max = caracteres.length-1;
+		for (var i = 0; i<longitud; i++) {
+			cadena += caracteres[ Math.floor(Math.random() * (max+1)) ];
+		}
+		return cadena;
+	}
 	function tipoChange() {
 		var tipo = document.getElementById("tipo_usuario").value;
 		var section1 = document.getElementById("datos-personas");
@@ -912,11 +923,14 @@ $(document).ready(function() {
 			//formateador de datos (?)
 			//dato, en publico, en privado, editable por el usuario
 			if(flag){
+				var token = cadenaAleatoria();
 				if(!conGmail){	
+					
 					if(email =="" || pass ==""){
 						alert("Indique su correo y clave"); 
 					}else{
 						firebase.auth().createUserWithEmailAndPassword(email, password).then(function(result) {
+							token = user.uid + token;
 						//guardar en BD
 							var user = firebase.auth().currentUser;
 							var userID = user.uid;
@@ -936,7 +950,8 @@ $(document).ready(function() {
 									rutrepE : {dato: rutrepE, publico: false, privado: true, editable: true},
 									giroE : {dato: giroE, publico: false, privado: true, editable: true},
 									areaserviciosE : {dato: areaserviciosE, publico: false, privado: true, editable: true},
-									servicios : {dato: serviciosRadio, publico: false, privado: true, editable: true}
+									servicios : {dato: serviciosRadio, publico: false, privado: true, editable: true},
+									token : token
 								}).then(function(docRef) {
 									console.log("registro exitoso");
 									uploadFile(userID); 
@@ -955,7 +970,8 @@ $(document).ready(function() {
 									activada:activada,
 									nivel:0,
 									rut : 		{dato: rut, publico: false, privado: false, editable: false},
-									carreras : 	{dato: carreras, publico: true, privado: true, editable: false}
+									carreras : 	{dato: carreras, publico: true, privado: true, editable: false},
+									token : token
 								}).then(function(docRef) {
 									console.log("registro exitoso");
 									uploadFile(userID); 
@@ -974,7 +990,8 @@ $(document).ready(function() {
 									nivel:0,
 									rut : {dato: rut, publico: false, privado: false, editable: false},
 									titulos : {dato: titulos, publico: true, privado: true, editable: false},
-									nvestudios : {dato: nvestudios, publico: true, privado: true, editable: false}
+									nvestudios : {dato: nvestudios, publico: true, privado: true, editable: false},
+									token : token
 								}).then(function(docRef) {
 									console.log("registro exitoso");
 									uploadFile(userID); 
@@ -995,9 +1012,11 @@ $(document).ready(function() {
 						});
 					}
 				}else{
+					
 					//registro con GMAIL
 					//guardar en BD
 					var user = firebase.auth().currentUser;
+					token = user.uid + token;
 					var userID = user.uid;
 					email = user.email;
 					if(tipo =="empresa"){
@@ -1016,7 +1035,8 @@ $(document).ready(function() {
 							rutrepE : {dato: rutrepE, publico: false, privado: true, editable: true},
 							giroE : {dato: giroE, publico: false, privado: true, editable: true},
 							areaserviciosE : {dato: areaserviciosE, publico: false, privado: true, editable: true},
-							serviciosRadio : {dato: serviciosRadio, publico: false, privado: true, editable: true}
+							serviciosRadio : {dato: serviciosRadio, publico: false, privado: true, editable: true},
+							token : token
 						}).then(function(docRef) {
 							console.log("registro exitoso");
 							uploadFile(userID); 
@@ -1034,7 +1054,8 @@ $(document).ready(function() {
 							activada:activada,
 							nivel:0,
 							rut : {dato: rut, publico: false, privado: false, editable: false},
-							carreras : {dato: carreras, publico: true, privado: true, editable: false}
+							carreras : {dato: carreras, publico: true, privado: true, editable: false},
+							token : token
 						}).then(function(docRef) {
 							console.log("registro exitoso");
 							uploadFile(userID); 
@@ -1053,7 +1074,8 @@ $(document).ready(function() {
 							nivel:0,
 							rut : {dato: rut, publico: false, privado: false, editable: false},
 							titulos : {dato: titulos, publico: true, privado: true, editable: false},
-							nvestudios : {dato: nvestudios, publico: true, privado: true, editable: false}
+							nvestudios : {dato: nvestudios, publico: true, privado: true, editable: false},
+							token : token
 						}).then(function(docRef) {
 							console.log("registro exitoso");
 							uploadFile(userID); 
@@ -1309,10 +1331,14 @@ $(document).ready(function() {
 							document.getElementById('passmail').style.display = "none";
 							document.getElementById('gmail').style.display = "none";
 						}else{
-							document.getElementById('editProfile').style.display = "block";
-							//si esta aqui es porque apreto el boton y TIENE CUENTA
-							window.location.href = 'perfil.html';
-							
+							if(doc.data().nivel<50){
+								document.getElementById('editProfile').style.display = "block";
+								//si esta aqui es porque apreto el boton y TIENE CUENTA
+								window.location.href = 'perfil.html';
+							}else{
+								//ES ADMIN
+								
+							}
 						}
 					})
 				}
@@ -1351,45 +1377,67 @@ $(document).ready(function() {
 				window.location.href = 'perfil.html';
 			});
 		}
+		if(conGmail){
+			//subir foto para los Gmail
+			var user = firebase.auth().currentUser;
+			fetch(user.photoURL)
+			.then(res => res.blob()) // Gets the response and returns it as a blob
+			.then(blob => {
+			var file = blob;
+			
+				var storageRef = firebase.storage().ref('fotosperfil/'+user.uid);
+				var task = storageRef.put(file);
+				task.on('state_changed', function progress(snapshot) {
+					//var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+					//uploader.value = percentage;
+				}, function error(err) {
 
+
+				},function complete() {
+
+				});
+			});
+		}
 	} 
 
    
-function ValidateFile() {
-	var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png", ".pdf"]; 
-    var fileButton = document.getElementById("fileButton");
-	var oInput = fileButton.files[0];
-	if(oInput===undefined || oInput===null ){
-		//no hay file
+	function ValidateFile() {
+		var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png", ".pdf"]; 
+		var fileButton = document.getElementById("fileButton");
+		var oInput = fileButton.files[0];
+		if(oInput===undefined || oInput===null ){
+			//no hay file
 
-	}else{
-		var sFileName = oInput.name;
-		if (sFileName.length > 0) {
-			var blnValid = false;
-			for (var j = 0; j < _validFileExtensions.length; j++) {
-				var sCurExtension = _validFileExtensions[j];
-				if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
-					blnValid = true;
-					break;
+		}else{
+			var sFileName = oInput.name;
+			if (sFileName.length > 0) {
+				var blnValid = false;
+				for (var j = 0; j < _validFileExtensions.length; j++) {
+					var sCurExtension = _validFileExtensions[j];
+					if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+						blnValid = true;
+						break;
+					}
+				}
+				
+				if (!blnValid) {
+					document.getElementById('alerterrorFormato').style.display = "block";
+					//borrar archivo
+					document.getElementById('fileButton').value= null;
+					setTimeout(function() { document.getElementById("alerterrorFormato").style.display = "none"; }, 8000);
+					validFile = true;
+					console.log("false");
+					return false;
 				}
 			}
-			
-			if (!blnValid) {
-				document.getElementById('alerterrorFormato').style.display = "block";
-				//borrar archivo
-				document.getElementById('fileButton').value= null;
-				setTimeout(function() { document.getElementById("alerterrorFormato").style.display = "none"; }, 8000);
-				validFile = true;
-				console.log("false");
-				return false;
-			}
 		}
+		
+		console.log("true");
+		validFile = true;
+		return true;
 	}
+
 	
-	console.log("true");
-	validFile = true;
-    return true;
-}
 </script>
 
 	  

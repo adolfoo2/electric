@@ -81,6 +81,12 @@
 				max-width: 600px;
 				}
 			}
+
+			#footer .footer-ribbon {
+				position: absolute;
+				margin: -16px 0 0 0;
+				padding: 10px 20px 6px 20px;
+			}	
 		</style>
 
 		<!-- Head Libs -->
@@ -102,39 +108,28 @@
 													<li>
 														<a data-hash href="#about-me" class="nav-link text-color-dark bg-color-primary">
 															<i class="icon-home icons"></i>
-															<span class="custom-tooltip text-color-dark">Sobre mí</span>
+															<span class="custom-tooltip text-color-dark">Inicio</span>
 														</a>
 													</li>
 													<li>
-														<a data-hash href="#experience" class="nav-link text-color-dark bg-color-primary">
+														<a data-hash href="#detalles" class="nav-link text-color-dark bg-color-primary">
 															<i class="icon-eye icons"></i>
-															<span class="custom-tooltip text-color-dark">Experience</span>
-														</a>
-													</li>
-													<li>
-														<a data-hash href="#education" class="nav-link text-color-dark bg-color-primary">
-															<i class="icon-briefcase icons"></i>
-															<span class="custom-tooltip text-color-dark">Education</span>
+															<span class="custom-tooltip text-color-dark">Sobre mí</span>
 														</a>
 													</li>
 													<li>
 														<a data-hash href="#skills" class="nav-link text-color-dark bg-color-primary">
 															<i class="icon-graduation icons"></i>
-															<span class="custom-tooltip text-color-dark">Skills</span>
-														</a>
-													</li>
-													<li>
-														<a data-hash href="#portfolio" class="nav-link text-color-dark bg-color-primary">
-															<i class="icon-diamond icons"></i>
-															<span class="custom-tooltip text-color-dark">Portfolio</span>
+															<span class="custom-tooltip text-color-dark">Habilidades</span>
 														</a>
 													</li>
 													<li>
 														<a data-hash href="#recommendations" class="nav-link text-color-dark bg-color-primary">
 															<i class="icon-pencil icons"></i>
-															<span class="custom-tooltip text-color-dark">Recommendations</span>
+															<span class="custom-tooltip text-color-dark">Actividades extracurriculares</span>
 														</a>
 													</li>
+													
 													<li>
 														<a data-hash href="#blog" class="nav-link text-color-dark bg-color-primary">
 															<i class="icon-bubbles icons"></i>
@@ -144,7 +139,7 @@
 													<li>
 														<a data-hash href="#say-hello" class="nav-link text-color-dark bg-color-primary">
 															<i class="icon-envelope-open icons"></i>
-															<span class="custom-tooltip text-color-dark">Say Hello</span>
+															<span class="custom-tooltip text-color-dark">Contacto</span>
 														</a>
 													</li>
 												</ul>
@@ -165,18 +160,27 @@
 					<div class="row">
 						<div class="col-lg-4 custom-sm-margin-bottom-1 profile-pic">
 							<img id="photoPerfil" src="https://i.stack.imgur.com/34AD2.jpg" class="img-fluid custom-border custom-image-position-2 custom-box-shadow-4" alt />
-							<div class="edit"><a href="#"><i class="fas fa-2x fa-pencil-alt"></i></a></div>
 						</div>
 						<div class="col-lg-6 col-xl-5">
-							<h1 class="text-color-primary custom-font-size-1" id="name_user">Nombre Usuario</h1>
-							<p class="text-color-light font-weight-normal custom-font-size-2 custom-margin-bottom-1" id = "area_interes" ></p>
+							<div id="about-name">
+								<h1 class="text-color-primary custom-font-size-1" id="name_user">Nombre Usuario</h1>
+							</div>
+							<div id="about-area">
+								<p class="text-color-light font-weight-normal custom-font-size-2 custom-margin-bottom-1" id = "area_interes" ></p>
+							</div>
 							<span class="custom-about-me-infos">
-								<span class="custom-text-color-1 text-uppercase" id="carreras"></span>
-								<span class="custom-text-color-1 text-uppercase mb-3" id="centro-estudios"></span>
+								<div id="about-carr">
+									<span class="custom-text-color-1 text-uppercase" id="carreras"></span>
+								</div>
+								<div id="about-centro">
+									<span class="custom-text-color-1 text-uppercase mb-3" id="centro-estudios"></span>
+								</div>
 								<span class="custom-text-color-1 text-uppercase">
-									<strong class="text-color-light">Trabajo Previo: </strong>
-									<span id="last-job" style="display: inline;"></span>
-									<a  data-toggle="modal" data-target="#formModal" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1 ml-2">Editar</a>
+									<div id="about-trab">
+										<strong class="text-color-light">Trabajo Previo: </strong>
+										<span id="last-job" style="display: inline;"></span>
+									</div>									
+									<a  data-toggle="modal" data-target="#formModal" class="editar btn btn-tertiary text-uppercase custom-btn-style-1 text-1 ml-2">Editar</a>
 								</span>
 								<!--
 								<span class="custom-text-color-1 text-uppercase">
@@ -189,89 +193,84 @@
 						</div>
 						<div class="col-lg-2 col-xl-3 d-lg-block">
 							<div class="form-group row">
-								<div class="col-lg-10">
-									<span class="custom-text-color-1 text-uppercase" id="tipo_usuario">
+								<div class="col-lg-10" id="about-tipo-user">
+									<h3 class="custom-text-color-1 text-uppercase" id="tipo_usuario">
 										<strong class="text-color-light"></strong>
-									</span>
-									<div class="radio">
+									</h3>
+									<!--<div class="radio">
 										<label class="text-color-light">
-											<input type="radio" name="tipoperfil" id="tipoempresaRadio1" value="juridica" checked>
+											<input type="radio" name="tipoperfil" id="tipoempresaRadio1" value="publico" checked>
 											Perfil Público
 										</label>
 									</div>
 									<div class="radio">
 										<label class="text-color-light">
-											<input type="radio" name="tipoperfil" id="tipoempresaRadio2" value="natural">
+											<input type="radio" name="tipoperfil" id="tipoempresaRadio2" value="privado">
 											Perfil Privado
 										</label>
 									</div>
+								-->
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<ul class="social-icons custom-social-icons">
-					<li class="social-icons-facebook">
-						<a href="http://www.facebook.com/" target="_blank" title="Facebook">
-							<i class="fab fa-facebook-f"></i>
-						</a>
-					</li>
-					<li class="social-icons-twitter">
-						<a href="http://www.twitter.com/" target="_blank" title="Twitter">
-							<i class="fab fa-twitter"></i>
-						</a>
-					</li>
-					<li class="social-icons-youtube">
-						<a href="http://www.youtube.com/" target="_blank" title="Youtube">
-							<i class="fab fa-youtube"></i>
-						</a>
-					</li>
-				</ul>
+				<!--
+					<ul class="social-icons custom-social-icons">
+						<li class="social-icons-facebook">
+							<a href="http://www.facebook.com/" target="_blank" title="Facebook">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+						</li>
+						<li class="social-icons-twitter">
+							<a href="http://www.twitter.com/" target="_blank" title="Twitter">
+								<i class="fab fa-twitter"></i>
+							</a>
+						</li>
+						<li class="social-icons-youtube">
+							<a href="http://www.youtube.com/" target="_blank" title="Youtube">
+								<i class="fab fa-youtube"></i>
+							</a>
+						</li>
+					</ul>
+				-->
 			</section>
-
-			<div class="custom-about-me-links bg-color-light">
+			<div class="custom-about-me-links bg-color-light"  >
 				<div class="container">
 					<div class="row justify-content-end">
-						<div class="col-lg-3 text-center custom-xs-border-bottom p-0">
-							<a data-hash href="#say-hello" class="text-decoration-none">
+						
+						<div class="col-lg-6 text-center p-0">
+							<a href="#" class="text-decoration-none" id="subirDoc">
 								<span class="custom-nav-button text-color-dark">
-									<i class="icon-earphones-alt icons text-color-primary"></i>
-									Contact Information	
+									<i class="fa fa-upload icons text-color-primary"></i>
+									Subir documento de validación
 								</span>
 							</a>
-						</div>
-						<div class="col-lg-2 text-center custom-xs-border-bottom p-0">
-							<a data-hash href="#say-hello" class="text-decoration-none">
-								<span class="custom-nav-button custom-divisors text-color-dark">
-									<i class="icon-envelope-open icons text-color-primary"></i>
-									Send Message	
+							<a class="text-decoration-none subirDocumento" id="certificado">
+								<span class="custom-nav-button btn-succcess">
+									<i class="far fa-check-circle"></i>
+									PERFIL CERTIFICADO
 								</span>
 							</a>
-						</div>
-						<div class="col-lg-3 text-center p-0">
-							<a href="#" class="text-decoration-none">
-								<span class="custom-nav-button text-color-dark">
-									<i class="icon-cloud-download icons text-color-primary"></i>
-									Download Resume	
-								</span>
-							</a>
+							<input class="text-decoration-none subirDocumento" type="file" id="fileButton" accept="image/*,application/pdf">
 						</div>
 					</div>
 				</div>
 			</div>
+			
 
-			<section class="section section-no-border bg-color-light m-0">
+			<section class="section section-no-border bg-color-light m-0" id="detalles">
 				<div class="container">
 					<div class="row">
 						<div class="col">
 
 							<div class="custom-box-details bg-color-light custom-box-shadow-1 col-lg-7 ml-6 mb-5 mb-lg-4 float-right clearfix">
-								<a  data-toggle="modal" data-target="#formModal2" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1 ml-2  row align-self-end">Editar</a>
+								<a  data-toggle="modal" data-target="#formModal2" class="editar btn btn-tertiary text-uppercase custom-btn-style-1 text-1 ml-2  row align-self-end">Editar</a>
 								<h4>Detalles Personales</h4>
 
-								<div class="row">
+								<div class="row" id="#about-datosall">
 
-									<div class="col-md-6">
+									<div class="col-md-6" id="datos-principales">
 										<ul class="custom-list-style-1 p-0 mb-0">
 											<li>
 												<span class="text-color-dark">Email:</span>
@@ -288,7 +287,7 @@
 											
 										</ul>
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-6" id="datos-secondarios">
 										<ul class="custom-list-style-1 p-0 mb-0">
 											<li>
 												<span class="text-color-dark">Ciudad:</span>
@@ -307,12 +306,11 @@
 									</div>
 								</div>
 							</div>
-
-							<h2 class="text-color-dark font-weight-extra-bold text-uppercase">Sobre Mí</h2>
-
-
-							<p id="aboutme"></p>
-
+							<div id="about-about">
+								<h2 class="text-color-dark font-weight-extra-bold text-uppercase">Sobre Mí</h2>
+								<p id="aboutme"></p>
+							</div>
+							<a  data-toggle="modal" data-target="#formModal3" class="editar btn btn-tertiary text-uppercase custom-btn-style-1 text-1 ml-2  row align-self-end">Editar</a>
 							<!--<a id="aboutMeMoreBtn" class="btn btn-tertiary text-uppercase custom-btn-style-1 text-1" href="#">View More</a>-->
 
 						</div>
@@ -325,63 +323,14 @@
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-md-6 col-lg-8 mb-4 mb-md-0">
-							<div class="row">
+							<div class="row" id="soft-list">
 								<div class="col-lg-6">
-									<h2 class="text-color-dark text-uppercase font-weight-extra-bold">Skills & Language</h2>
-									<div class="progress-bars custom-progress-bars">
-										<div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-											<span>Start Up</span>
-										</div>
-
-										<div class="progress mb-2">
-											<div class="progress-bar" data-appear-progress-animation="60%"></div>
-										</div>
-										<div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-											<span>Innovation</span>
-										</div>
-										<div class="progress mb-2">
-											<div class="progress-bar" data-appear-progress-animation="80%" data-appear-animation-delay="300"></div>
-										</div>
-										<div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-											<span>Products</span>
-										</div>
-										<div class="progress mb-2">
-											<div class="progress-bar" data-appear-progress-animation="70%" data-appear-animation-delay="600"></div>
-										</div>
-										<div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-											<span>CSS</span>
-										</div>
-										<div class="progress mb-2">
-											<div class="progress-bar" data-appear-progress-animation="90%" data-appear-animation-delay="900"></div>
-										</div>
-									</div>
+									<h2 class="text-color-dark text-uppercase font-weight-extra-bold">Manejo de Aplicaciones</h2>
+									<div class="progress-bars custom-progress-bars" id="softwares-skills1"></div>
 								</div>
 								<div class="col-lg-6">
-									<div class="progress-bars custom-progress-bars custom-md-margin-top-1">
-										<div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-											<span>Javascript</span>
-										</div>
-										<div class="progress mb-2">
-											<div class="progress-bar" data-appear-progress-animation="60%"></div>
-										</div>
-										<div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-											<span>Business</span>
-										</div>
-										<div class="progress mb-2">
-											<div class="progress-bar" data-appear-progress-animation="80%" data-appear-animation-delay="300"></div>
-										</div>
-										<div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-											<span>E-commerce</span>
-										</div>
-										<div class="progress mb-2">
-											<div class="progress-bar" data-appear-progress-animation="70%" data-appear-animation-delay="600"></div>
-										</div>
-										<div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-											<span>Creative</span>
-										</div>
-										<div class="progress mb-2">
-											<div class="progress-bar" data-appear-progress-animation="90%" data-appear-animation-delay="900"></div>
-										</div>
+									<div class="progress-bars custom-progress-bars custom-md-margin-top-1" id="softwares-skills2">
+										
 									</div>
 								</div>
 							</div>
@@ -389,138 +338,22 @@
 						<div class="col-md-6 col-lg-4">
 							<div class="row">
 								<div class="col">
-									<div class="custom-box-details bg-color-light custom-box-shadow-1">
-										<h4 class="text-color-dark">Languages</h4>
+									<div class="custom-box-details bg-color-light custom-box-shadow-1" id="about-idiomas">
+										<h4 class="text-color-dark">Idiomas</h4>
 										<ul class="custom-list-style-1 p-0">
 											<li>
-												<span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-us mr-1" alt="English">English:</span>
-												<span class="custom-text-color-2">Advanced</span>
+												<span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-es mr-1" alt="Español">Español:</span>
+												<span class="custom-text-color-2" id="nvespanol">Advanced</span>
 											</li>
 											<li>
-												<span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-es mr-1" alt="Spanish">Spanish:</span>
-												<span class="custom-text-color-2">Advanced</span>
+												<span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-us mr-1" alt="Inglés">Inglés:</span>
+												<span class="custom-text-color-2" id="nvingles">Advanced</span>
 											</li>
 											<li>
-												<span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-fr mr-1" alt="Française">French:</span>
-												<span class="custom-text-color-2">Basic</span>
+												<span class="font-weight-semibold custom-max-width-1 text-color-dark"><img src="img/blank.gif" class="flag flag-fr mr-1" alt="Frances">Frances:</span>
+												<span class="custom-text-color-2" id="nvfrances">Basic</span>
 											</li>
 										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section id="portfolio" class="section section-no-border bg-color-secondary m-0">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<h2 class="text-color-dark font-weight-extra-bold text-uppercase">Portfolio</h2>
-							<ul class="nav nav-pills sort-source custom-nav-sort mb-4" data-sort-id="portfolio" data-option-key="filter">
-								<li class="nav-item active" data-option-value="*"><a class="nav-link active" href="#">Show All</a></li>
-								<li class="nav-item" data-option-value=".websites"><a class="nav-link" href="#">Websites</a></li>
-								<li class="nav-item" data-option-value=".logos"><a class="nav-link" href="#">Logos</a></li>
-								<li class="nav-item" data-option-value=".brands"><a class="nav-link" href="#">Brands</a></li>
-							</ul>
-							<div class="sort-destination-loader sort-destination-loader-showing">
-								<div class="row image-gallery sort-destination lightbox" data-sort-id="portfolio" data-plugin-options="{'delegate': 'a.lightbox-portfolio', 'type': 'image', 'gallery': {'enabled': true}}">
-									<div class="col-12 col-sm-6 col-lg-3 isotope-item websites">
-										<div class="image-gallery-item mb-4 pb-3">
-											<a href="img/demos/resume/portfolio/portfolio-1.jpg" class="lightbox-portfolio">
-												<span class="thumb-info custom-thumb-info-1">
-													<span class="thumb-info-wrapper">
-														<span class="thumb-info-plus"></span>
-														<img src="img/demos/resume/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-													</span>
-												</span>
-											</a>
-										</div>
-									</div>
-									<div class="col-12 col-sm-6 col-lg-3 isotope-item logos">
-										<div class="image-gallery-item mb-4 pb-3">
-											<a href="img/demos/resume/portfolio/portfolio-2.jpg" class="lightbox-portfolio">
-												<span class="thumb-info custom-thumb-info-1">
-													<span class="thumb-info-wrapper">
-														<span class="thumb-info-plus"></span>
-														<img src="img/demos/resume/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-													</span>
-												</span>
-											</a>
-										</div>
-									</div>
-									<div class="col-12 col-sm-6 col-lg-3 isotope-item brands">
-										<div class="image-gallery-item mb-4 pb-3">
-											<a href="img/demos/resume/portfolio/portfolio-3.jpg" class="lightbox-portfolio">
-												<span class="thumb-info custom-thumb-info-1">
-													<span class="thumb-info-wrapper">
-														<span class="thumb-info-plus"></span>
-														<img src="img/demos/resume/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-													</span>
-												</span>
-											</a>
-										</div>
-									</div>
-									<div class="col-12 col-sm-6 col-lg-3 isotope-item websites">
-										<div class="image-gallery-item mb-4 pb-3">
-											<a href="img/demos/resume/portfolio/portfolio-4.jpg" class="lightbox-portfolio">
-												<span class="thumb-info custom-thumb-info-1">
-													<span class="thumb-info-wrapper">
-														<span class="thumb-info-plus"></span>
-														<img src="img/demos/resume/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-													</span>
-												</span>
-											</a>
-										</div>
-									</div>
-									<div class="col-12 col-sm-6 col-lg-3 isotope-item websites">
-										<div class="image-gallery-item mb-4 pb-3">
-											<a href="img/demos/resume/portfolio/portfolio-5.jpg" class="lightbox-portfolio">
-												<span class="thumb-info custom-thumb-info-1">
-													<span class="thumb-info-wrapper">
-														<span class="thumb-info-plus"></span>
-														<img src="img/demos/resume/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-													</span>
-												</span>
-											</a>
-										</div>
-									</div>
-									<div class="col-12 col-sm-6 col-lg-3 isotope-item websites">
-										<div class="image-gallery-item mb-4 pb-3">
-											<a href="img/demos/resume/portfolio/portfolio-6.jpg" class="lightbox-portfolio">
-												<span class="thumb-info custom-thumb-info-1">
-													<span class="thumb-info-wrapper">
-														<span class="thumb-info-plus"></span>
-														<img src="img/demos/resume/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-													</span>
-												</span>
-											</a>
-										</div>
-									</div>
-									<div class="col-12 col-sm-6 col-lg-3 isotope-item websites">
-										<div class="image-gallery-item mb-4 pb-3">
-											<a href="img/demos/resume/portfolio/portfolio-7.jpg" class="lightbox-portfolio">
-												<span class="thumb-info custom-thumb-info-1">
-													<span class="thumb-info-wrapper">
-														<span class="thumb-info-plus"></span>
-														<img src="img/demos/resume/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-													</span>
-												</span>
-											</a>
-										</div>
-									</div>
-									<div class="col-12 col-sm-6 col-lg-3 isotope-item websites">
-										<div class="image-gallery-item mb-4 pb-3">
-											<a href="img/demos/resume/portfolio/portfolio-8.jpg" class="lightbox-portfolio">
-												<span class="thumb-info custom-thumb-info-1">
-													<span class="thumb-info-wrapper">
-														<span class="thumb-info-plus"></span>
-														<img src="img/demos/resume/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-													</span>
-												</span>
-											</a>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -532,31 +365,36 @@
 			<section id="recommendations" class="section section-no-border bg-color-primary m-0">
 				<div class="container">
 					<div class="row">
-						<div class="col">
-							<h2 class="text-color-light font-weight-extra-bold text-uppercase">Tesis</h2>
-						</div>
-						<div class="col-lg-12 p-0">
-							<div class="owl-carousel custom-dots-style-1 custom-dots-color-1 custom-dots-color-1-light custom-dots-position-1 mb-0" data-plugin-options="{'items': 1, 'autoHeight': true, 'loop': false, 'nav': false, 'dots': true}">
-								<div>
-									<div class="col">
-										<div class="testimonial custom-testimonial-style-1 custom-testimonial-style-1-light testimonial-with-quotes mb-0">
-											<blockquote class="pb-2">
-												<p class="custom-text-color-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu. Praesent aliquam velit vel libero dictum, non sollicitudin lectus mollis. Morbi sollicitudin auctor gravida.</p>
-											</blockquote>
-											<div class="testimonial-author float-left">
-												<p><strong class="text-uppercase text-color-light">Bob Doe</strong><span class="custom-text-color-3 font-weight-light">Director of Engineering</span></p>
+						<div class="col-lg-8 p-0" id="about-tesis">
+							<h2 class="text-color-light font-weight-extra-bold text-uppercase" id="titletesis">Tesis</h2>
+							
+							<div class="col-lg-12 p-0">
+								<div class="owl-carousel custom-dots-style-1 custom-dots-color-1 custom-dots-color-1-light custom-dots-position-1 mb-0" data-plugin-options="{'items': 1, 'autoHeight': true, 'loop': false, 'nav': false, 'dots': true}">
+									<div>
+										<div class="col">
+											<div class="testimonial custom-testimonial-style-1 custom-testimonial-style-1-light testimonial-with-quotes mb-0">
+												<blockquote class="pb-2">
+													<p class="custom-text-color-3" id="descripciontesis"></p>
+												</blockquote>
+												<div class="testimonial-author float-left">
+													<p><strong class="text-uppercase text-color-light">Tesis</strong></p>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div>
-									<div class="col">
-										<div class="testimonial custom-testimonial-style-1 custom-testimonial-style-1-light testimonial-with-quotes mb-0">
-											<blockquote class="pb-2">
-												<p class="custom-text-color-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu. Praesent aliquam velit vel libero dictum, non sollicitudin lectus mollis. Morbi sollicitudin auctor gravida.</p>
-											</blockquote>
-											<div class="testimonial-author float-left">
-												<p><strong class="text-uppercase text-color-light">Bob Doe</strong><span class="custom-text-color-3 font-weight-light">Director of Engineering</span></p>
+							</div>
+						</div>
+						<div class="col-lg-4 p-0" id="about-act-ext">
+							<div class="col">
+								<h2 class="text-color-light font-weight-extra-bold text-uppercase">Actividades Extracurriculares</h2>
+							</div>
+							<div class="col-lg-12 p-0">
+								<div class="owl-carousel custom-dots-style-1 custom-dots-color-1 custom-dots-color-1-light custom-dots-position-1 mb-0" data-plugin-options="{'items': 1, 'autoHeight': true, 'loop': false, 'nav': false, 'dots': true}">
+									<div>
+										<div class="col">
+											<div class="testimonial custom-testimonial-style-1 custom-testimonial-style-1-light testimonial-with-quotes mb-0">
+												<p class="text-color-light text-uppercase" id="actextra"></p>
 											</div>
 										</div>
 									</div>
@@ -566,20 +404,17 @@
 					</div>
 				</div>
 			</section>
-
 			<section id="blog" class="section section-no-border bg-color-light m-0">
 				<div class="container">
 					<div class="row">
 						<div class="col">
 							<h2 class="text-color-quaternary font-weight-extra-bold text-uppercase">Portafolios </h2>
-							<div class="row">
-									<div class="row" id="portafolios"></div>
-
-							</div>
+							<div class="row" id="portafolios"></div>
+							<div class="row port-ocultos" id="portafolios-ocultos" style="display: none;"></div>
 						</div>
 						<div class="col-lg-12 col-sm-12 pt-4 mt-4 text-center">
-							<a class="btn btn-primary btn-outline custom-btn-style-2 font-weight-bold custom-border-radius-1 text-uppercase" data-toggle="modal" data-target="#form-modalNuevoPortafolio">Nuevo Portafolio</a>
-							<a class="btn btn-primary btn-outline custom-btn-style-2 font-weight-bold custom-border-radius-1 text-uppercase">Ver todos</a>
+							<a class="editar btn btn-primary btn-outline custom-btn-style-2 font-weight-bold custom-border-radius-1 text-uppercase" data-toggle="modal" data-target="#form-modalNuevoPortafolio">Nuevo Portafolio</a>
+							<a class="btn btn-primary btn-outline custom-btn-style-2 font-weight-bold custom-border-radius-1 text-uppercase" id="ver-todos-portfolios">Ver todos</a>
 						</div>
 					</div>
 				</div>
@@ -587,12 +422,12 @@
 
 			<div id="say-hello" class="container-fluid">
 				<div class="row">
-					<div class="col-lg-6 p-0">
+					<div class="col-lg-6 p-0" id="contactame">
 						<section class="section section-no-border bg-color-primary h-100 m-0">
 							<div class="row justify-content-end m-0">
 								<div class="col-half-section col-half-section-right mr-3">
 
-									<h2 class="text-color-light text-uppercase font-weight-extra-bold">Say Hello</h2>
+									<h2 class="text-color-light text-uppercase font-weight-extra-bold">Contáctame</h2>
 									<form id="contactForm" class="contact-form custom-form-style form-errors-light" action="php/contact-form.php" method="post">
 										<div class="contact-form-success alert alert-success d-none mt-4" id="contactSuccess">
 											<strong>Success!</strong> Your message has been sent to us.
@@ -604,15 +439,15 @@
 
 										<div class="form-content">
 											<div class="form-control-custom form-control-custom-light">
-												<input type="text" class="form-control" name="name" placeholder="Your Name *" data-msg-required="This field is required." id="name" required="" />
+												<input type="text" class="form-control" name="name" placeholder="Tu nombre *" data-msg-required="Este campo es requerido." id="name-mailer" required="" />
 											</div>
 											<div class="form-control-custom form-control-custom-light">
-												<input type="text" class="form-control" name="subject" placeholder="Subject *" data-msg-required="This field is required." id="subject" required="" />
+												<input type="text" class="form-control" name="subject" placeholder="Asunto *" data-msg-required="Este campo es requerido." id="subject" required="" />
 											</div>
 											<div class="form-control-custom form-control-custom-light">
-												<textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" placeholder="Message*" id="message" required="" aria-required="true"></textarea>
+												<textarea maxlength="5000" data-msg-required="Por favor manda un mensaje." rows="10" class="form-control" name="message" placeholder="Mensaje*" id="message" required="" aria-required="true"></textarea>
 											</div>
-											<input type="submit" class="btn btn-quaternary text-color-light text-uppercase font-weight-semibold outline-none custom-btn-style-2 custom-border-radius-1" value="Submit" />
+											<input type="submit" class="btn btn-quaternary text-color-light text-uppercase font-weight-semibold outline-none custom-btn-style-2 custom-border-radius-1" value="Enviar" />
 										</div>
 									</form>
 
@@ -620,64 +455,47 @@
 							</div>
 						</section>
 					</div>
-					<div class="col-lg-6 p-0">
+					<div class="col-lg-6 p-0" id="about-mail-tele">
 						<section class="section section-no-border h-100 m-0" style="background: url(img/demos/resume/contact/contact-bg-1.jpg); background-size: cover;">
 							<div class="row m-0">
 								<div class="col-half-section col-half-section-left ml-3">
-									<a href="mailto:you@domain.com" class="text-decoration-none">
-										<span class="feature-box custom-feature-box align-items-center mb-4">
-											<span class="custom-feature-box-icon">
-												<i class="icon-envelope icons text-color-light"></i>
-											</span>
-											<span class="feature-box-info">
-												<span class="custom-label font-weight-semibold text-uppercase custom-text-color-1 line-height-5">Email</span>
-												<strong class="font-weight-light text-color-light custom-opacity-effect-1">you@domain.com</strong>
-											</span>
-										</span>
-									</a>
-									<a href="tel:+1234657890" class="text-decoration-none">
-										<span class="feature-box custom-feature-box align-items-center mb-4">
-											<span class="custom-feature-box-icon">
-												<i class="icon-phone icons text-color-light"></i>
-											</span>
-											<span class="feature-box-info">
-												<span class="custom-label font-weight-semibold text-uppercase custom-text-color-1 line-height-5">Phone</span>
-												<strong class="font-weight-light text-color-light custom-opacity-effect-1">123-456-7890</strong>
-											</span>
-										</span>
-									</a>
-									<a href="skype:yourskype?chat" class="text-decoration-none">
-										<span class="feature-box custom-feature-box align-items-center mb-4">
-											<span class="custom-feature-box-icon">
-												<i class="icon-social-skype icons text-color-light"></i>
-											</span>
-											<span class="feature-box-info">
-												<span class="custom-label font-weight-semibold text-uppercase custom-text-color-1 line-height-5">Skype</span>
-												<strong class="font-weight-light text-color-light custom-opacity-effect-1">yourskype</strong>
-											</span>
-										</span>
-									</a>
-									<span class="feature-box custom-feature-box align-items-center">
+									<span class="feature-box custom-feature-box align-items-center mb-4" id="mailContacto-container">
 										<span class="custom-feature-box-icon">
-											<i class="icon-share icons text-color-light"></i>
+											
 										</span>
-										<a href="http://www.facebook.com" class="d-flex text-decoration-none">
-											<span class="feature-box-info">
-												<span class="custom-label font-weight-semibold text-uppercase custom-text-color-1 line-height-5">Follow me</span>
-												<strong class="font-weight-light text-color-light custom-opacity-effect-1">Facebook</strong>
-											</span>
-										</a>
-										<a href="http://www.twitter.com" class="d-flex text-decoration-none">
-											<span class="feature-box-info custom-both-side-border mt-2">
-												<strong class="font-weight-light text-color-light custom-opacity-effect-1">Twitter</strong>
-											</span>
-										</a>
-										<a href="http://www.linkedin.com" class="d-flex text-decoration-none">
-											<span class="feature-box-info p-0 mt-2">
-												<strong class="font-weight-light text-color-light custom-opacity-effect-1">Linkedin</strong>
-											</span>
-										</a>
+										<span class="feature-box-info">
+											<span class="custom-label font-weight-semibold text-uppercase custom-text-color-1 line-height-5">Correo</span>
+											<strong class="font-weight-light text-color-light custom-opacity-effect-1" id="mailContacto">Cargando...</strong>
+										</span>
 									</span>
+									<span class="feature-box custom-feature-box align-items-center mb-4" id="fonoContacto-container">
+										<span class="custom-feature-box-icon">
+											
+										</span>
+										<span class="feature-box-info">
+											<span class="custom-label font-weight-semibold text-uppercase custom-text-color-1 line-height-5">Teléfono</span>
+											<strong class="font-weight-light text-color-light custom-opacity-effect-1" id="fonoContacto">Cargando...</strong>
+										</span>
+									</span>
+									<div class="row">
+										<div class="col-lg-12 p-0">
+											<div class="col">
+												<h2 class="text-color-light font-weight-extra-bold text-uppercase" id="campolibre1title"></h2>
+											</div>
+											<div class="col-lg-12 p-0">
+												<div class="owl-carousel custom-dots-style-1 custom-dots-color-1 custom-dots-color-1-light custom-dots-position-1 mb-0 owl-theme owl-loaded owl-drag owl-carousel-init" data-plugin-options="{'items': 1, 'autoHeight': true, 'loop': false, 'nav': false, 'dots': true}" style="height: auto;">
+													
+												<div class="owl-stage-outer owl-height" style="height: 20px;"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 380px;"><div class="owl-item active" style="width: 380px;"><div>
+														<div class="col">
+															<div class="testimonial custom-testimonial-style-1 custom-testimonial-style-1-light testimonial-with-quotes mb-0">
+																<p class="text-color-light text-uppercase" id="campolibre1desc"></p>
+															</div>
+														</div>
+													</div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"></button><button type="button" role="presentation" class="owl-next"></button></div><div class="owl-dots disabled"><button role="button" class="owl-dot active"><span></span></button></div></div>
+											</div>
+										</div>
+									</div>
+									
 								</div>
 							</div>
 						</section>
@@ -690,14 +508,7 @@
 		</div>	
 
 		<div class="row align-items-center">
-			<div class="col-sm-3">
-
-				<div class="pr-3 pr-sm-5 pb-3 pb-sm-0 border-right-light">
-					<h4 class="mb-2">With Form</h4>
-					<p class="m-0">Add forms in the content of the modal.</p>
-				</div>
-
-			</div>
+	
 			<div class="col-sm-9">
 
 				<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
@@ -792,10 +603,6 @@
 			</div>
 
 			<div class="col-sm-9">
-				<button class="btn btn-modern btn-primary" data-toggle="modal" data-target="#formModal2">
-					Modal Section 2
-				</button>
-
 				<div class="modal fade" id="formModal2" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -960,11 +767,11 @@
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-lg-3 control-label text-lg-right pt-2" for="descripciontesis">Descripción de tema Tesis</label>
+									<label class="col-lg-3 control-label text-lg-right pt-2" for="descripciontesismodal">Descripción de tema Tesis</label>
 									<div class="col-lg-8">
-										<textarea class="form-control" id="descripciontesis" rows="3" data-plugin-maxlength="" maxlength="500" style="margin-top: 0px; margin-bottom: 0px; height: 135px;"></textarea>
+										<textarea class="form-control" id="descripciontesismodal" rows="3" data-plugin-maxlength="" maxlength="250" style="margin-top: 0px; margin-bottom: 0px; height: 135px;"></textarea>
 										<p>
-											Cantidad máxima de Carácteres: <span style="display: inline;" id= "left-charstesis">500</span>
+											Cantidad máxima de Carácteres: <span style="display: inline;" id= "left-charstesis">250</span>
 										</p>
 										<br>
 										Disponible en perfil: <input id="checkdestesisPu" type="checkbox" > Público
@@ -974,7 +781,7 @@
 								<hr>
 								<hr>
 								<div class="form-group row align-items-center">
-									<label class="col-sm-3 text-left text-sm-right mb-0" for="actextracurModal">Actividades extracurriculares</label>
+									<label class="col-sm-3 text-left text-sm-right mb-0" for="actextracurModal">Actividades Extracurriculares</label>
 									<div class="col-sm-9">
 										<select class="carreras-estudiante form-control" multiple="multiple" id='actextracurModal'>
 										</select>
@@ -982,12 +789,118 @@
 										<input id="checkactextracurPr"  type="checkbox" > Privado
 									</div>
 								</div>	
-								
+								<hr>
+								<div class="form-group row align-items-center">
+									<label class="col-sm-3 text-left text-sm-right mb-0" for="nvespanolModal">Dominio Español</label>
+									<div class="col-sm-9">
+										<select  class="nivel-estudio form-control" name="nvespanolModal" id='nvespanolModal'>
+											<option value="Nativo">Nativo</option>
+											<option value="Nulo">Nulo</option>
+											<option value="Básico">Básico</option>											
+											<option value="Medio">Medio</option>
+											<option value="Avanzado">Avanzado</option>
+										</select>
+										<br>
+										Disponible en perfil: <input id="checknvspanolPu" type="checkbox" > Público
+										<input id="checknvspanolPr"  type="checkbox" > Privado
+									</div>
+								</div>
+								<hr>
+								<div class="form-group row align-items-center">
+									<label class="col-sm-3 text-left text-sm-right mb-0" for="nvinglesModal">Dominio Inglés</label>
+									<div class="col-sm-9">
+										<select  class="nivel-estudio form-control" name="nvinglesModal" id='nvinglesModal'>
+											<option value="Nativo">Nativo</option>
+											<option value="Nulo">Nulo</option>
+											<option value="Básico">Básico</option>											
+											<option value="Medio">Medio</option>
+											<option value="Avanzado">Avanzado</option>
+										</select>
+										<br>
+										Disponible en perfil: <input id="checknvinglesPu" type="checkbox" > Público
+										<input id="checknvinglesPr"  type="checkbox" > Privado
+									</div>
+								</div>
+								<hr>
+								<div class="form-group row align-items-center">
+									<label class="col-sm-3 text-left text-sm-right mb-0" for="nvfrancesModal">Dominio Francés</label>
+									<div class="col-sm-9">
+										<select  class="nivel-estudio form-control" name="nvfrancesModal" id='nvfrancesModal'>
+											<option value="Nativo">Nativo</option>
+											<option value="Nulo">Nulo</option>
+											<option value="Básico">Básico</option>											
+											<option value="Medio">Medio</option>
+											<option value="Avanzado">Avanzado</option>
+										</select>
+										<br>
+										Disponible en perfil: <input id="checknvfrancesPu" type="checkbox" > Público
+										<input id="checknvfrancesPr"  type="checkbox" > Privado
+									</div>
+								</div>
+								<hr>
+								<div class="form-group row align-items-center">
+									<label class="col-sm-3 text-left text-sm-right mb-0" for="titlemodal">Dominio Software</label>
+									<div class="col-sm-9">
+										<div id="otrosSoftwaresmodal" class="col-sm-12">
+
+										</div>
+										<button type="button" class="btn btn-primary" id="btn-nuevoSoftware">Agregar dominio</button>
+									</div>
+								</div>
+								<hr>
+								<div class="form-group row">
+									<label class="col-lg-3 control-label text-lg-right pt-2" for="seminariosmodal">Seminarios/ Charlas/ Capacitaciones</label>
+									<div class="col-lg-8">
+										<textarea class="form-control" id="seminariosmodal" rows="3" data-plugin-maxlength="" maxlength="500" style="margin-top: 0px; margin-bottom: 0px; height: 135px;"></textarea>
+										<p>
+											Cantidad máxima de Carácteres: <span style="display: inline;" id= "seminarios-left-chars">500</span>
+										</p>
+										<br>
+										Disponible en perfil: <input id="checkseminariosPu" type="checkbox" > Público
+										<input id="checkseminariosPr"  type="checkbox" > Privado
+									</div>
+								</div>
+								<hr>
+								<div class="form-group row align-items-center">
+									<label class="col-sm-3 text-left text-sm-right mb-0" for="campolibre1titleModal">Campo Libre</label>
+									<div class="col-sm-9">
+										<div class="row">
+											<div class="col-sm-6"> <input type="text" class="form-control" placeholder="Título" id="campolibre1titleModal"></div>
+											<div class="col-sm-6"> 
+												<textarea class="form-control" id="campolibre1descModal" rows="3" data-plugin-maxlength="" maxlength="500" style="margin-top: 0px; margin-bottom: 0px; height: 135px;"></textarea>
+												<p>
+													Cantidad máxima de Carácteres: <span style="display: inline;" id= "seminarios-left-chars">500</span>
+												</p></div>
+										</div>
+										<br>
+										Disponible en perfil: <input id="checkcampolibre1Pu" type="checkbox"> Público
+										<input id="checkcampolibre1Pr"  type="checkbox" > Privado
+									</div>
+								</div>
+								<hr>
+								<div class="form-group row align-items-center">
+									<label class="col-sm-3 text-left text-sm-right mb-0" for="contactotelModal">Contacto | Teléfono</label>
+									<div class="col-sm-9">
+										<input id="contactotelModal" type="text" name="contactotelModal" placeholder="teléfono" class="form-control" value="" required/>
+										<br>
+										Disponible en perfil: <input id="checkcontactotelPu" type="checkbox" > Público
+										<input id="checkcontactotelPr"  type="checkbox" > Privado
+									</div>
+								</div>		
+								<div class="form-group row align-items-center">
+									<label class="col-sm-3 text-left text-sm-right mb-0" for="contactomailModal">Contacto | Email</label>
+									<div class="col-sm-9">
+										<input id="contactomailModal" type="email" name="contactomailModal" placeholder="Email" class="form-control" value="" required/>
+										<br>
+										Disponible en perfil: <input id="checkcontactomailPu" type="checkbox" > Público
+										<input id="checkcontactomailPr"  type="checkbox" > Privado
+									</div>
+								</div>							
 							</form>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
-							<button type="button" class="btn btn-primary" id="btn-guardar2">Guardar cambios</button>
+							<button type="button" class="btn btn-primary" id="btn-guardar3">Guardar cambios</button>
 						</div>
 					</div>
 				</div>
@@ -1033,7 +946,6 @@
 									<div class="form-group row align-items-center">
 										<label class="col-sm-3 text-left text-sm-right mb-0">Disponible en perfil: </label>
 										<div class="col-sm-9">
-											</select>
 											<br> <input id="checkNuevoPortafolioPu" type="checkbox" > Público
 											<input id="checkNuevoPortafolioPr"  type="checkbox" > Privado
 										</div>
@@ -1090,7 +1002,6 @@
 									<div class="form-group row align-items-center">
 										<label class="col-sm-3 text-left text-sm-right mb-0">Disponible en perfil: </label>
 										<div class="col-sm-9">
-											</select>
 											<br> <input id="checkEditPortafolioPu" type="checkbox" > Público
 											<input id="checkEditPortafolioPr"  type="checkbox" > Privado
 										</div>
@@ -1151,7 +1062,7 @@
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
 
-
+	
 		
 
 		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
@@ -1179,572 +1090,1182 @@
 	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
 	<script>
-		
-		// Initialize Firebase
-		var config = {
-				apiKey: "AIzaSyBdAIe1K0LqZ7Vwm0g1uK2G-dB_fd6ClPo",
-				authDomain: "electric-latam.firebaseapp.com",
-				databaseURL: "https://electric-latam.firebaseio.com",
-				projectId: "electric-latam",
-				storageBucket: "electric-latam.appspot.com",
-		};
-			
-		firebase.initializeApp(config);
+		var auth;
+		var gets;
+		var userfake;
+		let containerMap = new Map();
 
-		// make auth and firestore references
-		const auth = firebase.auth();
-		const db = firebase.firestore();
-
-		var storageRef = firebase.storage().ref();
-
-		var database = firebase.database();
-		
-		
-		var usuario = null;
 		$(function(){
 			
+			var tipo_vis = "publico";
 
+			function getSearchParameters() {
+				var prmstr = window.location.search.substr(1);
+				return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+			}
+
+			function transformToAssocArray( prmstr ) {
+				var params = {};
+				var prmarr = prmstr.split("&");
+				for ( var i = 0; i < prmarr.length; i++) {
+					var tmparr = prmarr[i].split("=");
+					params[tmparr[0]] = tmparr[1];
+				}
+				return params;
+			}
+			gets = getSearchParameters();
+
+			function new_software(id,nombre_software,cant_knows, checkpu, checkpr){
+				var pu_check = "";
+				if(checkpu)
+					pu_check = "checked";
+				var pr_check = "";
+				if(checkpr)
+					pr_check = "checked";
+				var html = //'<div class="row">'+
+									'<div class="col-sm-6"> <input data-id="'+id+'" type="text" class="form-control" value="'+nombre_software+'" placeholder="Nombre" id="soft-'+id+'"></div>'+
+									'<div class="col-sm-6"> <input type="range" min="1" max="100" value="'+cant_knows+'" class="form-control slider" id="rango-'+id+'"></div>'+
+								//'</div>'+
+								'<br>'+
+								'Disponible en perfil: <input id="checkPu-'+id+'" type="checkbox" '+pu_check+'> Público'+
+								'<input id="checkPr-'+id+'"  type="checkbox" '+pr_check+'> Privado'+
+								'<a data-id="'+id+'" class="text-danger borrar-Software" ><i class="fa fa-ban" aria-hidden="true"></i><a> ';
+
+				var p = document.getElementById("otrosSoftwaresmodal");
+			
+				var newElement = document.createElement("div");
+				newElement.classList.add("form-group");
+				newElement.classList.add("row");
+				newElement.classList.add("align-items-center");
+				newElement.id = id;
+				newElement.innerHTML = html;
+				p.appendChild(newElement);
+			}
+
+			function getSoftware(uid) {
+				//console.log("Obtengo portafolios")
+				var user = firebase.auth().currentUser;
+				var p1 = document.getElementById("softwares-skills1");
+				var p2 = document.getElementById("softwares-skills2");
+				const events = firebase.firestore().collection("users").doc(uid).collection("softwares")
+				var i = 0;
+				var html_code1 ="";
+				var html_code2 ="";
+				events.get().then((querySnapshot) => {
+					querySnapshot.forEach((doc) => {
+						var nombre_soft 	= doc.data().nombre;
+						var porcentaje_soft = doc.data().porcentaje;
+						var checkpu = doc.data().publico;
+						var checkpr = doc.data().privado;
+						new_software(doc.id,nombre_soft,porcentaje_soft,checkpu,checkpr);
+						var html = '<div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">'+
+											'<span>'+nombre_soft+'</span>'+
+										'</div>'+
+										'<div class="progress mb-2">'+
+											'	<div class="progress-bar" data-appear-progress-animation="'+porcentaje_soft+'%" style="width: '+porcentaje_soft+'%;"></div>'+
+										'</div>';
+						if((i%2) == 0){
+							html_code1 = html_code1 + html;
+						}else{
+							html_code2 = html_code2 + html;
+						}
+						
+
+						i=i+1;
+					})
+						p1.innerHTML = html_code1;
+						p2.innerHTML = html_code2;
+					//var html1 = "<div class='owl-dots disabled'></div>"
+					//var p = document.getElementById('portafolios');
+					//p.innerHTML = html1;
+				})
+				return i;
+			}
+
+			// Initialize Firebase
+			var config = {
+					apiKey: "AIzaSyBdAIe1K0LqZ7Vwm0g1uK2G-dB_fd6ClPo",
+					authDomain: "electric-latam.firebaseapp.com",
+					databaseURL: "https://electric-latam.firebaseio.com",
+					projectId: "electric-latam",
+					storageBucket: "electric-latam.appspot.com",
+			};
+				
+			firebase.initializeApp(config);
+
+			// make auth and firestore references
+			auth = firebase.auth();
+			const db = firebase.firestore();
+
+			var storageRef = firebase.storage().ref();
+
+			var database = firebase.database();
+			
+			var usuario = null;
+			
 			$( "#header-principal" ).load( "header.html", function() {
+				
 			auth.onAuthStateChanged(user => {
 			var user = firebase.auth().currentUser;
 			
 				if(user===null){
 					//si esta aqui, pa ajuera
-					window.location.href = 'login-new.html';
+					if(gets.uid === undefined)
+						window.location.href = 'login-new.html';
+					else{
+						document.getElementById('logout').style.display = "none";
+						document.getElementById('login').style.display = "block";
+						document.getElementById('register').style.display = "block";
+						document.getElementById('editProfile').style.display = "none";
+						
+						pre_llenado(gets.uid,2);
+						console.log(gets.uid)
+					}
 				}else{
-					document.getElementById('logout').style.display = "block";
-					document.getElementById('login').style.display = "none";
-					document.getElementById('register').style.display = "none";
-					document.getElementById('editProfile').style.display = "none";
-
-					var docRef = db.collection("users").doc(user.uid);
-					docRef.get().then(function(doc) {
-						if(doc.data()===undefined){
-							console.log("google");
-							//si apreto el boton de gmail y no tiene cuenta, debe estar aqui!
-							//pal registrar
-							window.location.href = 'registro.html';
-						}else{
-							usuario = doc.data();
-							//console.log(usuario);
-							getPortafolios();
-							var tipo_user = usuario.tipo.dato;
-							$("#tipo_usuario").text("Perfil " + tipo_user + ":");
-							if(tipo_user != "empresa"){
-								var nombre = isDefined(usuario.nombre, "input", "");
-								var apep = isDefined(usuario.apellidop, "input", "");
-								var apem = isDefined(usuario.apellidom, "input", "");
-
-								$("#name_user").text(nombre+" "+apep+" "+apem);
-								$("#area_interes").text("Areas: "+ isDefined(usuario.area, "tostring", "¿"));
-								$("#carreras").text("Carrera/s: "+ isDefined(usuario.carreras, "tostring", "¿"));
-								$("#centro-estudios").text("Casa de Estudio/s: "+ isDefined(usuario.centrosEstudio, "tostring", "¿"));
-
-								$("#last-job").text(isDefined(usuario.jobs, "input", "")); // POSIBLENTE CAMBIE
-								//$("#last-studycenter").text(isDefined(usuario.universidad, "input", "")); // POSIBLENTE CAMBIE
-								$("#email").text(isDefined(usuario.email, "input", ""));
-								$("#phone").text(isDefined(usuario.telefono, "input", ""));
-								$("#region").text(isDefined(usuario.region, "input", ""));
-								$("#ciudad").text(isDefined(usuario.ciudad, "input", ""));
-								$("#disp-work").text(isDefined(usuario.disptrabajar, "input", ""));
-								$("#disp-contratation").text(isDefined(usuario.dispcontratacion, "input", ""));
-								$("#aboutme").text(isDefined(usuario.aboutme, "input", ""))
-
-								//MODAL 1
-								if(inputModal(usuario.nombre,'nombreModal','checknombrePr','checknombrePu')){
-									document.getElementById('nombreModal').value = usuario.nombre.dato+" "+usuario.apellidop.dato+" "+usuario.apellidom.dato;
-								}
-
-								if(inputModal(usuario.tipo,'tipoUsuarioModal','checktipoUsuarioPr','checktipoUsuarioPu')){
-									document.getElementById('tipoUsuarioModal').value = usuario.tipo.dato;
-								}
-								if(inputModal(usuario.carreras,'carreraModal','checkcarreraPr','checkcarreraPu')){
-									$("#carreraModal").select2("destroy");
-									var options = isDefined(usuario.carreras, "select2", "¿");
-									for(var i= 0; i<options.length; i++){
-										$("#carreraModal").append("<option value="+i+" selected>"+options[i]+"</option>");
-									}
-									$("#carreraModal").select2({
-										tags: true,
-										allowClear: true,
-										tokenSeparators: [','],
-										maximumSelectionLength: 5,
-										placeholder: 'Carreras.'
-									});
-								}
-								if(inputModal(usuario.area,'areasModal','checkareasPr','checkareasPu')){
-									$("#areasModal").select2("destroy");
-									var options = isDefined(usuario.area, "select2", "¿");
-									for(var i= 0; i<options.length; i++){
-										$("#areasModal").append("<option value="+i+" selected>"+options[i]+"</option>");
-									}
-									$("#areasModal").select2({
-										tags: true,
-										allowClear: true,
-										tokenSeparators: [','],
-										maximumSelectionLength: 15,
-										placeholder: 'Áreas.'
-									});
-								}
-
-								if(inputModal(usuario.centrosEstudio,'centrosModal','checkcentrosPr','checkcentrosPu')){
-									$("#centrosModal").select2("destroy");
-									var options = isDefined(usuario.centrosEstudio, "select2", "¿");
-									for(var i= 0; i<options.length; i++){
-										$("#centrosModal").append("<option value="+i+" selected>"+options[i]+"</option>");
-									}
-									$("#centrosModal").select2({
-										tags: true,
-										allowClear: true,
-										tokenSeparators: [','],
-										maximumSelectionLength: 15,
-										placeholder: 'Centros de estudio.'
-									});
-								}
-
-								//MODAL 2
-								if(inputModal(usuario.email,'emailModal','checkemailPr','checkemailPu')){
-									document.getElementById('emailModal').value = usuario.email.dato;
-								}
-								if(inputModal(usuario.telefono,'telModal','checktelPr','checktelPu')){
-									document.getElementById('telModal').value = usuario.telefono.dato;
-								}
-								if(inputModal(usuario.disptrabajar,'dispHor','checkdishPr','checkdishPu')){
-									//var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
-									var inputs = $("input[name=disponibilidad-horario]");
-									for(var i=0;i<inputs.length;i++){
-										if(inputs[i].value == usuario.disptrabajar.dato)
-											inputs[i].checked = true;
-									}
-								}
-								if(inputModal(usuario.dispcontratacion,'dispCon','checkdiscPr','checkdiscPu')){
-									//var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
-									var inputs = $("input[name=disponibilidad-contratacion]");
-									for(var i=0;i<inputs.length;i++){
-										if(inputs[i].value == usuario.dispcontratacion.dato)
-											inputs[i].checked = true;
-									}
-								}
-								if(inputModal(usuario.ciudad,'ciudadModal','checkciudadPr','checkciudadPu')){
-									document.getElementById('ciudadModal').value = usuario.ciudad.dato;
-								}
-								if(inputModal(usuario.region,'regionModal','checkregionPr','checkregionPu')){
-									document.getElementById('regionModal').value = usuario.region.dato;
-								}
-								if(inputModal(usuario.aboutme,'aboutmemodal','checkaboutPr','checkaboutPu')){
-									document.getElementById('aboutmemodal').value = usuario.aboutme.dato;
-								}
-							}else{
-								//empresa
-								if(inputModal(usuario.nombre,'nombreModal','checknombrePr','checknombrePu')){
-									document.getElementById('nombreModal').value = usuario.nombre.dato;
-								}
-							}							
-							document.getElementById('editProfile').style.display = "block";
-							//si esta aqui es porque esta inciado todo naissu
-							photo = user.photoURL;
-							if(photo===null){
-								document.getElementById("photoPerfil").src="https://i.stack.imgur.com/34AD2.jpg";
-							}else{
-								document.getElementById("photoPerfil").src=photo;
-							}
-
-							/*Foto: Solicitar carga de foto de perfil
-							Centro de formación o universidad: (campo a rellenar o descargar base para seleccionar?) 
-							*/
-						}
-					})
-				}
-			});
-		});
-		$( "#footer" ).load( "footer.html", function() {})
-	});
-	function MaysPrimera(string){
-		return string.charAt(0).toUpperCase() + string.slice(1);
-	}
-	function toString(string,sep){
-		var area = (string).split(sep); 
-		var str_aux ="";
-		for (var i=0; i < area.length; i++) {
-			if(i==0){
-				str_aux = MaysPrimera(area[i]); 
-			}else{
-				str_aux = str_aux +", " +MaysPrimera(area[i]); 
-			}									
-		}
-		return str_aux;
-	}
-
-	function isDefined(string, tipo, sep){
-		var aux_str;
-		if(string===undefined){
-			var aux_str = "CAMPO INCOMPLETO";
-		}else{
-			if(tipo == "input"){
-				aux_str = string.dato;
-			}else if(tipo == "tostring"){
-				aux_str = toString(string.dato, sep);
-			}else if("select2"){
-				aux_str = string.dato.split(sep);
-			}
-		}
-		return aux_str
-	}
-
-
-	function inputModal(dato,campoinput,campopriv,campopublic){
-		if(dato===undefined){
-			//no posee el dato
-		}else{
-			//!dato.editable
-			document.getElementById(campoinput).disabled = !dato.editable;
-			document.getElementById(campopublic).disabled = !dato.editable;
-			document.getElementById(campopriv).disabled = !dato.editable;
-			
-			document.getElementById(campopublic).checked = dato.publico;
-			document.getElementById(campopriv).checked = dato.privado;
-			return true;
-		}
-	}
-
-
-
-	$("#carreraModal").select2({
-		tags: true,
-		allowClear: true,
-		tokenSeparators: [','],
-		maximumSelectionLength: 5,
-		placeholder: 'Carreras.'
-	});
-
-	$("#areasModal").select2({
-		tags: true,
-		allowClear: true,
-		tokenSeparators: [','],
-		maximumSelectionLength: 15,
-		placeholder: 'Áreas.'
-	});
-
-	$("#centrosModal").select2({
-		tags: true,
-		allowClear: true,
-		tokenSeparators: [','],
-		maximumSelectionLength: 15,
-		placeholder: 'Centros de estudio.'
-	});
-
-	function uploadFile() {
-		var fileButton = document.getElementById("fileButton");
-		//console.log(fileButton);
-		var file = fileButton.files[0];
-		//ver caso que no hay file!!!
-		if(file===undefined || file===null){
-		//no hay file nuevo, no hace nada
-			location.reload();
-		}else{
-			var user = firebase.auth().currentUser;
-			var storageRef = firebase.storage().ref('fotosperfil/'+user.uid);
-			var task = storageRef.put(file);
-			task.on('state_changed', function progress(snapshot) {
-				//var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
-				//uploader.value = percentage;
-			}, function error(err) {
-
-
-			},function complete() {
-				//redirect
-				var user = firebase.auth().currentUser;
-				storageRef = firebase.storage().ref();
-				storageRef.child('fotosperfil/'+user.uid).getDownloadURL().then(function(url) {
-					user.updateProfile({
-					photoURL: url
-					}).then(function() {
-						location.reload();
-					}).catch(function(error) {
-					// An error happened.
-					});
+					if(gets.uid === undefined){
+						document.getElementById('logout').style.display = "block";
+						document.getElementById('login').style.display = "none";
+						document.getElementById('register').style.display = "none";
+						document.getElementById('editProfile').style.display = "block";
+						pre_llenado(user.uid,1);	
+					}else{
+						document.getElementById('logout').style.display = "block";
+						document.getElementById('login').style.display = "none";
+						document.getElementById('register').style.display = "none";
+						document.getElementById('editProfile').style.display = "block";
+						
+						pre_llenado(gets.uid,2);
+						console.log(gets.uid)
+					}
 					
-				})
-
+				}
+				});
 			});
-		}
 
-	} 
-
-	$("#aboutmemodal").on('input', function() {	
-		var delta = $("#aboutmemodal").attr("maxlength") - $(this).val().length
-		$("#left-chars").text(delta);
-	});
-
-	$("#descripciontesis").on('input', function() {	
-		var delta = $("#descripciontesis").attr("maxlength") - $(this).val().length
-		$("#charstesis").text(delta);
-	});
-
-	$("#btn-guardar1").click(function() {	
-		var form = document.getElementById("form-modal1");
-		var aux = $('#carreraModal').select2('data');
-		var auxString = "";
-		for(var i = 0;i< aux.length;i++){
-			auxString = auxString+aux[i].text;
-			if((i+1)!=aux.length){
-				auxString = auxString+"¿";
-			}
-		}
-		var carreras=auxString;
-
-		aux = $('#areasModal').select2('data');
-		auxString = "";
-		for(var i = 0;i< aux.length;i++){
-			auxString = auxString+aux[i].text;
-			if((i+1)!=aux.length){
-				auxString = auxString+"¿";
-			}
-		}
-		var area=auxString;
-
-		aux = $('#centrosModal').select2('data');
-		auxString = ""; 
-		for(var i = 0;i< aux.length;i++){
-			auxString = auxString+aux[i].text;
-			if((i+1)!=aux.length){
-				auxString = auxString+"¿";
-			}
-		}
-		var centrosEstudio=auxString;
-
-		var tipo = form.tipoUsuarioModal.value;
-		var user = firebase.auth().currentUser;
-		var updateUser = db.collection("users").doc(user.uid);
-        updateUser.update({
-			tipo : 				{dato: tipo, 			publico: form.checktipoUsuarioPu.checked, 	privado: form.checktipoUsuarioPr.checked, 		editable: usuario.tipo.editable},
-			area : 				{dato: area, 			publico: form.checkareasPu.checked, 		privado: form.checkareasPr.checked, 			editable: usuario.area.editable},
-			centrosEstudio : 	{dato: centrosEstudio, 	publico: form.checkcentrosPu.checked, 		privado: form.checkcentrosPr.checked, 			editable: true},
-			carreras : 			{dato: carreras, 		publico: form.checkcarreraPu.checked, 		privado: form.checkcarreraPr.checked, 			editable: usuario.carreras.editable}
-        }).then(function(error) {
-			if (error) {
-				console.log('HOCURRIÓ UN HORROR')
-			}else {
-				
-				uploadFile();
-				//location.reload() 
-			}
-		})
-	})
-
-	$("#btn-guardar2").click(function() {	
-		var form = document.getElementById("form-modal2");
-		var user = firebase.auth().currentUser;
-		
-		var email = form.emailModal.value;
-		var fono = form.telModal.value;
-		var disp_hor = $("input[name=disponibilidad-horario]:checked").val();
-		var disp_tra = $("input[name=disponibilidad-contratacion]:checked").val();
-		var ciudad = form.ciudadModal.value;
-		var region = form.regionModal.value;
-		var about = form.aboutmemodal.value;
-		
-		var updateUser = db.collection("users").doc(user.uid);
-        updateUser.update({
-			email : 				{dato: email, 			publico: form.checkemailPu.checked, 		privado: form.checkemailPr.checked, 			editable: usuario.email.editable},
-			telefono : 				{dato: fono, 			publico: form.checktelPu.checked, 			privado: form.checktelPr.checked, 				editable: usuario.telefono.editable},
-			disptrabajar : 			{dato: disp_hor, 		publico: form.checkdishPu.checked, 			privado: form.checkdishPr.checked, 				editable: true},
-			dispcontratacion : 		{dato: disp_tra, 		publico: form.checkdiscPu.checked, 			privado: form.checkdiscPr.checked, 				editable: true},
-			ciudad : 				{dato: ciudad, 			publico: form.checkciudadPu.checked, 		privado: form.checkciudadPr.checked, 			editable: true},
-			region : 				{dato: region, 			publico: form.checkregionPu.checked, 		privado: form.checkregionPr.checked, 			editable: true},
-			aboutme : 				{dato: about, 			publico: form.checkaboutPu.checked, 		privado: form.checkaboutPr.checked, 			editable: true}
-		}).then(function(error) {
-			if (error) {
-				console.log('HOCURRIÓ UN HORROR')
-			}else {
-				
-				//uploadFile();
-				location.reload() 
-			}
-		})
-		
-	})
-
-	$("#btn-nuevoPortfolio").click(function() {	
-		var form = document.getElementById("form-modalNP");
-		var titulo = form.tituloNuevoPortafolioModal.value;
-		var enlace = form.enlaceNuevoPortafolioModal.value;
-		var descripcion = form.descripcionNuevoPortafolioModal.value;
-
-		var publico = form.checkNuevoPortafolioPu.checked;
-
-		var privado = form.checkNuevoPortafolioPr.checked;
-		
-		var user = firebase.auth().currentUser;
-
-		//creo portafolios si no existe y le seteo este nuevo portafolio
-		var nuevoPorta = db.collection("users").doc(user.uid).collection("portafolio");
-        nuevoPorta.add({
-			titulo : titulo,
-			enlace : enlace,
-			descripcion : descripcion,
-			publico : publico,
-			privado,privado
-        }).then(function(docRef) {
-			console.log('Nuevo portafolio!')
-			location.reload();
-		})
-		.catch(function(error) {
-			console.error("Error agregando portafolio: ", error);
-		});
-	})
-
-
-	function deletePortafolio(idPorta){
-		var user = firebase.auth().currentUser;
-		db.collection("users").doc(user.uid).collection("portafolio").doc(idPorta).delete().then(function() {
-			console.log("Potafolio eliminado");
-			location.reload();
-		}).catch(function(error) {
-			console.error("Error eliminando documento: ", error);
-		});
-	}
-
-
+			function pre_llenado(uid,tipo){
+				//tipo 1 = editar
+				//tipo 2 = ver -> tiene get
+				if(tipo == 2){
+					$(".editar").remove();
+				}
+				console.log(uid);
+				var docRef = db.collection("users").doc(uid);
+				docRef.get().then(function(doc) {
+				if(doc.data()===undefined && tipo == 1){
+					console.log("google");
+					//si apreto el boton de gmail y no tiene cuenta, debe estar aqui!
+					//pal registrar
+					window.location.href = 'registro.html';
+				}
+				usuario = doc.data();
 	
-	$("#btn-EditPortfolio").click(function() {	
-		var form = document.getElementById("form-modalNPEdit");
-		var idPorta = form.idEditPortafolioModal.value;
-		var titulo = form.tituloEditPortafolioModal.value;
-		var enlace = form.enlaceEditPortafolioModal.value;
-		var descripcion = form.descripcionEditPortafolioModal.value;
-
-		var publico = form.checkEditPortafolioPu.checked;
-
-		var privado = form.checkEditPortafolioPr.checked;
-		
-		var user = firebase.auth().currentUser;
-		
-		var updatePorta = db.collection("users").doc(user.uid).collection("portafolio").doc(idPorta);
-        updatePorta.update({
-			titulo : titulo,
-			enlace : enlace,
-			descripcion : descripcion,
-			publico : publico,
-			privado,privado
-		}).then(function(error) {
-			if (error) {
-				console.log('HOCURRIÓ UN HORROR')
-			}else {
+				/*var inputs = $("input[name=tipoperfil]");
+				for(var i=0;i<inputs.length;i++){
+					if(inputs[i].value == usuario.tipoperfil)
+						inputs[i].checked = true;
+				}
+				*/
+				if(usuario.activada){
+					document.getElementById('certificado').style.display = "block";
+					document.getElementById('fileButton').style.display = "none";
+					document.getElementById('subirDoc').style.display = "none";
+				}else{
+					document.getElementById('certificado').style.display = "none";
+					document.getElementById('subirDoc').style.display = "block";
+				}
 				
-				//uploadFile();
-				location.reload() 
+				if(tipo == 1){
+
+					getPortafolios(uid);
+					var tipo_user = usuario.tipo.dato;
+					$("#tipo_usuario").text("Perfil " + tipo_user);
+					if(tipo_user != "empresa"){
+						var nombre = isDefined(usuario.nombre, "input", "");
+						var apep = isDefined(usuario.apellidop, "input", "");
+						var apem = isDefined(usuario.apellidom, "input", "");
+
+						$("#name_user").text(nombre+" "+apep+" "+apem);
+						$("#area_interes").text("Áreas: "+ isDefined(usuario.area, "tostring", "¿"));
+						$("#carreras").text("Carrera/s: "+ isDefined(usuario.carreras, "tostring", "¿"));
+						$("#centro-estudios").text("Casa de Estudio/s: "+ isDefined(usuario.centrosEstudio, "tostring", "¿"));
+
+						//$("#last-job").text(isDefined(usuario.jobs, "input", "","#about-trab")); // POSIBLENTE CAMBIE
+						//$("#last-studycenter").text(isDefined(usuario.universidad, "input", "")); // POSIBLENTE CAMBIE
+						$("#email").text(isDefined(usuario.email, "input", ""));
+						$("#phone").text(isDefined(usuario.telefono, "input", ""));
+						$("#region").text(isDefined(usuario.region, "input", ""));
+						$("#ciudad").text(isDefined(usuario.ciudad, "input", ""));
+						$("#disp-work").text(isDefined(usuario.disptrabajar, "input", ""));
+						$("#disp-contratation").text(isDefined(usuario.dispcontratacion, "input", ""));
+						$("#aboutme").text(isDefined(usuario.aboutme, "input", ""));
+						
+						$("#nvespanol").text(isDefined(usuario.nvespanol, "input", ""));
+						$("#nvingles").text(isDefined(usuario.nvingles, "input", ""));
+						$("#nvfrances").text(isDefined(usuario.nvfrances, "input", ""));
+						$("#titletesis").text(isDefined(usuario.titletesis, "input", ""));
+						$("#descripciontesis").text(isDefined(usuario.descripciontesis, "input", ""));
+						$("#actextra").text(isDefined(usuario.actextra, "input", ""));
+						$("#mailContacto").text(isDefined(usuario.contactomail, "input", ""));
+						$("#fonoContacto").text(isDefined(usuario.contactotel, "input", ""));
+						$("#campolibre1title").text(isDefined(usuario.campolibre1title, "input", ""));
+						$("#campolibre1desc").text(isDefined(usuario.campolibre1desc, "input", ""));
+						getSoftware(uid);
+
+						//MODAL 1
+						if(inputModal(usuario.nombre,'nombreModal','checknombrePr','checknombrePu')){
+							document.getElementById('nombreModal').value = usuario.nombre.dato+" "+usuario.apellidop.dato+" "+usuario.apellidom.dato;
+						}
+
+						if(inputModal(usuario.tipo,'tipoUsuarioModal','checktipoUsuarioPr','checktipoUsuarioPu')){
+							document.getElementById('tipoUsuarioModal').value = usuario.tipo.dato;
+						}
+						if(inputModal(usuario.carreras,'carreraModal','checkcarreraPr','checkcarreraPu')){
+							$("#carreraModal").select2("destroy");
+							var options = isDefined(usuario.carreras, "select2", "¿");
+							for(var i= 0; i<options.length; i++){
+								$("#carreraModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+							}
+							$("#carreraModal").select2({
+								tags: true,
+								allowClear: true,
+								tokenSeparators: [','],
+								maximumSelectionLength: 5,
+								placeholder: 'Carreras.'
+							});
+						}
+						if(inputModal(usuario.area,'areasModal','checkareasPr','checkareasPu')){
+							$("#areasModal").select2("destroy");
+							var options = isDefined(usuario.area, "select2", "¿");
+							for(var i= 0; i<options.length; i++){
+								$("#areasModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+							}
+							$("#areasModal").select2({
+								tags: true,
+								allowClear: true,
+								tokenSeparators: [','],
+								maximumSelectionLength: 15,
+								placeholder: 'Áreas.'
+							});
+						}
+
+						if(inputModal(usuario.centrosEstudio,'centrosModal','checkcentrosPr','checkcentrosPu')){
+							$("#centrosModal").select2("destroy");
+							var options = isDefined(usuario.centrosEstudio, "select2", "¿");
+							for(var i= 0; i<options.length; i++){
+								$("#centrosModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+							}
+							$("#centrosModal").select2({
+								tags: true,
+								allowClear: true,
+								tokenSeparators: [','],
+								maximumSelectionLength: 15,
+								placeholder: 'Centros de estudio.'
+							});
+						}
+
+						//MODAL 2
+						if(inputModal(usuario.email,'emailModal','checkemailPr','checkemailPu')){
+							document.getElementById('emailModal').value = usuario.email.dato;
+						}
+						if(inputModal(usuario.telefono,'telModal','checktelPr','checktelPu')){
+							document.getElementById('telModal').value = usuario.telefono.dato;
+						}
+						if(inputModal(usuario.disptrabajar,'dispHor','checkdishPr','checkdishPu')){
+							//var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
+							var inputs = $("input[name=disponibilidad-horario]");
+							for(var i=0;i<inputs.length;i++){
+								if(inputs[i].value == usuario.disptrabajar.dato)
+									inputs[i].checked = true;
+							}
+						}
+						if(inputModal(usuario.dispcontratacion,'dispCon','checkdiscPr','checkdiscPu')){
+							//var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
+							var inputs = $("input[name=disponibilidad-contratacion]");
+							for(var i=0;i<inputs.length;i++){
+								if(inputs[i].value == usuario.dispcontratacion.dato)
+									inputs[i].checked = true;
+							}
+						}
+						if(inputModal(usuario.ciudad,'ciudadModal','checkciudadPr','checkciudadPu')){
+							document.getElementById('ciudadModal').value = usuario.ciudad.dato;
+						}
+						if(inputModal(usuario.region,'regionModal','checkregionPr','checkregionPu')){
+							document.getElementById('regionModal').value = usuario.region.dato;
+						}
+						if(inputModal(usuario.aboutme,'aboutmemodal','checkaboutPr','checkaboutPu')){
+							document.getElementById('aboutmemodal').value = usuario.aboutme.dato;
+						}
+
+						//MODAL 3
+						if(inputModal(usuario.titletesis,'titletesisModal','checktitletesisPr','checktitletesisPu')){
+							document.getElementById('titletesisModal').value = usuario.titletesis.dato;
+						}
+						if(inputModal(usuario.descripciontesis,'descripciontesismodal','checkdestesisPr','checkdestesisPu')){
+							document.getElementById('descripciontesismodal').value = usuario.descripciontesis.dato;
+						}
+						if(inputModal(usuario.actextra,'actextracurModal','checkactextracurPr','checkactextracurPu')){
+							$("#actextracurModal").select2("destroy");
+							var options = isDefined(usuario.actextra, "select2", "¿");
+							for(var i= 0; i<options.length; i++){
+								$("#actextracurModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+							}
+							$("#actextracurModal").select2({
+								tags: true,
+								allowClear: true,
+								tokenSeparators: [','],
+								maximumSelectionLength: 15,
+								placeholder: 'Extracurricular.'
+							});
+						}
+						if(inputModal(usuario.nvespanol,'nvespanolModal','checknvspanolPr','checknvspanolPu')){
+							//var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
+							$("#nvespanolModal").val(usuario.nvespanol.dato);
+							
+						}
+						if(inputModal(usuario.nvingles,'nvinglesModal','checknvinglesPr','checknvinglesPu')){
+							//var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
+							$("#nvinglesModal").val(usuario.nvingles.dato);
+						}
+						if(inputModal(usuario.nvfrances,'nvfrancesModal','checknvfrancesPr','checknvfrancesPu')){
+							$("#nvfrancesModal").val(usuario.nvfrances.dato);
+						}
+
+						if(inputModal(usuario.seminarios,'seminariosmodal','checkseminariosPr','checkseminariosPu')){
+							document.getElementById('seminariosmodal').value = usuario.seminarios.dato;
+						}
+						if(inputModal(usuario.campolibre1title,'campolibre1titleModal','checkcampolibre1Pr','checkcampolibre1Pu')){
+							document.getElementById('campolibre1titleModal').value = usuario.campolibre1title.dato;
+						}
+						if(inputModal(usuario.campolibre1desc,'campolibre1descModal','checkcampolibre1Pr','checkcampolibre1Pu')){
+							document.getElementById('campolibre1descModal').value = usuario.campolibre1desc.dato;
+						}
+						if(inputModal(usuario.contactotel,'contactotelModal','checkcontactotelPr','checkcontactotelPu')){
+							document.getElementById('contactotelModal').value = usuario.contactotel.dato;
+						}
+						if(inputModal(usuario.contactomail,'contactomailModal','checkcontactomailPr','checkcontactomailPu')){
+							document.getElementById('contactomailModal').value = usuario.contactomail.dato;
+						}
+
+					}else{
+						//empresa
+						if(inputModal(usuario.nombre,'nombreModal','checknombrePr','checknombrePu')){
+							document.getElementById('nombreModal').value = usuario.nombre.dato;
+						}
+					}							
+					//si esta aqui es porque esta inciado todo naissu
+
+				}else if(tipo == 2){
+					
+					if(gets["token"] !== undefined){ // Luego comparar lo del token
+						
+						tipo_vis = "privado"; 
+					}
+					
+					
+					
+					$("#fileButton").remove();
+					$("#subirDoc").remove();
+					//sección de seteo de elementos por contenedor
+					containerMap.set("#about-mail-tele", 4); 
+					containerMap.set("#about-name", 1); 
+					containerMap.set("#about-area", 1); 
+					containerMap.set("#about-carr", 1); 
+					containerMap.set("#about-centro", 1); 
+					containerMap.set("#about-tipo-user", 1); 
+					containerMap.set("#about-datosall", 6); 
+					containerMap.set("#about-about", 1); 
+					containerMap.set("#soft-list", 1); 
+					containerMap.set("#about-idiomas", 3); 
+					containerMap.set("#about-tesis", 1); 
+					containerMap.set("#about-trab", 1); 
+					containerMap.set("#about-act-ext", 1); 
+					containerMap.set("#blog", 1); 
+					containerMap.set("#contactame", 1); 
+
+					userfake = usuario; // BORRAR
+					getPortafolios(uid,tipo);
+					var tipo_user = usuario.tipo.dato;
+					$("#tipo_usuario").text("Perfil " + tipo_user);
+					if(tipo_user != "empresa"){
+						var nombre = isDefined(usuario.nombre, "input", "",$(this),tipo);
+						var apep = isDefined(usuario.apellidop, "input", "",$(this),tipo);
+						var apem = isDefined(usuario.apellidom, "input", "",$(this),tipo);
+
+						$("#name_user").text(nombre+" "+apep+" "+apem);
+						$("#area_interes").text("Área/s: "+ isDefined(usuario.area, "tostring", "¿","#area_interes",tipo,"#about-area"));
+						$("#carreras").text("Carrera/s: "+ isDefined(usuario.carreras, "tostring", "¿","#carreras",tipo,"#about-carr"));
+
+						$("#centro-estudios").text("Casa de Estudio/s: "+ isDefined(usuario.centrosEstudio, "tostring", "¿","#centro-estudios",tipo,"#about-centro"));
+						$("#aboutme").text(isDefined(usuario.aboutme, "input", "","#aboutme",tipo,"#about-about"));
+						
+						//$("#last-job").text(isDefined(usuario.jobs, "input", "","#last-job",tipo,"#about-trab")); // POSIBLENTE CAMBIE
+						//$("#last-studycenter").text(isDefined(usuario.universidad, "input", "")); // POSIBLENTE CAMBIE
+						$("#email").text(isDefined(usuario.email, "input", "","#email",tipo,"#about-datosall"));
+						$("#phone").text(isDefined(usuario.telefono, "input", "","#phone",tipo,"#about-datosall"));
+						$("#region").text(isDefined(usuario.region, "input", "","#region",tipo,"#about-datosall"));
+						$("#ciudad").text(isDefined(usuario.ciudad, "input", "","#ciudad",tipo,"#about-datosall"));
+						$("#disp-work").text(isDefined(usuario.disptrabajar, "input", "","#disp-work",tipo,"#about-datosall"));
+						$("#disp-contratation").text(isDefined(usuario.dispcontratacion, "input", "","#disp-contratation",tipo,"#about-datosall"));
+						$("#aboutme").text(isDefined(usuario.aboutme, "input", "","#aboutme",tipo,"#about-about"));
+						
+						$("#nvespanol").text(isDefined(usuario.nvespanol, "input", "","#nvespanol",tipo,"#about-idiomas"));
+						$("#nvingles").text(isDefined(usuario.nvingles, "input", "","#nvingles",tipo,"#about-idiomas"));
+						$("#nvfrances").text(isDefined(usuario.nvfrances, "input", "","#nvfrances",tipo,"#about-idiomas"));
+						$("#titletesis").text(isDefined(usuario.titletesis, "input", "","#titletesis",tipo,"#about-tesis"));
+						$("#descripciontesis").text(isDefined(usuario.descripciontesis, "input", "","#descripciontesis",tipo));
+						$("#actextra").text(isDefined(usuario.actextra, "input", "","#actextra",tipo, "#about-act-ext"));
+						
+						$("#mailContacto").text('<i class="icon-envelope icons text-color-light"></i>'+isDefined(usuario.contactomail, "input", "", "#mailContacto", tipo, "#about-mail-tele"));
+						$("#fonoContacto").text('<i class="icon-phone icons text-color-light"></i>'+isDefined(usuario.contactotel, "input", "","#fonoContacto",tipo, "#about-mail-tele"));
+						$("#campolibre1title").text(isDefined(usuario.campolibre1title, "input", "","#campolibre1title",tipo, "#about-mail-tele"));
+						$("#campolibre1desc").text(isDefined(usuario.campolibre1desc, "input", "","#campolibre1desc",tipo, "#about-mail-tele"));
+						var cant = getSoftware(uid);
+						if(cant == 0)
+							$("#soft-list").remove();
+						
+					}							
+					//si esta aqui es porque esta inciado todo naissu
+				}
+				
+				var photo = "https://i.stack.imgur.com/34AD2.jpg";
+				storageRef.child('fotosperfil/'+uid).getDownloadURL().then(function(url) {
+					photo=url;
+				}).then(function() {
+					console.log("usuario con foto")
+					document.getElementById("photoPerfil").src=photo;
+				}).catch(function(error) {
+					document.getElementById("photoPerfil").src=photo;
+				});
+
+
+				if(photo===null){
+					document.getElementById("photoPerfil").src="https://i.stack.imgur.com/34AD2.jpg";
+				}else{
+					document.getElementById("photoPerfil").src=photo;
+					
+				}
+
+				/*Foto: Solicitar carga de foto de perfil
+				Centro de formación o universidad: (campo a rellenar o descargar base para seleccionar?) 
+				*/
+			if(tipo==1 && usuario.nivel>=50){
+				//ES ADMIN
+				alert("Este tipo de cuenta no posee perfil");
+				window.location.href = 'registro.html';
 			}
+			
 		})
-		
-	})
-
-
-	function generarModalEdit(idPorta){
-		var user = firebase.auth().currentUser;
-		var portafolioRef = db.collection("users").doc(user.uid).collection("portafolio").doc(idPorta);
-		portafolioRef.get().then(function(doc) {
-			//recupero el portafolio para setear el modal editable
-			document.getElementById('tituloEditPortafolioModal').value = doc.data().titulo;
-			document.getElementById('descripcionEditPortafolioModal').value = doc.data().descripcion;
-			document.getElementById('enlaceEditPortafolioModal').value = doc.data().enlace;
-			document.getElementById('checkEditPortafolioPu').value = doc.data().publico;
-			document.getElementById('checkEditPortafolioPr').value = doc.data().privado;
-			document.getElementById('idEditPortafolioModal').value = idPorta;
-		})
+			
 	}
-
-	function getPortafolios() {
-		//console.log("Obtengo portafolios")
-		var user = firebase.auth().currentUser;
-		/*const snapshot = firebase.firestore().collection("users").doc(user.uid).collection("portafolio").get();
-		const documents = [];
-		snapshot.forEach(doc => {
-			var titulo = doc.data().titulo;
-			var descripcion = doc.data().descripcion;
-			var enlace = doc.data().enlace;
-			addPortafolio(titulo,descripcion,enlace,doc.id);
-		});*/
-
-		const events = firebase.firestore().collection("users").doc(user.uid).collection("portafolio")
-		events.get().then((querySnapshot) => {
-			querySnapshot.forEach((doc) => {
-				var titulo = doc.data().titulo;
-				var descripcion = doc.data().descripcion;
-				var enlace = doc.data().enlace;
-				addPortafolio(titulo,descripcion,enlace,doc.id);
-			})
-			//var html1 = "<div class='owl-dots disabled'></div>"
-			//var p = document.getElementById('portafolios');
-			//p.innerHTML = html1;
-		})
+			
+			$( "#footer" ).load( "footer.html", function() {})
 		
 
+			function MaysPrimera(string){
+				return string.charAt(0).toUpperCase() + string.slice(1);
+			}
+			
+			function toString(string,sep){
+				var area = (string).split(sep); 
+				var str_aux ="";
+				for (var i=0; i < area.length; i++) {
+					if(i==0){
+						str_aux = MaysPrimera(area[i]); 
+					}else{
+						str_aux = str_aux +", " +MaysPrimera(area[i]); 
+					}									
+				}
+				return str_aux;
+			}
 
-	}
+			/*function isDefined(string, tipo, sep){
+				var aux_str;
+				if(string===undefined || string.dato.replace(" ","") == ""){
+					var aux_str = "CAMPO INCOMPLETO";
+				}else{
+					if(tipo == "input"){
+						aux_str = string.dato;
+					}else if(tipo == "tostring"){
+						aux_str = toString(string.dato, sep);
+					}else if("select2"){
+						aux_str = string.dato.split(sep);
+					}
+				}
+				return aux_str
+			}*/
 
-	function addPortafolio(titulo,descripcion,enlace,id) {//col-lg-6¿
-		var html = //'<div class=" mb-5 mb-lg-0">'+
-						'<article class="thumb-info custom-thumb-info-2 custom-box-shadow-1 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="0" data-appear-animation-duration="1s" style="animation-duration: 1s; animation-delay: 0ms;">'+
-							'<div class="thumb-info-wrapper">'+
-								'<a href="#">'+
-									'<img src="'+enlace+'" alt="" class="img-fluid">'+
-								'</a>'+
-							'</div>'+
-							'<div class="thumb-info-caption">'+
-								'<div class="thumb-info-caption-text">'+
-									'<h4 class="mb-2">'+
-										'<a href="#" class="text-decoration-none text-color-dark font-weight-semibold">'+
-											titulo+
-										'</a>'+
-									'</h4>'+
-										'<p class="custom-text-color-2">'+descripcion+'</p>'+
-								'</div>'+
-								'<hr class="solid m-0 mt-4 mb-2">'+
-								'<div class="row justify-content-between">'+
-									'<div class="col-auto custom-blog-post-share text-uppercase font-weight-semibold text-color-dark text-2">'+
-										'<ul class="mb-0">'+
-											'<li>'+
-												'<a data-id="'+id+'" data-toggle="modal" data-target="#form-modalEditPortafolio" class="editPortafolio item-twitter text-decoration-none text-uppercase" href="#" title="Editar">Editar Portafolio</a>'+
-											'</li>'+
-											'<li>'+
-												'<a data-id="'+id+'" class="eliminarportafolio item-google-plus text-decoration-none text-uppercase" href="#" title="Eliminar">Eliminar Portafolio</a>'+
-											'</li>'+
-										'</ul>'+
+			function isDefined(string, tipo, sep, element, tipoeditar,parentid){
+				var aux_str;
+				if(string===undefined || string.dato.replace(" ","") == "" ){
+					var aux_str = "CAMPO INCOMPLETO";
+					if(tipoeditar == 2){
+						var nchildren = containerMap.get(parentid); 
+						if(nchildren > 1){
+							$(element).parent().remove();
+							console.log("Removí 1 solo hijo: "+element);
+							containerMap.set(parentid,(nchildren-1));
+							//$(parentid).attr("data-children") = (nchildren-1);
+						}else{
+							//tiene solo 1 hijo
+							$(parentid).remove();
+							console.log("Removi el parent: "+parentid)
+						}
+						/*if($(element).parent().parent().children().length==1){
+
+						}else{
+							$(element).parent().remove();
+							console.log("tiene mas de 1 hijo, ID: "+ element)
+						}*/
+					}
+				}else{
+					if(!string[tipo_vis] && tipoeditar == 2){
+						
+						var nchildren = containerMap.get(parentid); 
+						if(nchildren > 1){
+							$(element).parent().remove();
+							console.log("Removí 1 solo hijo: "+element);
+							containerMap.set(parentid,(nchildren-1));
+						}else{
+							//tiene solo 1 hijo
+							$(parentid).remove();
+							console.log("Removi el parent: "+parentid)
+						}
+						aux_str = ""
+						
+					}else{
+						if(tipo == "input"){
+							aux_str = string.dato;
+						}else if(tipo == "tostring"){
+							aux_str = toString(string.dato, sep);
+						}else if("select2"){
+							aux_str = string.dato.split(sep);
+						}	
+					}					
+				}
+				return aux_str
+			}
+
+			function uploadFile() {
+				var fileButton = document.getElementById("fileButton");
+				//console.log(fileButton);
+				var file = fileButton.files[0];
+				//ver caso que no hay file!!!
+				if(file===undefined || file===null){
+				//no hay file nuevo, no hace nada
+					location.reload();
+				}else{
+					var user = firebase.auth().currentUser;
+					var storageRef = firebase.storage().ref('fotosperfil/'+user.uid);
+					var task = storageRef.put(file);
+					task.on('state_changed', function progress(snapshot) {
+						//var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+						//uploader.value = percentage;
+					}, function error(err) {
+
+
+					},function complete() {
+						//redirect
+						var user = firebase.auth().currentUser;
+						storageRef = firebase.storage().ref();
+						storageRef.child('fotosperfil/'+user.uid).getDownloadURL().then(function(url) {
+							user.updateProfile({
+							photoURL: url
+							}).then(function() {
+								location.reload();
+							}).catch(function(error) {
+							// An error happened.
+							});
+							
+						})
+
+					});
+				}
+
+			} 
+			
+			function inputModal(dato,campoinput,campopriv,campopublic){
+				if(dato===undefined || dato.dato ==""){
+					//no posee el dato
+				}else{
+					//!dato.editable
+					document.getElementById(campoinput).disabled = !dato.editable;
+					document.getElementById(campopublic).disabled = !dato.editable;
+					document.getElementById(campopriv).disabled = !dato.editable;
+					
+					document.getElementById(campopublic).checked = dato.publico;
+					document.getElementById(campopriv).checked = dato.privado;
+					return true;
+				}
+			}
+
+			function deleteSoftware(idSoft){
+				
+				var user = firebase.auth().currentUser;
+				db.collection("users").doc(user.uid).collection("softwares").doc(idSoft).delete().then(function() {
+					console.log("Software eliminado");
+					$("#"+idSoft).remove();
+				}).catch(function(error) {
+					console.error("Error eliminando documento: ", error);
+				});
+				
+			}
+
+			function deletePortafolio(idPorta){
+				var user = firebase.auth().currentUser;
+				db.collection("users").doc(user.uid).collection("portafolio").doc(idPorta).delete().then(function() {
+					console.log("Potafolio eliminado");
+					location.reload();
+				}).catch(function(error) {
+					console.error("Error eliminando documento: ", error);
+				});
+			}
+
+			function ValidateFile() {
+				var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png", ".pdf"]; 
+				var fileButton = document.getElementById("fileButton");
+				var oInput = fileButton.files[0];
+				if(oInput===undefined || oInput===null ){
+					//no hay file
+
+				}else{
+					var sFileName = oInput.name;
+					if (sFileName.length > 0) {
+						var blnValid = false;
+						for (var j = 0; j < _validFileExtensions.length; j++) {
+							var sCurExtension = _validFileExtensions[j];
+							if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+								blnValid = true;
+								break;
+							}
+						}
+						
+						if (!blnValid) {
+							document.getElementById('alerterrorFormato').style.display = "block";
+							//borrar archivo
+							document.getElementById('fileButton').value= null;
+							setTimeout(function() { document.getElementById("alerterrorFormato").style.display = "none"; }, 8000);
+							validFile = true;
+							console.log("false");
+							return false;
+						}
+					}
+				}
+				
+				console.log("true");
+				validFile = true;
+				return true;
+			}
+
+			function uploadFile(id) {
+				var fileButton = document.getElementById("fileButton");
+				//console.log(fileButton);
+				var file = fileButton.files[0];
+				//ver caso que no hay file!!!
+				if(file===undefined || file===null){
+				//no hay file
+					window.location.href = 'perfil.html';
+				}else{
+					var storageRef = firebase.storage().ref('documentoregistro/'+id);
+					var task = storageRef.put(file);
+					task.on('state_changed', function progress(snapshot) {
+						//var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+						//uploader.value = percentage;
+					}, function error(err) {
+
+
+					},function complete() {
+						//redirect
+						alert("Documento enviado con éxito. Nos pondremos en contacto con usted a la brevedad.")
+						window.location.href = 'perfil.html';
+					});
+				}
+			} 
+		
+			function generarModalEdit(idPorta){
+				var user = firebase.auth().currentUser;
+				var portafolioRef = db.collection("users").doc(user.uid).collection("portafolio").doc(idPorta);
+				portafolioRef.get().then(function(doc) {
+					//recupero el portafolio para setear el modal editable
+					document.getElementById('tituloEditPortafolioModal').value = doc.data().titulo;
+					document.getElementById('descripcionEditPortafolioModal').value = doc.data().descripcion;
+					document.getElementById('enlaceEditPortafolioModal').value = doc.data().enlace;
+					document.getElementById('checkEditPortafolioPu').value = doc.data().publico;
+					document.getElementById('checkEditPortafolioPr').value = doc.data().privado;
+					document.getElementById('idEditPortafolioModal').value = idPorta;
+				})
+			}
+
+			function getPortafolios(uid,tipo) {
+				//console.log("Obtengo portafolios")
+
+				var user = firebase.auth().currentUser;
+
+				const events = firebase.firestore().collection("users").doc(uid).collection("portafolio")
+				var i = 0;
+				events.get().then((querySnapshot) => {
+					querySnapshot.forEach((doc) => {
+						var titulo = doc.data().titulo;
+						var descripcion = doc.data().descripcion;
+						var enlace = doc.data().enlace;
+						var publico_p = doc.data().publico;
+						var privado_p = doc.data().privado;
+						addPortafolio(titulo,descripcion,enlace,publico_p,privado_p,doc.id,i);
+						i = i+1;
+					})
+					if(i<=2){
+						document.getElementById("ver-todos-portfolios").style.display = "none";
+					}else{
+						document.getElementById("ver-todos-portfolios").style.display = "block";
+					}
+					//var html1 = "<div class='owl-dots disabled'></div>"
+					//var p = document.getElementById('portafolios');
+					//p.innerHTML = html1;
+				})
+				
+
+
+			}
+
+			function addPortafolio(titulo,descripcion,enlace,publico,privado,id,cant) {//col-lg-6¿
+				var html = //'<div class=" mb-5 mb-lg-0">'+
+								'<article class="thumb-info custom-thumb-info-2 custom-box-shadow-1 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="0" data-appear-animation-duration="1s" style="animation-duration: 1s; animation-delay: 0ms;">'+
+									'<div class="thumb-info-wrapper image-gallery-item mb-4 pb-3">'+
+										//'<a href="#">'+
+											'<img src="'+enlace+'" alt="" class="lightbox-portfolio">'+
+										//'</a>'+
 									'</div>'+
-								'</div>'+
-							'</div>'+
-						'</article>';
-					//'</div>';
+									'<div class="thumb-info-caption">'+
+										'<div class="thumb-info-caption-text">'+
+											'<h4 class="mb-2">'+
+												'<a href="#" class="text-decoration-none text-color-dark font-weight-semibold">'+
+													titulo+
+												'</a>'+
+											'</h4>'+
+												'<p class="custom-text-color-2">'+descripcion+'</p>'+
+										'</div>'+
+										'<hr class="solid m-0 mt-4 mb-2">'+
+										'<div class="row justify-content-between">'+
+											'<div class="col-auto custom-blog-post-share text-uppercase font-weight-semibold text-color-dark text-2">'+
+												'<ul class="mb-0">'+
+													'<li>'+
+														'<a data-id="'+id+'" data-toggle="modal" data-target="#form-modalEditPortafolio" class="editPortafolio item-twitter text-decoration-none text-uppercase" href="#" title="Editar">Editar Portafolio</a>'+
+													'</li>'+
+													'<li>'+
+														'<a data-id="'+id+'" class="eliminarportafolio item-google-plus text-decoration-none text-uppercase" href="#" title="Eliminar">Eliminar Portafolio</a>'+
+													'</li>'+
+												'</ul>'+
+											'</div>'+
+										'</div>'+
+									'</div>'+
+								'</article>';
+							//'</div>';
 
-		var p = document.getElementById('portafolios');
+				var p = document.getElementById('portafolios');
+				var p1 = document.getElementById('portafolios-ocultos');
+				//newElement.setAttribute('id', elementId);
+				var newElement = document.createElement("div");
+				newElement.classList.add("col-lg-6");
+				newElement.classList.add("mb-5");//col-lg-6 mb-5 mb-lg-0
+				newElement.classList.add("mb-lg-0");
+				newElement.innerHTML = html;
+				if(cant<2)
+					p.appendChild(newElement);
+				else
+					p1.appendChild(newElement);		
+			}
+
+			$("#ver-todos-portfolios").click(function(){
+				if($(this).text() == "Ver menos"){
+					$(this).text("Ver todos");
+					document.getElementById("portafolios-ocultos").style.display = "none";
+				}else{
+					$(this).text("Ver menos");
+					document.getElementById("portafolios-ocultos").style.display = "block";
+				}				
+			});
+			
+			$("#actextracurModal").select2({
+				tags: true,
+				allowClear: true,
+				tokenSeparators: [','],
+				maximumSelectionLength: 15,
+				placeholder: 'Extracurriculares.'
+			});
+
+			$("#carreraModal").select2({
+				tags: true,
+				allowClear: true,
+				tokenSeparators: [','],
+				maximumSelectionLength: 5,
+				placeholder: 'Carreras.'
+			});
+
+			$("#areasModal").select2({
+				tags: true,
+				allowClear: true,
+				tokenSeparators: [','],
+				maximumSelectionLength: 15,
+				placeholder: 'Áreas.'
+			});
+
+			$("#centrosModal").select2({
+				tags: true,
+				allowClear: true,
+				tokenSeparators: [','],
+				maximumSelectionLength: 15,
+				placeholder: 'Centros de estudio.'
+			});
+
+			$("#descripciontesismodal").on('input', function() {	
+				var delta = $("#descripciontesismodal").attr("maxlength") - $(this).val().length
+				$("#left-charstesis").text(delta);
+			});
+
+			$("#seminariosmodal").on('input', function() {	
+				var delta = $("#seminariosmodal").attr("maxlength") - $(this).val().length
+				$("#seminarios-left-chars").text(delta);
+			});
+
+			$("#aboutmemodal").on('input', function() {	
+				var delta = $("#aboutmemodal").attr("maxlength") - $(this).val().length
+				$("#left-chars").text(delta);
+			});
+
+			$("#descripciontesis").on('input', function() {	
+				var delta = $("#descripciontesis").attr("maxlength") - $(this).val().length
+				$("#charstesis").text(delta);
+			});
+
+			$("#btn-guardar1").click(function() {	
+				var form = document.getElementById("form-modal1");
+				var aux = $('#carreraModal').select2('data');
+				var auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var carreras_aux=auxString;
+
+				aux = $('#areasModal').select2('data');
+				auxString = "";
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var area=auxString;
+
+				aux = $('#centrosModal').select2('data');
+				auxString = ""; 
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var centrosEstudio=auxString;
+
+				var tipo = form.tipoUsuarioModal.value;
+				var user = firebase.auth().currentUser;
+				var updateUser = db.collection("users").doc(user.uid);
+				updateUser.update({
+					tipo : 				{dato: tipo, 			publico: form.checktipoUsuarioPu.checked, 	privado: form.checktipoUsuarioPr.checked, 		editable: usuario.tipo.editable},
+					area : 				{dato: area, 			publico: form.checkareasPu.checked, 		privado: form.checkareasPr.checked, 			editable: usuario.area.editable},
+					centrosEstudio : 	{dato: centrosEstudio, 	publico: form.checkcentrosPu.checked, 		privado: form.checkcentrosPr.checked, 			editable: true},
+					carreras : 			{dato: carreras_aux, 		publico: form.checkcarreraPu.checked, 		privado: form.checkcarreraPr.checked, 			editable: usuario.carreras.editable}
+				}).then(function(error) {
+					if (error) {
+						console.log('OCURRIÓ UN ERROR')
+					}else {
+						
+						uploadFile();
+						//location.reload() 
+					}
+				});
+			});
+
+			$("#btn-guardar2").click(function() {	
+				var form = document.getElementById("form-modal2");
+				var user = firebase.auth().currentUser;
+				
+				var email = form.emailModal.value;
+				var fono = form.telModal.value;
+				var disp_hor = $("input[name=disponibilidad-horario]:checked").val();
+				var disp_tra = $("input[name=disponibilidad-contratacion]:checked").val();
+				var ciudad = form.ciudadModal.value;
+				var region = form.regionModal.value;
+				var about = form.aboutmemodal.value;
+				
+				var updateUser = db.collection("users").doc(user.uid);
+				updateUser.update({
+					email : 				{dato: email, 			publico: form.checkemailPu.checked, 		privado: form.checkemailPr.checked, 			editable: usuario.email.editable},
+					telefono : 				{dato: fono, 			publico: form.checktelPu.checked, 			privado: form.checktelPr.checked, 				editable: usuario.telefono.editable},
+					disptrabajar : 			{dato: disp_hor, 		publico: form.checkdishPu.checked, 			privado: form.checkdishPr.checked, 				editable: true},
+					dispcontratacion : 		{dato: disp_tra, 		publico: form.checkdiscPu.checked, 			privado: form.checkdiscPr.checked, 				editable: true},
+					ciudad : 				{dato: ciudad, 			publico: form.checkciudadPu.checked, 		privado: form.checkciudadPr.checked, 			editable: true},
+					region : 				{dato: region, 			publico: form.checkregionPu.checked, 		privado: form.checkregionPr.checked, 			editable: true},
+					aboutme : 				{dato: about, 			publico: form.checkaboutPu.checked, 		privado: form.checkaboutPr.checked, 			editable: true}
+				}).then(function(error) {
+					if (error) {
+						console.log('OCURRIÓ UN ERROR')
+					}else {
+						
+						//uploadFile();
+						location.reload() 
+					}
+				});
+				
+			});
+
+			$("#btn-guardar3").click(function() {	
+				var form = document.getElementById("form-modal3");
+				var user = firebase.auth().currentUser;
+				
+				var nvespanol = $("#nvespanolModal option:selected").text();
+				var nvingles = $("#nvinglesModal option:selected").text();
+				var nvfrances = $("#nvfrancesModal option:selected").text();
+				var titletesis = form.titletesisModal.value;
+				var descripciontesis = form.descripciontesismodal.value;
+				var seminarios = form.seminariosmodal.value;
+
+				aux = $('#actextracurModal').select2('data');
+				auxString = ""; 
+				for(var i = 0;i< aux.length;i++){
+					auxString = auxString+aux[i].text;
+					if((i+1)!=aux.length){
+						auxString = auxString+"¿";
+					}
+				}
+				var actextra = auxString;
+				var seminarios = form.seminariosmodal.value;
+				var campolibre1title = form.campolibre1titleModal.value;
+				var campolibre1desc = form.campolibre1descModal.value;
+				var contactomail = form.contactomailModal.value;
+				var contactotel = form.contactotelModal.value;
+				
+				
+				var updateUser = db.collection("users").doc(user.uid);
+				updateUser.update({
+					titletesis : 					{dato: titletesis,			publico: form.checktitletesisPu.checked, 		privado: form.checktitletesisPr.checked, 			editable: true},
+					descripciontesis : 				{dato: descripciontesis, 		publico: form.checkdestesisPu.checked, 			privado: form.checkdestesisPr.checked, 			editable: true},
+					nvespanol : 					{dato: nvespanol, 				publico: form.checknvspanolPu.checked, 			privado: form.checknvspanolPr.checked, 			editable: true},
+					nvingles : 					{dato: nvingles, 				publico: form.checknvinglesPu.checked, 			privado: form.checknvinglesPr.checked, 			editable: true},
+					nvfrances : 				{dato: nvfrances, 				publico: form.checknvfrancesPu.checked, 		privado: form.checknvfrancesPr.checked, 			editable: true},
+					actextra : 					{dato: actextra, 				publico: form.checkactextracurPu.checked, 		privado: form.checkactextracurPr.checked, 			editable: true},
+					seminarios : 				{dato: seminarios, 				publico: form.checkseminariosPu.checked, 		privado: form.checkseminariosPr.checked, 				editable: true},
+					campolibre1title : 			{dato: campolibre1title, 		publico: form.campolibre1titleModal.checked, 	privado: form.checkcampolibre1Pr.checked, 				editable: true},
+					campolibre1desc : 			{dato: campolibre1desc, 		publico: form.checkcampolibre1Pu.checked, 		privado: form.checkcampolibre1Pr.checked, 				editable: true},
+					contactomail : 				{dato: contactomail, 			publico: form.checkcontactomailPu.checked, 		privado: form.checkcontactomailPr.checked, 			editable: true},
+					contactotel : 				{dato: contactotel, 			publico: form.checkcontactotelPu.checked, 		privado: form.checkcontactotelPr.checked, 			editable: true},
+				}).then(function(error) {
+					if (error) {
+						console.log('OCURRIÓ UN ERROR')
+					}else {
+						var div = $("#otrosSoftwaresmodal");
+
+						for(var i=0;i<div.children().length;i++){
+							var software = div.children()[i];
+
+							var nombre_soft = $("#soft-"+software.id).val();
+							var porcentaje_soft = $("#rango-"+software.id).val();
+							var prcheck_soft = $("#checkPr-"+software.id).val();
+							var pucheck_soft = $("#checkPu-"+software.id).val();
+
+						
+							var updateSoft = db.collection("users").doc(user.uid).collection("softwares").doc(software.id);
+							updateSoft.update({
+								nombre : nombre_soft,
+								porcentaje : porcentaje_soft,
+								publico : pucheck_soft,
+								privado : prcheck_soft
+							}).then(function(error) {
+								if (error) {
+									console.log('OCURRIÓ UN ERROR');
+								}else {
+									
+									//uploadFile();
+									location.reload();
+								}
+							})
+						}
+
+						//uploadFile();
+						//location.reload();
+					}
+					
+				});
+			});
+
+			$("#btn-nuevoSoftware").click(function() {	
+
+				
+				var form = document.getElementById("form-modal3");
+
+				var nombre_software = "Nombre";
+				var cant_knows = 50;
+				
+				var user = firebase.auth().currentUser;
+
+				//creo Software si no existe y le seteo este nuevo portafolio
+				var nuevoSoftware = db.collection("users").doc(user.uid).collection("softwares");
+				nuevoSoftware.get().then(snap => {
+					size = snap.size // will return the collection size
+					if(size<10){
+					nuevoSoftware.add({
+						nombre : nombre_software,
+						porcentaje : cant_knows,
+						publico : false,
+						privado: false
+					}).then(function(docRef) {
+						console.log('Nuevo Software!');
+						var html = //'<div class="row">'+
+										'<div class="col-sm-6"> <input data-id="'+docRef.id+'" type="text" class="form-control" value="'+nombre_software+'" placeholder="Nombre" id="soft-'+docRef.id+'"></div>'+
+										'<div class="col-sm-6"> <input type="range" min="1" max="100" value="'+cant_knows+'" class="form-control slider" id="rango-'+docRef.id+'"></div>'+
+									//'</div>'+
+									'<br>'+
+									'Disponible en perfil: <input id="checkPu-'+docRef.id+'" type="checkbox"> Público'+
+									'<input id="checkPr-'+docRef.id+'"  type="checkbox" > Privado'+
+									'<a data-id="'+docRef.id+'" class="text-danger borrar-Software" ><i class="fa fa-ban" aria-hidden="true"></i><a> ';
+
+
+						var p = document.getElementById("otrosSoftwaresmodal");
+					
+						var newElement = document.createElement("div");
+						newElement.classList.add("form-group");
+						newElement.classList.add("row");
+						newElement.classList.add("align-items-center");
+						newElement.id = docRef.id;
+						newElement.innerHTML = html;
+						p.appendChild(newElement);
+
+					})
+					.catch(function(error) {
+						console.error("Error agregando Software: ", error);
+					});
+				}else{
+					alert("Llegaste al límite softwares");
+				}
+				});    
+					
+			})
+
+			$("#btn-nuevoPortfolio").click(function() {	
+				var form = document.getElementById("form-modalNP");
+				var titulo = form.tituloNuevoPortafolioModal.value;
+				var enlace = form.enlaceNuevoPortafolioModal.value;
+				var descripcion = form.descripcionNuevoPortafolioModal.value;
+
+				var publico = form.checkNuevoPortafolioPu.checked;
+
+				var privado = form.checkNuevoPortafolioPr.checked;
+				
+				var user = firebase.auth().currentUser;
+
+				//creo portafolios si no existe y le seteo este nuevo portafolio
+				var nuevoPorta = db.collection("users").doc(user.uid).collection("portafolio");
+				nuevoPorta.add({
+					titulo : titulo,
+					enlace : enlace,
+					descripcion : descripcion,
+					publico : publico,
+					privado,privado
+				}).then(function(docRef) {
+					console.log('Nuevo portafolio!')
+					location.reload();
+				})
+				.catch(function(error) {
+					console.error("Error agregando portafolio: ", error);
+				});
+			})
 		
-		//newElement.setAttribute('id', elementId);
-		var newElement = document.createElement("div");
-		newElement.classList.add("col-lg-6");
-		newElement.classList.add("mb-5");//col-lg-6 mb-5 mb-lg-0
-		newElement.classList.add("mb-lg-0");
-		newElement.innerHTML = html;
-		p.appendChild(newElement);
+			$("#btn-EditPortfolio").click(function() {	
+				var form = document.getElementById("form-modalNPEdit");
+				var idPorta = form.idEditPortafolioModal.value;
+				var titulo = form.tituloEditPortafolioModal.value;
+				var enlace = form.enlaceEditPortafolioModal.value;
+				var descripcion = form.descripcionEditPortafolioModal.value;
 
-	
-	}
+				var publico = form.checkEditPortafolioPu.checked;
 
-	$('body').on('click', 'a.editPortafolio', function() {
-		var  id = $( this ).attr("data-id");
-		generarModalEdit(id);
-	});
+				var privado = form.checkEditPortafolioPr.checked;
+				
+				var user = firebase.auth().currentUser;
+				
+				var updatePorta = db.collection("users").doc(user.uid).collection("portafolio").doc(idPorta);
+				updatePorta.update({
+					titulo : titulo,
+					enlace : enlace,
+					descripcion : descripcion,
+					publico : publico,
+					privado,privado
+				}).then(function(error) {
+					if (error) {
+						console.log('OCURRIÓ UN ERROR')
+					}else {
+						
+						//uploadFile();
+						location.reload() 
+					}
+				})
+				
+			})
 
-	$('body').on('click', 'a.eliminarportafolio', function() {
-		var  id = $( this ).attr("data-id");
-		var r = confirm("¿Está seguro de querer eliminar este porfaolio?");
-		if (r == true) {
-			deletePortafolio(id);
-		} else {
-			console.log("Cancelado por el usuario");
-		}
-		
-	});
+			$('body').on('click', 'a.editPortafolio', function() {
+				var  id = $( this ).attr("data-id");
+				generarModalEdit(id);
+			});
 
+			$('body').on('click', 'a.borrar-Software', function() {
+				var  id = $( this ).attr("data-id");
+				deleteSoftware(id);
+			});
+
+			$('body').on('click', 'a.eliminarportafolio', function() {
+				var  id = $( this ).attr("data-id");
+				var r = confirm("¿Está seguro de querer eliminar este porfaolio?");
+				if (r == true) {
+					deletePortafolio(id);
+				} else {
+					console.log("Cancelado por el usuario");
+				}
+				
+			});
+
+
+
+			/*$('input[type=radio][name=tipoperfil]').change(function() {
+				var tipoperfil = this.value;
+				var user = firebase.auth().currentUser;
+						
+				var updateUser = db.collection("users").doc(user.uid);
+				updateUser.update({
+					tipoperfil : 	tipoperfil,
+				}).then(function(error) {
+					if (error) {
+						console.log('OCURRIÓ UN ERROR')
+					}else {
+						console.log("Perfil "+tipoperfil);
+					}
+				})
+			});
+			*/
+
+
+			const fileButton = document.getElementById('fileButton');
+			//const txtUpload = document.getElementById('txtUpload');
+			fileButton.addEventListener('change', function(){
+				//document.getElementById('txtUpload')="Cambiar";
+				if(ValidateFile()){
+					var user = firebase.auth().currentUser;
+					uploadFile(user.uid)
+				}
+			})
+
+
+
+		});
 	</script>	
 </html>
