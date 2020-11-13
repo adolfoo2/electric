@@ -930,11 +930,27 @@ $(document).ready(function() {
 						alert("Indique su correo y clave"); 
 					}else{
 						firebase.auth().createUserWithEmailAndPassword(email, password).then(function(result) {
-							token = user.uid + token;
+							console.log(tipo);
 						//guardar en BD
 							var user = firebase.auth().currentUser;
+							token = user.uid + token;
 							var userID = user.uid;
 							if(tipo =="empresa"){
+								console.log(userID);
+					console.log(telefono);
+					console.log(email);
+					console.log(nombre);
+					console.log(tipo);
+					console.log(area);
+					console.log(activada);
+					console.log(rut);
+					console.log(nameRepE);
+					console.log(lastnameRepE);
+					console.log(rutrepE);
+					console.log(giroE);
+					console.log(areaserviciosE);
+					console.log(serviciosRadio);
+					console.log(token);
 								db.collection('users').doc(userID).set({
 									userID: userID,
 									telefono : {dato: telefono, publico: false, privado: true, editable: true},
@@ -994,10 +1010,9 @@ $(document).ready(function() {
 									token : token
 								}).then(function(docRef) {
 									console.log("registro exitoso");
-									uploadFile(userID); 
-								})			
+									uploadFile(userID);
+								})
 							}
-						
 						}).catch(function(error) {
 						// Handle Errors here.
 						var errorMessage = error.message;
@@ -1019,8 +1034,24 @@ $(document).ready(function() {
 					token = user.uid + token;
 					var userID = user.uid;
 					email = user.email;
+					console.log(userID);
+					console.log(telefono);
+					console.log(email);
+					console.log(nombre);
+					console.log(tipo);
+					console.log(area);
+					console.log(activada);
+					console.log(rut);
+					console.log(nameRepE);
+					console.log(lastnameRepE);
+					console.log(rutrepE);
+					console.log(giroE);
+					console.log(areaserviciosE);
+					console.log(serviciosRadio);
+					console.log(token);
+
 					if(tipo =="empresa"){
-						db.collection('users').doc(userID).set({
+ 						db.collection('users').doc(userID).set({
 							userID: userID,
 							telefono : {dato: telefono, publico: false, privado: true, editable: true},
 							email : {dato: email, publico: true, privado: true, editable: true},
@@ -1051,21 +1082,6 @@ $(document).ready(function() {
 							area : {dato: area, publico: false, privado: true, editable: true},
 							apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
 							apellidop : {dato: apellidop, publico: false, privado: true, editable: true},
-							activada:activada,
-							nivel:0,
-							rut : {dato: rut, publico: false, privado: false, editable: false},
-							carreras : {dato: carreras, publico: true, privado: true, editable: false},
-							token : token
-						}).then(function(docRef) {
-							console.log("registro exitoso");
-							uploadFile(userID); 
-						})
-					}else{
-						db.collection('users').doc(userID).set({
-							userID: userID,
-							telefono : {dato: telefono, publico: false, privado: true, editable: true},
-							email : {dato: email, publico: true, privado: true, editable: true},
-							nombre : {dato: nombre, publico: true, privado: true, editable: false},
 							tipo : {dato: tipo, publico: false, privado: false, editable: false},
 							area : {dato: area, publico: false, privado: true, editable: true},
 							apellidom : {dato: apellidom, publico: false, privado: true, editable: true},
@@ -1083,6 +1099,8 @@ $(document).ready(function() {
 					}
 					
 				}
+			}else{
+				console.log("flag false");
 			}
 		}else{
 			//archivo invalido, borrar

@@ -1,0 +1,1124 @@
+<div class="row align-items-center">
+	
+    <div class="col-sm-9">
+
+        <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="formModalLabel">Datos cabecera</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-modal1" class="mb-4" novalidate="novalidate">
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Nombre</label>
+                                <div class="col-sm-9">
+                                    <input id="nombreModal" type="text" name="name" class="form-control" value="" required/>
+                                    <br>
+                                    Disponible en perfil: <input id="checknombrePu" type="checkbox" > Público
+                                    <input id="checknombrePr"  type="checkbox" > Privado
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Tipo de cuenta</label>
+                                <div class="col-sm-9">
+                                    <input id="tipoUsuarioModal" type="text" name="tipoUsuario" class="form-control" value=""/>
+                                    <br>Disponible en perfil: <input id="checktipoUsuarioPu" type="checkbox" > Público
+                                    <input id="checktipoUsuarioPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Carrera</label>
+                                <div class="col-sm-9">
+
+                                    <select class="carreras-estudiante form-control" multiple="multiple" id='carreraModal'>
+                                    </select>
+                                    <br>Disponible en perfil: <input id="checkcarreraPu" type="checkbox" > Público
+                                    <input id="checkcarreraPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Áreas</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" multiple="multiple" id='areasModal'>
+                                    </select>
+                                    <br>Disponible en perfil: <input id="checkareasPu" type="checkbox" > Público
+                                    <input id="checkareasPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Centros de estudio</label>
+                                <div class="col-sm-9">
+
+                                    <select class="form-control" multiple="multiple" id='centrosModal'>
+                                    </select>
+                                    Disponible en perfil: <input id="checkcentrosPu" type="checkbox" > Público
+                                    <input id="checkcentrosPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Foto de perfil</label>
+                                
+                                <div class="col-sm-9 fileupload fileupload-new" data-provides="fileupload">
+                                    <div class="input-append">
+                                        <div class="uneditable-input">
+                                            <span class="fileupload-preview"></span>
+                                        </div>
+                                        <span class="btn btn-default btn-file">
+                                            <span id="txtUpload" class="fileupload-exists">Seleccionar Archivo</span>
+                                            <!--<span class="fileupload-new">Seleccionar Archivo</span>-->
+                                            <input type="file" id="fileButton" accept="image/*,application/pdf">
+
+                                        </span>
+                                        <!--<a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Eliminar</a>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="btn-guardar1">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-9">
+        <div class="modal fade" id="formModal2" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="formModalLabel2">Datos Extras</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-modal2" class="mb-4" novalidate="novalidate">
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0" for="emailModal">Email</label>
+                                <div class="col-sm-9">
+                                    <input id="emailModal" type="email" name="name" class="form-control" value="" required/>
+                                    <br>
+                                    Disponible en perfil: <input id="checkemailPu" type="checkbox" > Público
+                                    <input id="checkemailPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0" for="telModal">Teléfono</label>
+                                <div class="col-sm-9">
+                                    <input id="telModal" type="text" name="telModal" class="form-control" value="" required/>
+                                    <br>
+                                    Disponible en perfil: <input id="checktelPu" type="checkbox" > Público
+                                    <input id="checktelPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row">
+                                <label class="col-lg-3 control-label text-lg-right pt-2">Disponibilidad de horario*:</label>
+                                <div class="col-lg-9"  id ="dispHor">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="disponibilidad-horario" id="horarioRadio1" value="Full time" checked>
+                                            Full time
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="disponibilidad-horario" id="horarioRadio2" value="Part time">
+                                            Part time
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="disponibilidad-horario" id="horarioRadio3" value="Eventual">
+                                            Eventual
+                                        </label>
+                                    </div>
+                                    <br>
+                                    Disponible en perfil: <input id="checkdishPu" type="checkbox" > Público
+                                    <input id="checkdishPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row">
+                                <label class="col-lg-3 control-label text-lg-right pt-2">Disponibilidad de Contratación*:</label>
+                                <div class="col-lg-9"  id ="dispCon">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="disponibilidad-contratacion" id="contratacionRadio1" value="Indefinida" checked>
+                                            Indefinida
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="disponibilidad-contratacion" id="contratacionRadio2" value="Temporal">
+                                            Temporal
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="disponibilidad-contratacion" id="contratacionRadio3" value="Por obra o servicio">
+                                            Por obra o servicio
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="disponibilidad-contratacion" id="contratacionRadio4" value="Eventual">
+                                            Eventual
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="disponibilidad-contratacion" id="contratacionRadio5" value="De formación y aprendizaje">
+                                            De formación y aprendizaje
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="disponibilidad-contratacion" id="contratacionRadio6" value="Práctica laboral">
+                                            Práctica laboral
+                                        </label>
+                                    </div>
+                                    <br>
+                                Disponible en perfil: <input id="checkdiscPu" type="checkbox" > Público
+                                <input id="checkdiscPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0" for="ciudadModal">Ciudad</label>
+                                <div class="col-sm-9">
+                                    <input id="ciudadModal" type="text" name="ciudad" class="form-control" value="" required/>
+                                    <br>
+                                    Disponible en perfil: <input id="checkciudadPu" type="checkbox" > Público
+                                    <input id="checkciudadPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0" for="regionModal">Región</label>
+                                <div class="col-sm-9">
+                                    <input id="regionModal" type="text" name="region" class="form-control" value="" required/>
+                                    <br>
+                                    Disponible en perfil: <input id="checkregionPu" type="checkbox" > Público
+                                    <input id="checkregionPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row">
+                                <label class="col-lg-3 control-label text-lg-right pt-2" for="aboutmemodal">Sobre mi</label>
+                                <div class="col-lg-8">
+                                    <textarea class="form-control" id="aboutmemodal" rows="3" data-plugin-maxlength="" maxlength="500" style="margin-top: 0px; margin-bottom: 0px; height: 135px;"></textarea>
+                                    <p>
+                                        Cantidad máxima de Carácteres: <span style="display: inline;" id= "left-chars">500</span>
+                                    </p>
+                                    <br>
+                                    Disponible en perfil: <input id="checkaboutPu" type="checkbox" > Público
+                                    <input id="checkaboutPr"  type="checkbox" > Privado
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="btn-guardar2">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="formModal3" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="formModalLabel3">Datos Extras 2</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-modal3" class="mb-4" novalidate="novalidate">
+                        <div class="form-group row align-items-center">
+                            <label class="col-sm-3 text-left text-sm-right mb-0" for="titletesisModal">Título de Tesis</label>
+                            <div class="col-sm-9">
+                                <input id="titletesisModal" type="text" name="titletesis" class="form-control" value="" required/>
+                                <br>
+                                Disponible en perfil: <input id="checktitletesisPu" type="checkbox" > Público
+                                <input id="checktitletesisPr"  type="checkbox" > Privado
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 control-label text-lg-right pt-2" for="descripciontesismodal">Descripción de tema Tesis</label>
+                            <div class="col-lg-8">
+                                <textarea class="form-control" id="descripciontesismodal" rows="3" data-plugin-maxlength="" maxlength="250" style="margin-top: 0px; margin-bottom: 0px; height: 135px;"></textarea>
+                                <p>
+                                    Cantidad máxima de Carácteres: <span style="display: inline;" id= "left-charstesis">250</span>
+                                </p>
+                                <br>
+                                Disponible en perfil: <input id="checkdestesisPu" type="checkbox" > Público
+                                <input id="checkdestesisPr"  type="checkbox" > Privado
+                            </div>									
+                        </div>
+                        <hr>
+                        <hr>
+                        <div class="form-group row align-items-center">
+                            <label class="col-sm-3 text-left text-sm-right mb-0" for="actextracurModal">Actividades Extracurriculares</label>
+                            <div class="col-sm-9">
+                                <select class="carreras-estudiante form-control" multiple="multiple" id='actextracurModal'>
+                                </select>
+                                <br>Disponible en perfil: <input id="checkactextracurPu" type="checkbox" > Público
+                                <input id="checkactextracurPr"  type="checkbox" > Privado
+                            </div>
+                        </div>	
+                        <hr>
+                        <div class="form-group row align-items-center">
+                            <label class="col-sm-3 text-left text-sm-right mb-0" for="nvespanolModal">Dominio Español</label>
+                            <div class="col-sm-9">
+                                <select  class="nivel-estudio form-control" name="nvespanolModal" id='nvespanolModal'>
+                                    <option value="Nativo">Nativo</option>
+                                    <option value="Nulo">Nulo</option>
+                                    <option value="Básico">Básico</option>											
+                                    <option value="Medio">Medio</option>
+                                    <option value="Avanzado">Avanzado</option>
+                                </select>
+                                <br>
+                                Disponible en perfil: <input id="checknvspanolPu" type="checkbox" > Público
+                                <input id="checknvspanolPr"  type="checkbox" > Privado
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group row align-items-center">
+                            <label class="col-sm-3 text-left text-sm-right mb-0" for="nvinglesModal">Dominio Inglés</label>
+                            <div class="col-sm-9">
+                                <select  class="nivel-estudio form-control" name="nvinglesModal" id='nvinglesModal'>
+                                    <option value="Nativo">Nativo</option>
+                                    <option value="Nulo">Nulo</option>
+                                    <option value="Básico">Básico</option>											
+                                    <option value="Medio">Medio</option>
+                                    <option value="Avanzado">Avanzado</option>
+                                </select>
+                                <br>
+                                Disponible en perfil: <input id="checknvinglesPu" type="checkbox" > Público
+                                <input id="checknvinglesPr"  type="checkbox" > Privado
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group row align-items-center">
+                            <label class="col-sm-3 text-left text-sm-right mb-0" for="nvfrancesModal">Dominio Francés</label>
+                            <div class="col-sm-9">
+                                <select  class="nivel-estudio form-control" name="nvfrancesModal" id='nvfrancesModal'>
+                                    <option value="Nativo">Nativo</option>
+                                    <option value="Nulo">Nulo</option>
+                                    <option value="Básico">Básico</option>											
+                                    <option value="Medio">Medio</option>
+                                    <option value="Avanzado">Avanzado</option>
+                                </select>
+                                <br>
+                                Disponible en perfil: <input id="checknvfrancesPu" type="checkbox" > Público
+                                <input id="checknvfrancesPr"  type="checkbox" > Privado
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group row align-items-center">
+                            <label class="col-sm-3 text-left text-sm-right mb-0" for="titlemodal">Dominio Software</label>
+                            <div class="col-sm-9">
+                                <div id="otrosSoftwaresmodal" class="col-sm-12">
+
+                                </div>
+                                <button type="button" class="btn btn-primary" id="btn-nuevoSoftware">Agregar dominio</button>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group row">
+                            <label class="col-lg-3 control-label text-lg-right pt-2" for="seminariosmodal">Seminarios/ Charlas/ Capacitaciones</label>
+                            <div class="col-lg-8">
+                                <textarea class="form-control" id="seminariosmodal" rows="3" data-plugin-maxlength="" maxlength="500" style="margin-top: 0px; margin-bottom: 0px; height: 135px;"></textarea>
+                                <p>
+                                    Cantidad máxima de Carácteres: <span style="display: inline;" id= "seminarios-left-chars">500</span>
+                                </p>
+                                <br>
+                                Disponible en perfil: <input id="checkseminariosPu" type="checkbox" > Público
+                                <input id="checkseminariosPr"  type="checkbox" > Privado
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group row align-items-center">
+                            <label class="col-sm-3 text-left text-sm-right mb-0" for="campolibre1titleModal">Campo Libre</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-6"> <input type="text" class="form-control" placeholder="Título" id="campolibre1titleModal"></div>
+                                    <div class="col-sm-6"> 
+                                        <textarea class="form-control" id="campolibre1descModal" rows="3" data-plugin-maxlength="" maxlength="500" style="margin-top: 0px; margin-bottom: 0px; height: 135px;"></textarea>
+                                        <p>
+                                            Cantidad máxima de Carácteres: <span style="display: inline;" id= "seminarios-left-chars">500</span>
+                                        </p></div>
+                                </div>
+                                <br>
+                                Disponible en perfil: <input id="checkcampolibre1Pu" type="checkbox"> Público
+                                <input id="checkcampolibre1Pr"  type="checkbox" > Privado
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group row align-items-center">
+                            <label class="col-sm-3 text-left text-sm-right mb-0" for="contactotelModal">Contacto | Teléfono</label>
+                            <div class="col-sm-9">
+                                <input id="contactotelModal" type="text" name="contactotelModal" placeholder="teléfono" class="form-control" value="" required/>
+                                <br>
+                                Disponible en perfil: <input id="checkcontactotelPu" type="checkbox" > Público
+                                <input id="checkcontactotelPr"  type="checkbox" > Privado
+                            </div>
+                        </div>		
+                        <div class="form-group row align-items-center">
+                            <label class="col-sm-3 text-left text-sm-right mb-0" for="contactomailModal">Contacto | Email</label>
+                            <div class="col-sm-9">
+                                <input id="contactomailModal" type="email" name="contactomailModal" placeholder="Email" class="form-control" value="" required/>
+                                <br>
+                                Disponible en perfil: <input id="checkcontactomailPu" type="checkbox" > Público
+                                <input id="checkcontactomailPr"  type="checkbox" > Privado
+                            </div>
+                        </div>							
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="btn-guardar3">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-9">
+        <div class="modal fade" id="form-modalNuevoPortafolio" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="formModalLabel">Datos Portafolio</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-modalNP" class="mb-4" novalidate="novalidate">
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Título</label>
+                                <div class="col-sm-9">
+                                    <input id="tituloNuevoPortafolioModal" type="text" name="titulo" class="form-control" value="" required/>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Enlace</label>
+                                <div class="col-sm-9">
+                                    <input id="enlaceNuevoPortafolioModal" type="text" name="enlace" class="form-control" value=""/>
+
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Descripción</label>
+                                <div class="col-sm-9">
+                                    <textarea id="descripcionNuevoPortafolioModal" rows="5" class="form-control"></textarea>
+
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Disponible en perfil: </label>
+                                <div class="col-sm-9">
+                                    <br> <input id="checkNuevoPortafolioPu" type="checkbox" > Público
+                                    <input id="checkNuevoPortafolioPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="btn-nuevoPortfolio">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-9">
+        <div class="modal fade" id="form-modalEditPortafolio" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="formModalLabel">Datos Portafolio</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-modalNPEdit" class="mb-4" novalidate="novalidate">
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Título</label>
+                                <div class="col-sm-9">
+                                    <input id="idEditPortafolioModal" value="" type="hidden"/>
+                                    <input id="tituloEditPortafolioModal" type="text" name="titulo" class="form-control" value="" required/>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Enlace</label>
+                                <div class="col-sm-9">
+                                    <input id="enlaceEditPortafolioModal" type="text" name="enlace" class="form-control" value=""/>
+
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Descripción</label>
+                                <div class="col-sm-9">
+                                    <textarea id="descripcionEditPortafolioModal" rows="5" class="form-control" value=""></textarea>
+
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-3 text-left text-sm-right mb-0">Disponible en perfil: </label>
+                                <div class="col-sm-9">
+                                    <br> <input id="checkEditPortafolioPu" type="checkbox" > Público
+                                    <input id="checkEditPortafolioPr"  type="checkbox" > Privado
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="btn-EditPortfolio">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    
+    function pre_llenado(tipo,usuario){
+        //tipo 1 = editar
+        //tipo 2 = ver -> tiene get
+        if(tipo == 2){
+            $(".editar").remove();
+        }
+        //console.log(uid);
+       
+
+            /*var inputs = $("input[name=tipoperfil]");
+            for(var i=0;i<inputs.length;i++){
+                if(inputs[i].value == usuario.tipoperfil)
+                    inputs[i].checked = true;
+            }
+            */
+            if(usuario.activada){
+                document.getElementById('certificado').style.display = "block";
+                document.getElementById('fileButton').style.display = "none";
+                document.getElementById('subirDoc').style.display = "none";
+            }else{
+                document.getElementById('certificado').style.display = "none";
+                document.getElementById('subirDoc').style.display = "block";
+            }
+            
+            if(tipo == 1){
+
+            getPortafolios(uid);
+            var tipo_user = usuario.tipo.dato;
+            $("#tipo_usuario").text("Perfil " + tipo_user);
+            if(tipo_user != "empresa"){
+
+                var nombre = isDefined(usuario.nombre, "input", "");
+                var apep = isDefined(usuario.apellidop, "input", "");
+                var apem = isDefined(usuario.apellidom, "input", "");
+
+                $("#name_user").text(nombre+" "+apep+" "+apem);
+                
+                $("#area_interes").text("Áreas: "+ isDefined(usuario.area, "tostring", "¿"));
+                $("#carreras").text("Carrera/s: "+ isDefined(usuario.carreras, "tostring", "¿"));
+                $("#centro-estudios").text("Casa de Estudio/s: "+ isDefined(usuario.centrosEstudio, "tostring", "¿"));
+
+                //$("#last-job").text('<strong class="text-color-light">Trabajo Previo: </strong>'+isDefined(usuario.jobs, "input", "","#about-trab")); // POSIBLENTE CAMBIE
+                //$("#last-studycenter").text(isDefined(usuario.universidad, "input", "")); // POSIBLENTE CAMBIE
+                $("#email").text(isDefined(usuario.email, "input", ""));
+                $("#phone").text(isDefined(usuario.telefono, "input", ""));
+                $("#region").text(isDefined(usuario.region, "input", ""));
+                $("#ciudad").text(isDefined(usuario.ciudad, "input", ""));
+                //$("#disp-work").text(isDefined(usuario.disptrabajar, "input", ""));
+                document.getElementById('disp-contratation').innerHTML='<span class="text-color-dark">Disponibilidad de contratación:</span><span class="custom-text-color-2"> '+isDefined(usuario.dispcontratacion, "input", "")+'</span>';
+                document.getElementById('disp-work').innerHTML='<span class="text-color-dark">Disponibilidad para trabajar:</span><span class="custom-text-color-2"> '+isDefined(usuario.disptrabajar, "input", "")+'</span>';
+                $("#aboutme").text(isDefined(usuario.aboutme, "input", ""));
+                 
+                $("#nvespanol").text(isDefined(usuario.nvespanol, "input", ""));
+                $("#nvingles").text(isDefined(usuario.nvingles, "input", ""));
+                $("#nvfrances").text(isDefined(usuario.nvfrances, "input", ""));
+                $("#titletesis").text(isDefined(usuario.titletesis, "input", ""));
+                $("#descripciontesis").text(isDefined(usuario.descripciontesis, "input", ""));
+                $("#actextra").text(isDefined(usuario.actextra, "input", ""));
+                document.getElementById('disp-seminarios').innerHTML='<h2 class="text-color-dark font-weight-extra-bold text-uppercase">Seminarios y Cursos</h2><p id="seminarios"></p>';
+                var obj = $("#seminarios").text(isDefined(usuario.seminarios, "input", "","#disp-seminarios",tipo,"#section-seminarios"));
+                obj.html(obj.html().replace( /\n/g,'<br/>'));
+                $("#mailContacto").text(isDefined(usuario.contactomail, "input", ""));
+                $("#fonoContacto").text(isDefined(usuario.contactotel, "input", ""));
+                $("#campolibre1title").text(isDefined(usuario.campolibre1title, "input", ""));
+                $("#campolibre1desc").text(isDefined(usuario.campolibre1desc, "input", ""));
+                getSoftware(uid);
+
+                //MODAL 1
+                if(inputModal(usuario.nombre,'nombreModal','checknombrePr','checknombrePu')){
+                    document.getElementById('nombreModal').value = usuario.nombre.dato+" "+usuario.apellidop.dato+" "+usuario.apellidom.dato;
+                }
+
+                if(inputModal(usuario.tipo,'tipoUsuarioModal','checktipoUsuarioPr','checktipoUsuarioPu')){
+                    document.getElementById('tipoUsuarioModal').value = usuario.tipo.dato;
+                }
+                if(inputModal(usuario.carreras,'carreraModal','checkcarreraPr','checkcarreraPu')){
+                    $("#carreraModal").select2("destroy");
+                    var options = isDefined(usuario.carreras, "select2", "¿");
+                    for(var i= 0; i<options.length; i++){
+                        $("#carreraModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+                    }
+                    $("#carreraModal").select2({
+                        tags: true,
+                        allowClear: true,
+                        tokenSeparators: [','],
+                        maximumSelectionLength: 5,
+                        placeholder: 'Carreras.'
+                    });
+                }
+                if(inputModal(usuario.area,'areasModal','checkareasPr','checkareasPu')){
+                    $("#areasModal").select2("destroy");
+                    var options = isDefined(usuario.area, "select2", "¿");
+                    for(var i= 0; i<options.length; i++){
+                        $("#areasModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+                    }
+                    $("#areasModal").select2({
+                        tags: true,
+                        allowClear: true,
+                        tokenSeparators: [','],
+                        maximumSelectionLength: 15,
+                        placeholder: 'Áreas.'
+                    });
+                }
+
+                if(inputModal(usuario.centrosEstudio,'centrosModal','checkcentrosPr','checkcentrosPu')){
+                    $("#centrosModal").select2("destroy");
+                    var options = isDefined(usuario.centrosEstudio, "select2", "¿");
+                    for(var i= 0; i<options.length; i++){
+                        $("#centrosModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+                    }
+                    $("#centrosModal").select2({
+                        tags: true,
+                        allowClear: true,
+                        tokenSeparators: [','],
+                        maximumSelectionLength: 15,
+                        placeholder: 'Centros de estudio.'
+                    });
+                }
+
+                //MODAL 2
+                if(inputModal(usuario.email,'emailModal','checkemailPr','checkemailPu')){
+                    document.getElementById('emailModal').value = usuario.email.dato;
+                }
+                if(inputModal(usuario.telefono,'telModal','checktelPr','checktelPu')){
+                    document.getElementById('telModal').value = usuario.telefono.dato;
+                }
+                if(inputModal(usuario.disptrabajar,'dispHor','checkdishPr','checkdishPu')){
+                    //var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
+                    var inputs = $("input[name=disponibilidad-horario]");
+                    for(var i=0;i<inputs.length;i++){
+                        if(inputs[i].value == usuario.disptrabajar.dato)
+                            inputs[i].checked = true;
+                    }
+                }
+                if(inputModal(usuario.dispcontratacion,'dispCon','checkdiscPr','checkdiscPu')){
+                    //var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
+                    var inputs = $("input[name=disponibilidad-contratacion]");
+                    for(var i=0;i<inputs.length;i++){
+                        if(inputs[i].value == usuario.dispcontratacion.dato)
+                            inputs[i].checked = true;
+                    }
+                }
+                if(inputModal(usuario.ciudad,'ciudadModal','checkciudadPr','checkciudadPu')){
+                    document.getElementById('ciudadModal').value = usuario.ciudad.dato;
+                }
+                if(inputModal(usuario.region,'regionModal','checkregionPr','checkregionPu')){
+                    document.getElementById('regionModal').value = usuario.region.dato;
+                }
+                if(inputModal(usuario.aboutme,'aboutmemodal','checkaboutPr','checkaboutPu')){
+                    document.getElementById('aboutmemodal').value = usuario.aboutme.dato;
+                }
+
+                //MODAL 3
+                if(inputModal(usuario.titletesis,'titletesisModal','checktitletesisPr','checktitletesisPu')){
+                    document.getElementById('titletesisModal').value = usuario.titletesis.dato;
+                }
+                if(inputModal(usuario.descripciontesis,'descripciontesismodal','checkdestesisPr','checkdestesisPu')){
+                    document.getElementById('descripciontesismodal').value = usuario.descripciontesis.dato;
+                }
+                if(inputModal(usuario.actextra,'actextracurModal','checkactextracurPr','checkactextracurPu')){
+                    $("#actextracurModal").select2("destroy");
+                    var options = isDefined(usuario.actextra, "select2", "¿");
+                    for(var i= 0; i<options.length; i++){
+                        $("#actextracurModal").append("<option value="+i+" selected>"+options[i]+"</option>");
+                    }
+                    $("#actextracurModal").select2({
+                        tags: true,
+                        allowClear: true,
+                        tokenSeparators: [','],
+                        maximumSelectionLength: 15,
+                        placeholder: 'Extracurricular.'
+                    });
+                }
+                if(inputModal(usuario.nvespanol,'nvespanolModal','checknvspanolPr','checknvspanolPu')){
+                    //var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
+                    $("#nvespanolModal").val(usuario.nvespanol.dato);
+                    
+                }
+                if(inputModal(usuario.nvingles,'nvinglesModal','checknvinglesPr','checknvinglesPu')){
+                    //var index = $("input[name=disponibilidad-horario]:checked").index(); // get Checked
+                    $("#nvinglesModal").val(usuario.nvingles.dato);
+                }
+                if(inputModal(usuario.nvfrances,'nvfrancesModal','checknvfrancesPr','checknvfrancesPu')){
+                    $("#nvfrancesModal").val(usuario.nvfrances.dato);
+                }
+
+                if(inputModal(usuario.seminarios,'seminariosmodal','checkseminariosPr','checkseminariosPu')){
+                    document.getElementById('seminariosmodal').value = usuario.seminarios.dato;
+                }
+                if(inputModal(usuario.campolibre1title,'campolibre1titleModal','checkcampolibre1Pr','checkcampolibre1Pu')){
+                    document.getElementById('campolibre1titleModal').value = usuario.campolibre1title.dato;
+                }
+                if(inputModal(usuario.campolibre1desc,'campolibre1descModal','checkcampolibre1Pr','checkcampolibre1Pu')){
+                    document.getElementById('campolibre1descModal').value = usuario.campolibre1desc.dato;
+                }
+                if(inputModal(usuario.contactotel,'contactotelModal','checkcontactotelPr','checkcontactotelPu')){
+                    document.getElementById('contactotelModal').value = usuario.contactotel.dato;
+                }
+                if(inputModal(usuario.contactomail,'contactomailModal','checkcontactomailPr','checkcontactomailPu')){
+                    document.getElementById('contactomailModal').value = usuario.contactomail.dato;
+                }
+
+                }else{
+                    //empresa
+                    if(inputModal(usuario.nombre,'nombreModal','checknombrePr','checknombrePu')){
+                        document.getElementById('nombreModal').value = usuario.nombre.dato;
+                    }
+
+
+
+                    
+                }							
+                //si esta aqui es porque esta inciado todo naissu
+
+            }else if(tipo == 2){
+            
+            if(gets["token"] !== undefined){ // Luego comparar lo del token
+                if(gets["token"] == usuario.token){
+                    tipo_vis = "privado"; 
+                }						
+            }			
+                
+            $("#fileButton").remove();
+            $("#subirDoc").remove();
+            //sección de seteo de elementos por contenedor
+            containerMap.set("#about-mail-tele", 4); 
+            containerMap.set("#about-name", 1); 
+            containerMap.set("#about-area", 1); 
+            containerMap.set("#about-carr", 1); 
+            containerMap.set("#about-centro", 1); 
+            containerMap.set("#about-tipo-user", 1); 
+            containerMap.set("#about-datosall", 6); 
+            containerMap.set("#about-about", 1); 
+            containerMap.set("#soft-list", 1); 
+            containerMap.set("#about-idiomas", 3); 
+            containerMap.set("#about-tesis", 2); 
+            containerMap.set("#about-trab", 1); 
+            containerMap.set("#about-act-ext", 1); 
+            containerMap.set("#blog", 1); 
+            containerMap.set("#contactame", 1);
+            containerMap.set("#section-seminarios", 1);  
+
+            userfake = usuario; // BORRAR
+            var can_por = getPortafolios(uid,tipo);
+            if(can_por == 0){
+                $("#blog").remove();
+            }
+            var tipo_user = usuario.tipo.dato;
+            $("#tipo_usuario").text("Perfil " + tipo_user);
+            if(tipo_user != "empresa"){
+                var nombre = isDefined(usuario.nombre, "input", "",$(this),tipo);
+                var apep = isDefined(usuario.apellidop, "input", "");
+                var apem = isDefined(usuario.apellidom, "input", "");
+
+                $("#name_user").text(nombre+" "+apep+" "+apem);
+                console.log(nombre+" "+apep+" "+apem);
+                $("#area_interes").text("Área/s: "+ isDefined(usuario.area, "tostring", "¿","#area_interes",tipo,"#about-area"));
+                $("#carreras").text("Carrera/s: "+ isDefined(usuario.carreras, "tostring", "¿","#carreras",tipo,"#about-carr"));
+
+                $("#centro-estudios").text("Casa de Estudio/s: "+ isDefined(usuario.centrosEstudio, "tostring", "¿","#centro-estudios",tipo,"#about-centro"));
+                $("#aboutme").text(isDefined(usuario.aboutme, "input", "","#aboutme",tipo,"#about-about"));
+                
+                //$("#last-job").text(isDefined(usuario.jobs, "input", "","#last-job",tipo,"#about-trab")); // POSIBLENTE CAMBIE
+                //$("#last-studycenter").text(isDefined(usuario.universidad, "input", "")); // POSIBLENTE CAMBIE
+                $("#email").text(isDefined(usuario.email, "input", "","#email",tipo,"#about-datosall"));
+                $("#phone").text(isDefined(usuario.telefono, "input", "","#phone",tipo,"#about-datosall"));
+                $("#region").text(isDefined(usuario.region, "input", "","#region",tipo,"#about-datosall"));
+                $("#ciudad").text(isDefined(usuario.ciudad, "input", "","#ciudad",tipo,"#about-datosall"));
+                document.getElementById('disp-contratation').innerHTML='<span class="text-color-dark">Disponibilidad de contratación:</span><span class="custom-text-color-2"> '+isDefined(usuario.dispcontratacion, "input", "","#disp-contratation",tipo,"#about-datosall")+'</span>';
+                document.getElementById('disp-work').innerHTML='<span class="text-color-dark">Disponibilidad para trabajar:</span><span class="custom-text-color-2"> '+isDefined(usuario.disptrabajar, "input", "","#disp-work",tipo,"#about-datosall")+'</span>';
+                 $("#aboutme").text(isDefined(usuario.aboutme, "input", "","#aboutme",tipo,"#about-about"));
+                
+                $("#nvespanol").text(isDefined(usuario.nvespanol, "input", "","#nvespanol",tipo,"#about-idiomas"));
+                $("#nvingles").text(isDefined(usuario.nvingles, "input", "","#nvingles",tipo,"#about-idiomas"));
+                $("#nvfrances").text(isDefined(usuario.nvfrances, "input", "","#nvfrances",tipo,"#about-idiomas"));
+                $("#titletesis").text(isDefined(usuario.titletesis, "input", "","#titletesis",tipo,"#about-tesis"));
+                $("#descripciontesis").text(isDefined(usuario.descripciontesis, "input", "","#descripciontesis",tipo,"#about-tesis"));
+                $("#actextra").text(isDefined(usuario.actextra, "input", "","#actextra",tipo, "#about-act-ext"));
+                document.getElementById('disp-seminarios').innerHTML='<h2 class="text-color-dark font-weight-extra-bold text-uppercase">Seminarios y Cursos</h2><p id="seminarios"></p>';
+                var obj = $("#seminarios").text(isDefined(usuario.seminarios, "input", "","#disp-seminarios",tipo,"#section-seminarios"));
+                obj.html(obj.html().replace( /\n/g,'<br/>'));
+                $("#mailContacto").text('<i class="icon-envelope icons text-color-light"></i>'+isDefined(usuario.contactomail, "input", "", "#mailContacto", tipo, "#about-mail-tele"));
+                $("#fonoContacto").text('<i class="icon-phone icons text-color-light"></i>'+isDefined(usuario.contactotel, "input", "","#fonoContacto",tipo, "#about-mail-tele"));
+                $("#campolibre1title").text(isDefined(usuario.campolibre1title, "input", "","#campolibre1title",tipo, "#about-mail-tele"));
+                $("#campolibre1desc").text(isDefined(usuario.campolibre1desc, "input", "","#campolibre1desc",tipo, "#about-mail-tele"));
+                var cant = getSoftware(uid);
+                if(cant == 0)
+                    $("#soft-list").remove();
+                
+            }							
+            //si esta aqui es porque esta inciado todo naissu
+        }
+    
+            var photo = "https://i.stack.imgur.com/34AD2.jpg";
+            storageRef.child('fotosperfil/'+uid).getDownloadURL().then(function(url) {
+                photo=url;
+            }).then(function() {
+                console.log("usuario con foto")
+                document.getElementById("photoPerfil").src=photo;
+            }).catch(function(error) {
+                document.getElementById("photoPerfil").src=photo;
+            });
+
+
+            if(photo===null){
+                document.getElementById("photoPerfil").src="https://i.stack.imgur.com/34AD2.jpg";
+            }else{
+                document.getElementById("photoPerfil").src=photo;
+                
+            }
+
+            /*Foto: Solicitar carga de foto de perfil
+            Centro de formación o universidad: (campo a rellenar o descargar base para seleccionar?) 
+            */
+            if(tipo==1 && usuario.nivel>=50){
+                //ES ADMIN
+                alert("Este tipo de cuenta no posee perfil");
+                window.location.href = 'registro.html';
+            }
+        
+    }
+
+    $("#actextracurModal").select2({
+            tags: true,
+            allowClear: true,
+            tokenSeparators: [','],
+            maximumSelectionLength: 15,
+            placeholder: 'Extracurriculares.'
+        });
+
+        $("#carreraModal").select2({
+            tags: true,
+            allowClear: true,
+            tokenSeparators: [','],
+            maximumSelectionLength: 5,
+            placeholder: 'Carreras.'
+        });
+
+        $("#areasModal").select2({
+            tags: true,
+            allowClear: true,
+            tokenSeparators: [','],
+            maximumSelectionLength: 15,
+            placeholder: 'Áreas.'
+        });
+
+        $("#centrosModal").select2({
+            tags: true,
+            allowClear: true,
+            tokenSeparators: [','],
+            maximumSelectionLength: 15,
+            placeholder: 'Centros de estudio.'
+        });
+
+        $("#descripciontesismodal").on('input', function() {	
+            var delta = $("#descripciontesismodal").attr("maxlength") - $(this).val().length
+            $("#left-charstesis").text(delta);
+        });
+
+        $("#seminariosmodal").on('input', function() {	
+            var delta = $("#seminariosmodal").attr("maxlength") - $(this).val().length
+            $("#seminarios-left-chars").text(delta);
+        });
+
+        $("#aboutmemodal").on('input', function() {	
+            var delta = $("#aboutmemodal").attr("maxlength") - $(this).val().length
+            $("#left-chars").text(delta);
+        });
+
+        $("#descripciontesis").on('input', function() {	
+            var delta = $("#descripciontesis").attr("maxlength") - $(this).val().length
+            $("#charstesis").text(delta);
+        });
+
+        $("#btn-guardar1").click(function() {	
+            var form = document.getElementById("form-modal1");
+            var aux = $('#carreraModal').select2('data');
+            var auxString = "";
+            for(var i = 0;i< aux.length;i++){
+                auxString = auxString+aux[i].text;
+                if((i+1)!=aux.length){
+                    auxString = auxString+"¿";
+                }
+            }
+            var carreras_aux=auxString;
+
+            aux = $('#areasModal').select2('data');
+            auxString = "";
+            for(var i = 0;i< aux.length;i++){
+                auxString = auxString+aux[i].text;
+                if((i+1)!=aux.length){
+                    auxString = auxString+"¿";
+                }
+            }
+            var area=auxString;
+
+            aux = $('#centrosModal').select2('data');
+            auxString = ""; 
+            for(var i = 0;i< aux.length;i++){
+                auxString = auxString+aux[i].text;
+                if((i+1)!=aux.length){
+                    auxString = auxString+"¿";
+                }
+            }
+            var centrosEstudio=auxString;
+
+            var tipo = form.tipoUsuarioModal.value;
+            var user = firebase.auth().currentUser;
+            var updateUser = db.collection("users").doc(uid);
+            updateUser.update({
+                tipo : 				{dato: tipo, 			publico: form.checktipoUsuarioPu.checked, 	privado: form.checktipoUsuarioPr.checked, 		editable: usuario.tipo.editable},
+                area : 				{dato: area, 			publico: form.checkareasPu.checked, 		privado: form.checkareasPr.checked, 			editable: usuario.area.editable},
+                centrosEstudio : 	{dato: centrosEstudio, 	publico: form.checkcentrosPu.checked, 		privado: form.checkcentrosPr.checked, 			editable: true},
+                carreras : 			{dato: carreras_aux, 		publico: form.checkcarreraPu.checked, 		privado: form.checkcarreraPr.checked, 			editable: usuario.carreras.editable}
+            }).then(function(error) {
+                if (error) {
+                    console.log('OCURRIÓ UN ERROR')
+                }else {
+                    
+                    uploadFile();
+                    //location.reload() 
+                }
+            });
+        });
+
+        $("#btn-guardar2").click(function() {	
+            var form = document.getElementById("form-modal2");
+            var user = firebase.auth().currentUser;
+            
+            var email = form.emailModal.value;
+            var fono = form.telModal.value;
+            var disp_hor = $("input[name=disponibilidad-horario]:checked").val();
+            var disp_tra = $("input[name=disponibilidad-contratacion]:checked").val();
+            var ciudad = form.ciudadModal.value;
+            var region = form.regionModal.value;
+            var about = form.aboutmemodal.value;
+            
+            var updateUser = db.collection("users").doc(user.uid);
+            updateUser.update({
+                email : 				{dato: email, 			publico: form.checkemailPu.checked, 		privado: form.checkemailPr.checked, 			editable: usuario.email.editable},
+                telefono : 				{dato: fono, 			publico: form.checktelPu.checked, 			privado: form.checktelPr.checked, 				editable: usuario.telefono.editable},
+                disptrabajar : 			{dato: disp_hor, 		publico: form.checkdishPu.checked, 			privado: form.checkdishPr.checked, 				editable: true},
+                dispcontratacion : 		{dato: disp_tra, 		publico: form.checkdiscPu.checked, 			privado: form.checkdiscPr.checked, 				editable: true},
+                ciudad : 				{dato: ciudad, 			publico: form.checkciudadPu.checked, 		privado: form.checkciudadPr.checked, 			editable: true},
+                region : 				{dato: region, 			publico: form.checkregionPu.checked, 		privado: form.checkregionPr.checked, 			editable: true},
+                aboutme : 				{dato: about, 			publico: form.checkaboutPu.checked, 		privado: form.checkaboutPr.checked, 			editable: true}
+            }).then(function(error) {
+                if (error) {
+                    console.log('OCURRIÓ UN ERROR')
+                }else {
+                    
+                    //uploadFile();
+                    location.reload() 
+                }
+            });
+            
+        });
+
+        $("#btn-guardar3").click(function() {	
+            var form = document.getElementById("form-modal3");
+            var user = firebase.auth().currentUser;
+            
+            var nvespanol = $("#nvespanolModal option:selected").text();
+            var nvingles = $("#nvinglesModal option:selected").text();
+            var nvfrances = $("#nvfrancesModal option:selected").text();
+            var titletesis = form.titletesisModal.value;
+            var descripciontesis = form.descripciontesismodal.value;
+            var seminarios = form.seminariosmodal.value;
+
+            aux = $('#actextracurModal').select2('data');
+            auxString = ""; 
+            for(var i = 0;i< aux.length;i++){
+                auxString = auxString+aux[i].text;
+                if((i+1)!=aux.length){
+                    auxString = auxString+"¿";
+                }
+            }
+            var actextra = auxString;
+            var seminarios = form.seminariosmodal.value;
+            var campolibre1title = form.campolibre1titleModal.value;
+            var campolibre1desc = form.campolibre1descModal.value;
+            var contactomail = form.contactomailModal.value;
+            var contactotel = form.contactotelModal.value;
+            
+            
+            var updateUser = db.collection("users").doc(user.uid);
+            updateUser.update({
+                titletesis : 					{dato: titletesis,			publico: form.checktitletesisPu.checked, 		privado: form.checktitletesisPr.checked, 			editable: true},
+                descripciontesis : 				{dato: descripciontesis, 		publico: form.checkdestesisPu.checked, 			privado: form.checkdestesisPr.checked, 			editable: true},
+                nvespanol : 					{dato: nvespanol, 				publico: form.checknvspanolPu.checked, 			privado: form.checknvspanolPr.checked, 			editable: true},
+                nvingles : 					{dato: nvingles, 				publico: form.checknvinglesPu.checked, 			privado: form.checknvinglesPr.checked, 			editable: true},
+                nvfrances : 				{dato: nvfrances, 				publico: form.checknvfrancesPu.checked, 		privado: form.checknvfrancesPr.checked, 			editable: true},
+                actextra : 					{dato: actextra, 				publico: form.checkactextracurPu.checked, 		privado: form.checkactextracurPr.checked, 			editable: true},
+                seminarios : 				{dato: seminarios, 				publico: form.checkseminariosPu.checked, 		privado: form.checkseminariosPr.checked, 				editable: true},
+                campolibre1title : 			{dato: campolibre1title, 		publico: form.campolibre1titleModal.checked, 	privado: form.checkcampolibre1Pr.checked, 				editable: true},
+                campolibre1desc : 			{dato: campolibre1desc, 		publico: form.checkcampolibre1Pu.checked, 		privado: form.checkcampolibre1Pr.checked, 				editable: true},
+                contactomail : 				{dato: contactomail, 			publico: form.checkcontactomailPu.checked, 		privado: form.checkcontactomailPr.checked, 			editable: true},
+                contactotel : 				{dato: contactotel, 			publico: form.checkcontactotelPu.checked, 		privado: form.checkcontactotelPr.checked, 			editable: true},
+            }).then(function(error) {
+                if (error) {
+                    console.log('OCURRIÓ UN ERROR')
+                }else {
+                    var div = $("#otrosSoftwaresmodal");
+
+                    for(var i=0;i<div.children().length;i++){
+                        var software = div.children()[i];
+
+                        var nombre_soft = $("#soft-"+software.id).val();
+                        var porcentaje_soft = $("#rango-"+software.id).val();
+                        var prcheck_soft = $("#checkPr-"+software.id).val();
+                        var pucheck_soft = $("#checkPu-"+software.id).val();
+
+                    
+                        var updateSoft = db.collection("users").doc(uid).collection("softwares").doc(software.id);
+                        updateSoft.update({
+                            nombre : nombre_soft,
+                            porcentaje : porcentaje_soft,
+                            publico : pucheck_soft,
+                            privado : prcheck_soft
+                        }).then(function(error) {
+                            if (error) {
+                                console.log('OCURRIÓ UN ERROR');
+                            }else {
+                                
+                                //uploadFile();
+                                location.reload();
+                            }
+                        })
+                    }
+
+                    //uploadFile();
+                    location.reload();
+                }
+                
+            });
+        });
+
+        function getPortafolios(uid,tipo) {
+            //console.log("Obtengo portafolios")
+
+            var user = firebase.auth().currentUser;
+
+            const events = firebase.firestore().collection("users").doc(uid).collection("portafolio")
+            var i = 0;
+            events.get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    var titulo = doc.data().titulo;
+                    var descripcion = doc.data().descripcion;
+                    var enlace = doc.data().enlace;
+                    var publico_p = doc.data().publico;
+                    var privado_p = doc.data().privado;
+                    addPortafolio(titulo,descripcion,enlace,publico_p,privado_p,doc.id,i);
+                    i = i+1;
+                })
+                if($("#ver-todos-portfolios").length > 0){
+                    if(i<=2){
+                        document.getElementById("ver-todos-portfolios").style.display = "none"; 
+                    }else{
+                        document.getElementById("ver-todos-portfolios").style.display = "block";
+                    }
+                }
+                
+                //var html1 = "<div class='owl-dots disabled'></div>"
+                //var p = document.getElementById('portafolios');
+                //p.innerHTML = html1;
+            })
+            return i;
+
+
+        }
+
+        function getSoftware(uid) {
+            var user = firebase.auth().currentUser;
+            var p1 = document.getElementById("softwares-skills1");
+            var p2 = document.getElementById("softwares-skills2");
+            const events = firebase.firestore().collection("users").doc(uid).collection("softwares")
+            var i = 0;
+            var html_code1 ="";
+            var html_code2 ="";
+            events.get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    var nombre_soft 	= doc.data().nombre;
+                    var porcentaje_soft = doc.data().porcentaje;
+                    var checkpu = doc.data().publico;
+                    var checkpr = doc.data().privado;
+                    new_software(doc.id,nombre_soft,porcentaje_soft,checkpu,checkpr);
+                    var html = '<div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">'+
+                                        '<span>'+nombre_soft+'</span>'+
+                                    '</div>'+
+                                    '<div class="progress mb-2">'+
+                                        '	<div class="progress-bar" data-appear-progress-animation="'+porcentaje_soft+'%" style="width: '+porcentaje_soft+'%;"></div>'+
+                                    '</div>';
+                    if((i%2) == 0){
+                        html_code1 = html_code1 + html;
+                    }else{
+                        html_code2 = html_code2 + html;
+                    }
+                    
+
+                    i=i+1;
+                })
+                    p1.innerHTML = html_code1;
+                    p2.innerHTML = html_code2;
+                //var html1 = "<div class='owl-dots disabled'></div>"
+                //var p = document.getElementById('portafolios');
+                //p.innerHTML = html1;
+            })
+            return i;
+        }
+
+   
+</script>	
