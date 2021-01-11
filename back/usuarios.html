@@ -1175,7 +1175,7 @@ const logout = document.querySelector('#logout');
                         '<a href="#" data-id="'+id+'" class="borrar btn btn-sm bg-red">'+
                           '<i class="fa fa-trash-o"></i>Eliminar'+
                           '</a>'+
-                          '<a href="#" class="btn btn-sm btn-primary">'+
+                          '<a href="#" data-id-ver="'+id+'" class="ver btn btn-sm btn-primary">'+
                             '<i class="fas fa-user"></i> Ver/editar perfil'+
                             '</a>'+
                       '</div>'+
@@ -1233,6 +1233,12 @@ $('body').on('click', 'a.borrar', function() {
     } else {
 			console.log("Cancelado por el usuario");
 		}
+})
+
+
+$('body').on('click', 'a.ver', function() {
+  var  id = $( this ).attr("data-id-ver");
+  window.location.href = "/back/perfil.html?uid="+id;
 })
 
 </script>

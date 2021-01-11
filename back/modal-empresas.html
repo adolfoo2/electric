@@ -655,30 +655,11 @@
                         
                     $("#mailContacto").text(isDefined(usuario.contactomail, "input", ""));
                     $("#fonoContacto").text(isDefined(usuario.contactotel, "input", ""));
-                    var we = isDefined(usuario.web, "input", "","#web",tipo, "#cweb");
-                    if(we === "CAMPO INCOMPLETO")
-                        we = ""; 
-
-                    var ins = isDefined(usuario.instagram, "input", "","#instagram",tipo, "#cinstagram");
-                    if(ins === "CAMPO INCOMPLETO")
-                        ins = ""; 
-                    
-                    var fa = isDefined(usuario.facebook, "input", "","#facebook",tipo, "#cfacebook");
-                    if(fa === "CAMPO INCOMPLETO")
-                        fa = ""; 
-
-                    var tw = isDefined(usuario.twitter, "input", "","#twitter",tipo, "#ctwitter");
-                    if(tw === "CAMPO INCOMPLETO")
-                        tw = ""; 
-
-                    var li = isDefined(usuario.linkedin, "input", "","#linkedin",tipo, "#clinkedin");
-                    if(li === "CAMPO INCOMPLETO")
-                        li = ""; 
-                    $("#web").attr('href',ins);
-                    $("#instagram").attr('href',ins);
-                    $("#facebook").attr('href',fa);
-                    $("#twitter").attr('href',tw);
-                    $("#linkedin").attr('href',li);
+                    $("#web").attr("href", isDefined(usuario.web, "input", ""));
+                    $("#instagram").attr("href", isDefined(usuario.instagram, "input", ""));
+                    $("#facebook").attr("href", isDefined(usuario.facebook, "input", ""));
+                    $("#linkedin").attr("href", isDefined(usuario.linkedin, "input", ""));
+                    $("#twitter").attr("href", isDefined(usuario.twitter, "input", ""));
                     $("#campolibre1title").text(isDefined(usuario.campolibre1title, "input", ""));
                     $("#campolibre1desc").text(isDefined(usuario.campolibre1desc, "input", ""));
                     getSoftware(uid);
@@ -994,30 +975,11 @@
                     
                     $("#mailContacto").text('<i class="icon-envelope icons text-color-light"></i>'+isDefined(usuario.contactomail, "input", "", "#mailContacto", tipo, "#about-mail-tele"));
                     $("#fonoContacto").text('<i class="icon-phone icons text-color-light"></i>'+isDefined(usuario.contactotel, "input", "","#fonoContacto",tipo, "#about-mail-tele"));
-                    var we = isDefined(usuario.web, "input", "","#web",tipo, "#cweb");
-                    if(we === "CAMPO INCOMPLETO")
-                        we = ""; 
-
-                    var ins = isDefined(usuario.instagram, "input", "","#instagram",tipo, "#cinstagram");
-                    if(ins === "CAMPO INCOMPLETO")
-                        ins = ""; 
-                    
-                    var fa = isDefined(usuario.facebook, "input", "","#facebook",tipo, "#cfacebook");
-                    if(fa === "CAMPO INCOMPLETO")
-                        fa = ""; 
-
-                    var tw = isDefined(usuario.twitter, "input", "","#twitter",tipo, "#ctwitter");
-                    if(tw === "CAMPO INCOMPLETO")
-                        tw = ""; 
-
-                    var li = isDefined(usuario.linkedin, "input", "","#linkedin",tipo, "#clinkedin");
-                    if(li === "CAMPO INCOMPLETO")
-                        li = ""; 
-                    $("#web").attr('href',ins);
-                    $("#instagram").attr('href',ins);
-                    $("#facebook").attr('href',fa);
-                    $("#twitter").attr('href',tw);
-                    $("#linkedin").attr('href',li);
+                    $("#web").attr('href',isDefined(usuario.web, "input", "","#web",tipo, "#cweb"));
+                    $("#instagram").attr('href',isDefined(usuario.instagram, "input", "","#instagram",tipo, "#cinstagram"));
+                    $("#facebook").attr('href',isDefined(usuario.facebook, "input", "","#facebook",tipo, "#cfacebook"));
+                    $("#twitter").attr('href',isDefined(usuario.twitter, "input", "","#twitter",tipo, "#ctwitter"));
+                    $("#linkedin").attr('href',isDefined(usuario.linkedin, "input", "","#linkedin",tipo, "#clinkedin"));
                     $("#campolibre1title").text(isDefined(usuario.campolibre1title, "input", "","#campolibre1title",tipo, "#about-mail-tele"));
                     $("#campolibre1desc").text(isDefined(usuario.campolibre1desc, "input", "","#campolibre1desc",tipo, "#about-mail-tele"));
                     var cant = getSoftware(uid);
@@ -1213,7 +1175,7 @@
             var region = form.regionModal.value;
             var ntrabajadores = form.ntrabajadoresModal.value;
             var formacioncontinua = $('input[name=formacioncontinuaModal]:checked', '#form-modal2').val();
-            var updateUser = db.collection("users").doc(user.uid);
+            var updateUser = db.collection("users").doc(uid);
             
             updateUser.update({
                 email : 				{dato: email, 			publico: form.checkemailPu.checked, 		privado: form.checkemailPr.checked, 			editable: usuario.email.editable},
@@ -1273,7 +1235,7 @@
             var web = form.contactowebModal.value;
             var about = form.aboutmemodal.value;
             
-            var updateUser = db.collection("users").doc(user.uid);
+            var updateUser = db.collection("users").doc(uid);
             updateUser.update({
                 mpagos : 				    {dato: mpagos, 				    publico: form.checkmpagosPu.checked, 			privado: form.checkmpagosPr.checked, 			editable: true},
                 actextra : 					{dato: actextra, 				publico: form.checkactextracurPu.checked, 		privado: form.checkactextracurPr.checked, 		editable: true},

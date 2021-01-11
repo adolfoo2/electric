@@ -733,7 +733,7 @@
 
                 document.getElementById("about-mision").innerHTML =
                             '<div class="col-lg-12 p-0">'+
-                                '<span class="text-color-light font-weight-extra-bold text-uppercase"><h2 class="text-color-light font-weight-extra-bold text-uppercase" >Misión</h2></span><br>'+
+                                '<span class="text-color-light font-weight-extra-bold text-uppercase"><h2 class="text-color-light font-weight-extra-bold text-uppercase" >Misión</h2></span>'+
                                 '<span class="text-color-light text-uppercase" id="mision-text">'+isDefined(usuario.mision, "input","")+'</span>'+
                             '</div>';
                 document.getElementById("about-vision").innerHTML =	
@@ -744,29 +744,29 @@
                 $("#mailContacto").text(isDefined(usuario.contactomail, "input", ""));
                 $("#fonoContacto").text(isDefined(usuario.contactotel, "input", ""));
                 var we = isDefined(usuario.web, "input", "","#web",tipo, "#cweb");
-                    if(we === "CAMPO INCOMPLETO")
-                        we = ""; 
+                if(we === "CAMPO INCOMPLETO")
+                    we = ""; 
 
-                    var ins = isDefined(usuario.instagram, "input", "","#instagram",tipo, "#cinstagram");
-                    if(ins === "CAMPO INCOMPLETO")
-                        ins = ""; 
-                    
-                    var fa = isDefined(usuario.facebook, "input", "","#facebook",tipo, "#cfacebook");
-                    if(fa === "CAMPO INCOMPLETO")
-                        fa = ""; 
+                var ins = isDefined(usuario.instagram, "input", "","#instagram",tipo, "#cinstagram");
+                if(ins === "CAMPO INCOMPLETO")
+                    ins = ""; 
+                
+                var fa = isDefined(usuario.facebook, "input", "","#facebook",tipo, "#cfacebook");
+                if(fa === "CAMPO INCOMPLETO")
+                    fa = ""; 
 
-                    var tw = isDefined(usuario.twitter, "input", "","#twitter",tipo, "#ctwitter");
-                    if(tw === "CAMPO INCOMPLETO")
-                        tw = ""; 
+                var tw = isDefined(usuario.twitter, "input", "","#twitter",tipo, "#ctwitter");
+                if(tw === "CAMPO INCOMPLETO")
+                    tw = ""; 
 
-                    var li = isDefined(usuario.linkedin, "input", "","#linkedin",tipo, "#clinkedin");
-                    if(li === "CAMPO INCOMPLETO")
-                        li = ""; 
-                    $("#web").attr('href',ins);
-                    $("#instagram").attr('href',ins);
-                    $("#facebook").attr('href',fa);
-                    $("#twitter").attr('href',tw);
-                    $("#linkedin").attr('href',li);
+                var li = isDefined(usuario.linkedin, "input", "","#linkedin",tipo, "#clinkedin");
+                if(li === "CAMPO INCOMPLETO")
+                    li = ""; 
+                $("#web").attr('href',ins);
+                $("#instagram").attr('href',ins);
+                $("#facebook").attr('href',fa);
+                $("#twitter").attr('href',tw);
+                $("#linkedin").attr('href',li);
                 $("#campolibre1title").text(isDefined(usuario.campolibre1title, "input", ""));
                 $("#campolibre1desc").text(isDefined(usuario.campolibre1desc, "input", ""));
                 
@@ -1070,7 +1070,7 @@
                     document.getElementById('disp-diplomados').innerHTML='<h2 class="text-color-dark font-weight-extra-bold text-uppercase">Diplomados y Certificados</h2><p id="diplomados"></p>';
                     var obj = $("#diplomados").text(isDefined(usuario.diplomados, "input", "","#disp-diplomados",tipo,"#section-diplomados"));
                     obj.html(obj.html().replace( /\n/g,'<br/>'));
-                    document.getElementById('disp-normativas').innerHTML='<h2 class="text-color-dark font-weight-extra-bold text-uppercase d-flex justify-content-center">Normativas</h2><p id="normativas"></p>';
+                    document.getElementById('disp-normativas').innerHTML='<h2 class="text-color-dark font-weight-extra-bold text-uppercase">Normativas</h2><p id="normativas"></p>';
                     var obj = $("#normativas").text(isDefined(usuario.normativas, "input", "","#disp-normativas",tipo,"#section-normativas"));
                     obj.html(obj.html().replace( /\n/g,'<br/>'));
                     $("#mailContacto").text('<i class="icon-envelope icons text-color-light"></i>'+isDefined(usuario.contactomail, "input", "", "#mailContacto", tipo, "#about-mail-tele"));
@@ -1308,7 +1308,7 @@
             var region = form.regionModal.value;
             var about = form.aboutmemodal.value;
 
-            var updateUser = db.collection("users").doc(user.uid);
+            var updateUser = db.collection("users").doc(uid);
             updateUser.update({
                 email : 				{dato: email, 			publico: form.checkemailPu.checked, 		privado: form.checkemailPr.checked, 			editable: usuario.email.editable},
                 telefono : 				{dato: fono, 			publico: form.checktelPu.checked, 			privado: form.checktelPr.checked, 				editable: usuario.telefono.editable},
@@ -1379,7 +1379,7 @@
             var contactotel = form.contactotelModal.value;
             
             
-            var updateUser = db.collection("users").doc(user.uid);
+            var updateUser = db.collection("users").doc(uid);
             updateUser.update({
                 titletesis : 				{dato: titletesis,			    publico: form.checktitletesisPu.checked, 		privado: form.checktitletesisPr.checked, 		editable: true},
                 descripciontesis : 			{dato: descripciontesis, 		publico: form.checkdestesisPu.checked, 			privado: form.checkdestesisPr.checked, 			editable: true},
@@ -1673,7 +1673,7 @@ $("#btn-nuevoSoftware").on('click',function() {
     var user = firebase.auth().currentUser;
 
     //creo Software si no existe y le seteo este nuevo portafolio
-    var nuevoSoftware = db.collection("users").doc(user.uid).collection("softwares");
+    var nuevoSoftware = db.collection("users").doc(uid).collection("softwares");
     nuevoSoftware.get().then(snap => {
         size = snap.size // will return the collection size
         if(size<10){
@@ -1723,7 +1723,7 @@ $("#btn-nuevalinea").on('click',function() {
     var user = firebase.auth().currentUser;
 
     //creo Software si no existe y le seteo este nuevo portafolio
-    var nuevaLinea = db.collection("users").doc(user.uid).collection("line");
+    var nuevaLinea = db.collection("users").doc(uid).collection("line");
     nuevaLinea.get().then(snap => {
         size = snap.size // will return the collection size
         if(size<15){
